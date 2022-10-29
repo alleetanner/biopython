@@ -42,7 +42,7 @@ enableGitInfo = true
     pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
     post = ""
     name = ""
-    url = "https://github.com/alleetanner/data-vis-with-streamlit"
+    url = "https://github.com/alleetanner/biopython"
     title = "GitHub"
 
 # Markup related configuration in Hugo
