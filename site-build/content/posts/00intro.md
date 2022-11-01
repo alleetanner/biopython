@@ -1,8 +1,8 @@
 ---
-title: "‣ What is Streamlit?"
-subtitle: "Bringing your data science to the internet"
+title: "• What is BioPython?"
+subtitle: "Python meets biological sequence data"
 
-date: 2022-09-10T00:00:00+01:00
+date: 2022-11-01T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
@@ -21,8 +21,8 @@ comment:
   enable: true
 ---
 
-### What is Streamlit?
-Streamlit is a library which allows you to turn your data science scripts into interactive web apps. It brings together powerful data analysis packages and graphical plotting libraries, blahblah
+### What is BioPython?
+Biopython is a Python library for working with DNA, RNA and protein sequences. It have a very wide catalogue of functions, for operations such as reverse complementing of a DNA string, sequence alignment and working with BLAST when searching genomic data. It also allows data to be retrieved from repositories holding sequence information produced by researchers globally, such as NCBI GenBank and Ensemble.
 
 Normal text body.
 
