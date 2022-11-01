@@ -66,14 +66,5 @@ code goes herer next setion blakfahuir wrafguighbarg
 Exercise Questions  a question box
  q1 q2     ]]></description>
 </item>
-<item>
-    <title>‣ Requirements and Resources</title>
-    <link>https://alleetanner.github.io/biopython/posts/01requirements/</link>
-    <pubDate>Sun, 11 Sep 2022 00:00:00 &#43;0100</pubDate>
-    <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/biopython/posts/01requirements/</guid>
-    <description><![CDATA[Glossary  The words library, module and package roughly mean the same thing; it is entirely natural to be confused by this!
- Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed.]]></description>
-</item>
 </channel>
 </rss>
