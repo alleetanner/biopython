@@ -1,8 +1,8 @@
 ---
-title: "‣ Requirements and Resources"
+title: "• Requirements and Resources"
 subtitle: "What you will need, and where to get help."
 
-date: 2022-09-11T00:00:00+01:00
+date: 2022-11-02T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
@@ -33,8 +33,9 @@ The words **library**, **module** and **package** roughly mean the same thing; i
 
 ### Python experience
 To get the most out of this session, you should have some experience with Python. In particular, you should
-* have experience of the [`pandas`](https://pandas.pydata.org/) library (if you have attended our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), that is perfect!)
-* be familiar with an Integrated Development Environment (IDE) (we recommend [VS Code](https://code.visualstudio.com/)) - we also have [a course on that!](https://milliams.com/courses/ides_debugging/)
+* have experience to beginner or intermediate level Python - for example, having attended our sessions on either of these would be an ideal introduction
+* be familiar with the biological background to genetics or genomics. For example, knowing the relationships between nucleotides and amino acids and having a general knowledge of what these are and what they do is sufficient.
+* bdbkj
 * some experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is also expected.
 
 We will recap some important coding concepts like `import`ing, creating functions using `def`, and how to work with dataframes. Streamlit encourages a "linear" coding style, and uses the Pandas dataframe as a foundation.sdfio no
