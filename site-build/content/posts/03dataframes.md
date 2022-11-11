@@ -1,6 +1,6 @@
 ---
-title: "‣ The all-powerful Dataframe"
-subtitle: "Arrange, compute, visualise with Pandas"
+title: "• Acquiring sequence data"
+subtitle: "Getting BioPython to search repositories for you"
 
 date: 2022-09-13T00:00:00+01:00
 
@@ -16,9 +16,9 @@ code:
 math:
   enable: true
 share:
-  enable: true
+  enable: false
 comment:
-  enable: true
+  enable: false
 ---
 
 ### Section title
