@@ -1,5 +1,5 @@
 ---
-title: "‣ First steps"
+title: "• Sequences"
 subtitle: "Build a website with two lines of Python code!"
 
 date: 2022-09-12T00:00:00+01:00
