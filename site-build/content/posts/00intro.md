@@ -16,13 +16,13 @@ code:
 math:
   enable: true
 share:
-  enable: true
+  enable: false
 comment:
-  enable: true
+  enable: false
 ---
 
 ### What is BioPython?
-Biopython is a Python library for working with DNA, RNA and protein sequences. It have a very wide catalogue of functions, for operations such as reverse complementing of a DNA string, sequence alignment and working with BLAST when searching genomic data. It also allows data to be retrieved from repositories holding sequence information produced by researchers globally, such as NCBI GenBank and Ensemble.
+[Biopython](https://biopython.org/) is a Python library for working with DNA, RNA and protein sequences. It has a wide catalogue of functions, for operations such as reverse complementing of a DNA string, sequence alignment and working with BLAST when searching genomic data. It also allows data to be retrieved from repositories holding sequence information produced by research laboratory globally, such as NCBI GenBank and Ensemble.
 
 Normal text body.
 
