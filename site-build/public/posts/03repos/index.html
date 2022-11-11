@@ -4,40 +4,42 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>‣ Streamlit and data visualisations - BioPython</title><meta name="Description" content=""><meta property="og:title" content="‣ Streamlit and data visualisations" />
+        <title>• Acquiring sequence data - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Acquiring sequence data" />
 <meta property="og:description" content="Section title  bullet1 bullt2  Normal text body.
 Warning   Warning1 Warning2     Info   Info1 Info2    
 Another section blahfdajkfhu aefuibahj rwefyugr
 code goes herer next setion blakfahuir wrafguighbarg
 Exercise Questions  a question box
- q1 q2     " />
+ q1 q2     Note title titleQuestions  a note box
+ dfdsafg q2     " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alleetanner.github.io/biopython/posts/04visuals/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-09-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-10-29T13:28:59+01:00" />
+<meta property="og:url" content="https://alleetanner.github.io/biopython/posts/03repos/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-13T00:00:00+01:00" />
+<meta property="article:modified_time" content="2022-11-11T13:02:22+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="‣ Streamlit and data visualisations"/>
+<meta name="twitter:title" content="• Acquiring sequence data"/>
 <meta name="twitter:description" content="Section title  bullet1 bullt2  Normal text body.
 Warning   Warning1 Warning2     Info   Info1 Info2    
 Another section blahfdajkfhu aefuibahj rwefyugr
 code goes herer next setion blakfahuir wrafguighbarg
 Exercise Questions  a question box
- q1 q2     "/>
+ q1 q2     Note title titleQuestions  a note box
+ dfdsafg q2     "/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://alleetanner.github.io/biopython/posts/04visuals/" /><link rel="prev" href="https://alleetanner.github.io/biopython/posts/03repos/" /><link rel="next" href="https://alleetanner.github.io/biopython/posts/05deploying/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/biopython/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://alleetanner.github.io/biopython/posts/03repos/" /><link rel="prev" href="https://alleetanner.github.io/biopython/posts/02sequences/" /><link rel="next" href="https://alleetanner.github.io/biopython/posts/04visuals/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/biopython/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "‣ Streamlit and data visualisations",
+        "headline": "• Acquiring sequence data",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/04visuals\/"
-        },"genre": "posts","wordcount":  32 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04visuals\/","datePublished": "2022-09-14T00:00:00+01:00","dateModified": "2022-10-29T13:28:59+01:00","publisher": {
+            "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/"
+        },"genre": "posts","wordcount":  40 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/","datePublished": "2022-09-13T00:00:00+01:00","dateModified": "2022-11-11T13:02:22+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -77,9 +79,9 @@ Exercise Questions  a question box
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">‣ Streamlit and data visualisations</h1><h2 class="single-subtitle">Getting your numbers to say something</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">• Acquiring sequence data</h1><h2 class="single-subtitle">Getting BioPython to search repositories for you</h2><div class="post-meta">
             <div class="post-meta-line">
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;32 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;40 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -93,6 +95,7 @@ Exercise Questions  a question box
         <li><a href="#section-title">Section title</a></li>
         <li><a href="#another-section">Another section</a></li>
         <li><a href="#exercise">Exercise</a></li>
+        <li><a href="#note">Note</a></li>
       </ul>
     </li>
   </ul>
@@ -145,16 +148,30 @@ Exercise Questions  a question box
 </div>
         </div>
     </div>
+<h3 id="note">Note</h3>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>title titleQuestions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>a note box</p>
+<ul>
+<li>dfdsafg</li>
+<li>q2</li>
+</ul>
+</div>
+        </div>
+    </div>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-10-29</span>
+                <span>Updated on 2022-11-11</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://alleetanner.github.io/biopython/posts/04visuals/" data-title="‣ Streamlit and data visualisations"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://alleetanner.github.io/biopython/posts/04visuals/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://alleetanner.github.io/biopython/posts/04visuals/" data-title="‣ Streamlit and data visualisations"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://alleetanner.github.io/biopython/posts/04visuals/" data-title="‣ Streamlit and data visualisations"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@6.20.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://alleetanner.github.io/biopython/posts/04visuals/" data-title="‣ Streamlit and data visualisations"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span></span>
             </div>
         </div>
     </div>
@@ -166,10 +183,10 @@ Exercise Questions  a question box
         </section>
     </div>
 
-    <div class="post-nav"><a href="/biopython/posts/03repos/" class="prev" rel="prev" title="• Acquiring sequence data"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>• Acquiring sequence data</a>
-            <a href="/biopython/posts/05deploying/" class="next" rel="next" title="‣ Deploying">‣ Deploying<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/biopython/posts/02sequences/" class="prev" rel="prev" title="• Sequences"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>• Sequences</a>
+            <a href="/biopython/posts/04visuals/" class="next" rel="next" title="‣ Streamlit and data visualisations">‣ Streamlit and data visualisations<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"></div></article></div>
+</article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.98.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/biopython/" target="_blank">Alastair Tanner</a></span></div>
@@ -181,5 +198,5 @@ Exercise Questions  a question box
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/biopython/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/biopython/js/theme.min.js"></script></body>
 </html>
