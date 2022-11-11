@@ -1,15 +1,24 @@
 ### University of Bristol ∙ Research Computing Training
 
-modifiedWelcome to this workshop on data visualisation using Streamlit. These pages can be followed in your own time, but also guide our training workshop.
+[BioPython](https://biopython.org/) is a suite of open source tools for computational molecular biology in Python. It allows us to acquire data, organise it using standardised formats, and produce results that can be easily shared with colleagues and collaborators.
 
-In many areas of research and study, we want to be able to work with data, investigate what the data says through visualisation, and communicate our findings with others. Streamlit ties these all together, providing a clear way to write code, present interactive analysis, and publish it on the internet.
+It has a range of features needed for this kind of work, including:
+
+- standard operations on sequences such as transcription, complements and conversions,
+- reading and writing many common file formats such as FASTA, GenBank and Blast,
+- accessing many online databases such as NCBI,
+- running tools like Blast directly,
+- and support for performing alignments.
+
+In this course we wil introduce some of the basics of Biopython and how it can support you in your workflows. It will focus on Biopython as a tool to do your job and less on the specifics of bioinformatics as a research field.
 
 {{< admonition type="example" title="Session goals" open=true >}}
-By the end of this workshop, you will
-- Be able to use the Streamlit library to create a website
-- Have some more practice with the Pandas Dataframe
-- Know the basics of layout and visualisation
-- Be able to deploy your website to the internet
+By the end of this workshop, you will have
+- an overview of the capabilities of BioPython
+- some practical experience of acquiring, managing and analysing sequence data
+- gained some familiarity with major sequence repositories
+- become familiar with communities where you can find answers to code questions
+- built a small dataset, and done some analysis on it.
 {{< /admonition >}}
 
 
