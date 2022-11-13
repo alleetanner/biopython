@@ -2,7 +2,7 @@
 title: "‣ Multiple Sequence Alignments"
 subtitle: "Comparison and homology at the molecular level."
 
-date: 2022-10-04T00:00:00+01:00
+date: 2022-11-04T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
