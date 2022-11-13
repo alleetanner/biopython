@@ -13,14 +13,15 @@
  Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed.]]></description>
 </item>
 <item>
-    <title>• What is BioPython?</title>
+    <title>• Set up and requirements</title>
     <link>https://alleetanner.github.io/biopython/posts/00intro/</link>
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/00intro/</guid>
-    <description><![CDATA[What is BioPython? Biopython is a Python library for working with DNA, RNA and protein sequences. It has a wide catalogue of functions, for operations such as reverse complementing of a DNA string, sequence alignment and working with BLAST when searching genomic data. It also allows data to be retrieved from repositories holding sequence information produced by research laboratory globally, such as NCBI GenBank and Ensemble.
-Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2]]></description>
+    <description><![CDATA[Setting things up in Anaconda Before we can work with BioPython, we will need the library to be install as part of your Python interpreter. We do this by XXXXX
+Warning   Warning1 Warning2     Info   Info1 Info2    
+Another section blahfdajkfhu aefuibahj rwefyugr
+code goes herer next setion blakfahuir wrafguighbarg]]></description>
 </item>
 <item>
     <title>• Sequences and repositories</title>
