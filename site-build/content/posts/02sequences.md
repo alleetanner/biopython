@@ -1,8 +1,8 @@
 ---
 title: "• Sequences"
-subtitle: "Build a website with two lines of Python code!"
+subtitle: "Viewing and manipulating fundamental genetic data"
 
-date: 2022-09-12T00:00:00+01:00
+date: 2022-10-03T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
@@ -16,9 +16,9 @@ code:
 math:
   enable: true
 share:
-  enable: true
+  enable: false
 comment:
-  enable: true
+  enable: false
 ---
 
 ### Section title
