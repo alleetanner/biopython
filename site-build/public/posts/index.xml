@@ -3,7 +3,20 @@
         <title>All Posts - BioPython</title>
         <link>https://alleetanner.github.io/biopython/posts/</link>
         <description>All Posts | BioPython</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 02 Nov 2022 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://alleetanner.github.io/biopython/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 05 Nov 2022 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://alleetanner.github.io/biopython/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>• Phylogenetics</title>
+    <link>https://alleetanner.github.io/biopython/posts/05phylogenetics/</link>
+    <pubDate>Sat, 05 Nov 2022 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/biopython/posts/05phylogenetics/</guid>
+    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
+Warning   Warning1 Warning2     Info   Info1 Info2    
+Another section blahfdajkfhu aefuibahj rwefyugr
+code goes herer next setion blakfahuir wrafguighbarg
+Exercise Questions  a question box
+ q1 q2     ]]></description>
+</item>
+<item>
     <title>• Working with sequences</title>
     <link>https://alleetanner.github.io/biopython/posts/02sequences/</link>
     <pubDate>Wed, 02 Nov 2022 00:00:00 &#43;0100</pubDate>
@@ -51,19 +64,6 @@ code goes herer next setion blakfahuir wrafguighbarg
 Exercise Questions  a question box
  q1 q2     Note title titleQuestions  a note box
  dfdsafg q2     ]]></description>
-</item>
-<item>
-    <title>‣ Deploying</title>
-    <link>https://alleetanner.github.io/biopython/posts/05deploying/</link>
-    <pubDate>Thu, 15 Sep 2022 00:00:00 &#43;0100</pubDate>
-    <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/biopython/posts/05deploying/</guid>
-    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     ]]></description>
 </item>
 </channel>
 </rss>
