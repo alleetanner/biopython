@@ -29,10 +29,11 @@ Given the vast amount of data being produced, international consortia were estab
 
 {{< admonition type="info" title="The big repositories" open=true >}}
 
-- [NCBI Genbank](https://www.ncbi.nlm.nih.gov/genbank/): this is the USA-based national repo, containing a wide-variety of databases. The biggest of these are "genome", "gene", and "protein", as well as pre-assembly reads, for example in "SRA", the sequence read archive. As of 2022, it contains around 240 million sequences, of around 1.5 trillion nucleotides.
-- Ensembl
-- ExPASy
+- [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/): this is the USA-based national repo administered by the National Centre for Biotechnology Information, containing a wide-variety of databases. The biggest of these are "genome", "gene", and "protein", as well as raw (pre-assembly) reads, for example in "SRA", the sequence read archive. As of 2022, it contains around 2.5 billion sequences, of around 17 trillion nucleotides.
+- [Ensembl](https://www.ensembl.org/index.html): the repository of the European Bioinformatics Institute. It is accompanied by a taxonomy-focused repository, [EnsembleGenomes](https://ensemblgenomes.org/), which is particularly useful for microbial research.
+- [ExPASy](https://www.expasy.org/): this is the archive for the Swiss Bioinformatics Institute. Originally is was focussed on proteomics and protein sequences, and today is a major hub for genomics focussed on cell-lines, gene function, drug-design and pathogen classification.
 {{< /admonition >}}
+
 {{< admonition type="info" open=true >}}
 - Info1
 - Info2
