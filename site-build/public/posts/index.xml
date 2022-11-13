@@ -17,6 +17,33 @@ Exercise Questions  a question box
  q1 q2     ]]></description>
 </item>
 <item>
+    <title>‣ Multiple Sequence Alignments</title>
+    <link>https://alleetanner.github.io/biopython/posts/04alignment/</link>
+    <pubDate>Fri, 04 Nov 2022 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/biopython/posts/04alignment/</guid>
+    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
+Warning   Warning1 Warning2     Info   Info1 Info2    
+Another section blahfdajkfhu aefuibahj rwefyugr
+code goes herer next setion blakfahuir wrafguighbarg
+Exercise Questions  a question box
+ q1 q2     ]]></description>
+</item>
+<item>
+    <title>• Acquiring sequence data</title>
+    <link>https://alleetanner.github.io/biopython/posts/03repos/</link>
+    <pubDate>Thu, 03 Nov 2022 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/biopython/posts/03repos/</guid>
+    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
+Warning   Warning1 Warning2     Info   Info1 Info2    
+Another section blahfdajkfhu aefuibahj rwefyugr
+code goes herer next setion blakfahuir wrafguighbarg
+Exercise Questions  a question box
+ q1 q2     Note title titleQuestions  a note box
+ dfdsafg q2     ]]></description>
+</item>
+<item>
     <title>• Working with sequences</title>
     <link>https://alleetanner.github.io/biopython/posts/02sequences/</link>
     <pubDate>Wed, 02 Nov 2022 00:00:00 &#43;0100</pubDate>
@@ -37,33 +64,6 @@ my_rna = my_dna.transcribe() Once you have an RNA sequence, you can again do sta
 Warning   Warning1 Warning2     Info   Info1 Info2    
 Another section blahfdajkfhu aefuibahj rwefyugr
 code goes herer next setion blakfahuir wrafguighbarg]]></description>
-</item>
-<item>
-    <title>‣ Multiple Sequence Alignments</title>
-    <link>https://alleetanner.github.io/biopython/posts/04alignment/</link>
-    <pubDate>Tue, 04 Oct 2022 00:00:00 &#43;0100</pubDate>
-    <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/biopython/posts/04alignment/</guid>
-    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     ]]></description>
-</item>
-<item>
-    <title>• Acquiring sequence data</title>
-    <link>https://alleetanner.github.io/biopython/posts/03repos/</link>
-    <pubDate>Mon, 03 Oct 2022 00:00:00 &#43;0100</pubDate>
-    <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/biopython/posts/03repos/</guid>
-    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     Note title titleQuestions  a note box
- dfdsafg q2     ]]></description>
 </item>
 </channel>
 </rss>
