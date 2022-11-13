@@ -1,5 +1,5 @@
 ---
-title: "‣ Multiple Sequence Alignments"
+title: "• Multiple Sequence Alignments"
 subtitle: "Comparison and homology at the molecular level."
 
 date: 2022-11-04T00:00:00+01:00
