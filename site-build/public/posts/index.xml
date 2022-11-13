@@ -35,7 +35,7 @@ Exercise Questions  a question box
     <pubDate>Thu, 03 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/03repos/</guid>
-    <description><![CDATA[Understanding genetic repositories While basic methods of sequencing have existed since the 1960s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as &ldquo;high-throughput&rdquo; or &ldquo;next-generation&rdquo; sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups. As an example of this, sequencing the human genome in 2000 required many specialist research groups, several years, and $100 million dollars ; by 2010 this had dropped to a matter of weeks and $100,000, and in 2022 a human genome can be sequenced for around $800, in a matter of days.]]></description>
+    <description><![CDATA[Sequence repositories While basic methods of sequencing have existed since the 1960s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as &ldquo;high-throughput&rdquo; or &ldquo;next-generation&rdquo; sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups. As an example of this, sequencing the human genome in 2000 required many specialist research groups, several years, and $100 million dollars ; by 2010 this had dropped to a matter of weeks and $100,000, and in 2022 a human genome (or at least a full exome) can be sequenced for around $800, in a matter of days.]]></description>
 </item>
 <item>
     <title>• Working with sequences</title>
