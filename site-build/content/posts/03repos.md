@@ -22,15 +22,16 @@ comment:
 ---
 
 ### Understanding genetic repositories
-While basic methods of sequencing have existed since the 1960s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as "high-throughput" or "next-generation" sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups. As an example of this, sequencing the human genome in 2000 required many specialist research groups, several years, and [$100 million dollars](https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost); by 2010 this had dropped to a matter of weeks and $100,000, and in 2022 a human genome can be sequenced for around $800, in a matter of days.
+While basic methods of sequencing have existed since the 1960s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as "high-throughput" or "next-generation" sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups. As an example of this, sequencing the human genome in 2000 required many specialist research groups, several years, and [$100 million dollars](https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost); by 2010 this had dropped to a matter of weeks and $100,000, and in 2022 a human genome can be sequenced for around $800, in a matter of days. As such, research data has followed a parallel of [Moore's Law](https://www.wikiwand.com/en/Moore's_law), roughly doubling every 18 months.
 
 Given the vast amount of data being produced, international consortia were established, with the goal of making any and all bioinformatic research data available to the world, for free (well, ultimately funded by the tax-payer, as with all public research). Most journals will require that sequence information produced in the research process leading to publication is deposited with one of the major repositories. These repos should be seen as wonders of the modern scientific world! The openly-accessible data they contain drive forward research in medicine, biology, mathematics, information theory, even nanotechnology and biocomputing.
 
 
 {{< admonition type="info" title="The big repositories" open=true >}}
 
-- Warning1
-- Warning2
+- [NCBI Genbank](https://www.ncbi.nlm.nih.gov/genbank/): this is the USA-based national repo, containing a wide-variety of databases. The biggest of these are "genome", "gene", and "protein", as well as pre-assembly reads, for example in "SRA", the sequence read archive. As of 2022, it contains around 240 million sequences, of around 1.5 trillion nucleotides.
+- Ensembl
+- ExPASy
 {{< /admonition >}}
 {{< admonition type="info" open=true >}}
 - Info1
