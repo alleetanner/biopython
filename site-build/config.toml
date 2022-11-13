@@ -73,6 +73,7 @@ enableGitInfo = true
   title = ""
   # website description for RSS, SEO, Open Graph and Twitter Cards
   description = ""
+  hideReadingTime = true
 
   [params.header]
       desktopMode = "fixed"
