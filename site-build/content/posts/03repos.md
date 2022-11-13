@@ -21,13 +21,14 @@ comment:
   enable: false
 ---
 
-### Section title
-* bullet1
-* bullt2
+### Understanding genetic repositories
+While basic methods of sequencing have existed since the 1960s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as "high-throughput" or "next-generation" sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups. As an example of this, sequencing the human genome in 2000 required many specialist research groups, several years, and [$100 million dollars](https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost); by 2010 this had dropped to a matter of weeks and $100,000, and in 2022 a human genome can be sequenced for around $800, in a matter of days.
 
-Normal text body.
+Given the vast amount of data being produced, international consortia were established, with the goal of making any and all bioinformatic research data available to the world, for free (well, ultimately funded by the tax-payer, as with all public research). Most journals will require that sequence information produced in the research process leading to publication is deposited with one of the major repositories. These repos should be seen as wonders of the modern scientific world! The openly-accessible data they contain drive forward research in medicine, biology, mathematics, information theory, even nanotechnology and biocomputing.
 
-{{< admonition type="warning" open=true >}}
+
+{{< admonition type="info" title="The big repositories" open=true >}}
+
 - Warning1
 - Warning2
 {{< /admonition >}}
