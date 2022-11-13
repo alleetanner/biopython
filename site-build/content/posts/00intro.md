@@ -1,6 +1,6 @@
 ---
-title: "• What is BioPython?"
-subtitle: "Python meets biological sequence data"
+title: "• Set up and requirements"
+subtitle: "Creating a suitable environment for running BioPython"
 
 date: 2022-11-01T00:00:00+01:00
 
@@ -21,10 +21,11 @@ comment:
   enable: false
 ---
 
-### What is BioPython?
-[Biopython](https://biopython.org/) is a Python library for working with DNA, RNA and protein sequences. It has a wide catalogue of functions, for operations such as reverse complementing of a DNA string, sequence alignment and working with BLAST when searching genomic data. It also allows data to be retrieved from repositories holding sequence information produced by research laboratory globally, such as NCBI GenBank and Ensemble.
+### Setting things up in Anaconda
 
-Normal text body.
+Before we can work with BioPython, we will need the library to be install as part of your Python interpreter. We do this by XXXXX
+
+
 
 {{< admonition type="warning" open=true >}}
 - Warning1
