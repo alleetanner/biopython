@@ -2,7 +2,7 @@
 title: "• Working with sequences"
 subtitle: "The ultimate biological microscope"
 
-date: 2022-11-02T00:00:00+01:00
+date: 2022-11-01T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
@@ -16,45 +16,64 @@ code:
 math:
   enable: true
 share:
-  enable: true
+  enable: false
 comment:
-  enable: true
+  enable: false
 ---
 
-{{< admonition type="note" title="Glossary" open=false >}}
-The words **library**, **module** and **package** roughly mean the same thing; it is entirely natural to be confused by this!
-- **Library** : a collection of python files that expand the ability of python, using the `import` command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.
-  - A library can be [standard](https://docs.python.org/3/library/index.html) (it comes built into python), for example `time` or `math`, or
-  - 3rd party, so, not a core part of python itself and will need to be installed.
-- **Package** : a library that is available for delivery to a package manager, such as `pip` or `conda`. [PyPI](https://pypi.org/) is the main package storehouse for python.
-- **Module** : anything that is imported to a main running script. Libraries and packages are made of modules.
-{{< /admonition >}}
+
+### `Seq`
+
+The main module to get to grips with in Biopython is Seq. This is the primary interface to sequence data that you will work with. It is imported as:
+
+```
+from Bio.Seq import Seq
+```
+
+Using `Seq` we can create sequence objects from standard Python strings:
+
+```
+my_dna = Seq("AGTACACTGGTT")
+```
+
+#### RNA
+
+You can the corresponding RNA sequence from a DNA sequence by using the transcribe method:
+
+```
+my_rna = my_dna.transcribe()
+```
+
+Once you have an RNA sequence, you can again do standard operations on it, such as getting the complement:
+
+```
+my_rna.complement_rna()
+```
+
+Seq('UCAUGUGACCAA')
+
+It is also possible to convert back from an RNA sequence to a DNA sequence:
+
+my_dna_from_rna = my_rna.back_transcribe()
+
+Which, if it's working correctly should give us back the original data:
+
+my_dna == my_dna_from_rna
+
+True
+
+Translation
+
+Once we have an RNA sequence, you can get the expressed protein with translate:
+
+my_protein = my_rna.translate()
+
+my_protein
+
+Seq('STLV')
 
 
-### Python experience
-To get the most out of this session, you should have some experience with Python. In particular, you should
-* have experience to beginner or intermediate level Python - for example, having attended our sessions on either of these would be an ideal introduction
-* be familiar with the biological background to genetics or genomics. For example, knowing the relationships between nucleotides and amino acids and having a general knowledge of what these are and what they do is sufficient.
-* bdbkj
-* some experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is also expected.
 
-We will recap some important coding concepts like `import`ing, creating functions using `def`, and how to work with dataframes. Streamlit encourages a "linear" coding style, and uses the Pandas dataframe as a foundation.sdfio no
-
-### Installing required software
-You will need Python version 3.10 or higher installed on your machine. You can check what version you have installed with the command `python3 --version`. If you need to upgrade, search for a guide to follow on how to do that for your operating system.
-
-We also need to install some packages
-
-Normal text body.
-
-{{< admonition type="warning" open=true >}}
-- Warning1
-- Warning2
-{{< /admonition >}}
-{{< admonition type="info" open=true >}}
-- Info1
-- Info2
-{{< /admonition >}}
 
 ### Another section
 blahfdajkfhu aefuibahj rwefyugr
@@ -71,7 +90,8 @@ Let's put together some of the functions we have used so far to manipulate some 
 Answer these questions once you are finished:
 - Which of these two reading frames is probably correct?
 - Why?
-- 
+
+
 ```
 from Bio.Seq import Seq
 
@@ -106,6 +126,7 @@ amino_acids_backward = ____________________
 
 print(f"Amino acids reading <-     {____________________}")
 ```
+{{< /admonition >}}
 
 {{< admonition type="warning" title="Solution" open=false >}}
 ```
@@ -144,4 +165,4 @@ amino_acids_backward = transcribed_backward.translate()
 print(f"Amino acids reading <-     {amino_acids_backward}")
 ```
 {{< /admonition >}}
-{{< /admonition >}}
+
