@@ -3,16 +3,7 @@
         <title>All Posts - BioPython</title>
         <link>https://alleetanner.github.io/biopython/posts/</link>
         <description>All Posts | BioPython</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 02 Nov 2022 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://alleetanner.github.io/biopython/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>• Working with sequences</title>
-    <link>https://alleetanner.github.io/biopython/posts/01requirements/</link>
-    <pubDate>Wed, 02 Nov 2022 00:00:00 &#43;0100</pubDate>
-    <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/biopython/posts/01requirements/</guid>
-    <description><![CDATA[Glossary  The words library, module and package roughly mean the same thing; it is entirely natural to be confused by this!
- Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed.]]></description>
-</item>
-<item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 01 Nov 2022 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://alleetanner.github.io/biopython/posts/" rel="self" type="application/rss+xml" /><item>
     <title>• Set up and requirements</title>
     <link>https://alleetanner.github.io/biopython/posts/00intro/</link>
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0100</pubDate>
@@ -22,6 +13,17 @@
 Warning   Warning1 Warning2     Info   Info1 Info2    
 Another section blahfdajkfhu aefuibahj rwefyugr
 code goes herer next setion blakfahuir wrafguighbarg]]></description>
+</item>
+<item>
+    <title>• Working with sequences</title>
+    <link>https://alleetanner.github.io/biopython/posts/01sequences/</link>
+    <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/biopython/posts/01sequences/</guid>
+    <description><![CDATA[Seq The main module to get to grips with in Biopython is Seq. This is the primary interface to sequence data that you will work with. It is imported as:
+from Bio.Seq import Seq Using Seq we can create sequence objects from standard Python strings:
+my_dna = Seq(&#34;AGTACACTGGTT&#34;) RNA You can the corresponding RNA sequence from a DNA sequence by using the transcribe method:
+my_rna = my_dna.transcribe() Once you have an RNA sequence, you can again do standard operations on it, such as getting the complement:]]></description>
 </item>
 <item>
     <title>• Sequences and repositories</title>

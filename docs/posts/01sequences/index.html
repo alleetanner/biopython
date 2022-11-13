@@ -4,36 +4,36 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>• Set up and requirements - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Set up and requirements" />
-<meta property="og:description" content="Setting things up in Anaconda Before we can work with BioPython, we will need the library to be install as part of your Python interpreter. We do this by XXXXX
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg" />
+        <title>• Working with sequences - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Working with sequences" />
+<meta property="og:description" content="Seq The main module to get to grips with in Biopython is Seq. This is the primary interface to sequence data that you will work with. It is imported as:
+from Bio.Seq import Seq Using Seq we can create sequence objects from standard Python strings:
+my_dna = Seq(&#34;AGTACACTGGTT&#34;) RNA You can the corresponding RNA sequence from a DNA sequence by using the transcribe method:
+my_rna = my_dna.transcribe() Once you have an RNA sequence, you can again do standard operations on it, such as getting the complement:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alleetanner.github.io/biopython/posts/00intro/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://alleetanner.github.io/biopython/posts/01sequences/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-01T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-13T14:42:30+00:00" />
+<meta property="article:modified_time" content="2022-11-13T15:03:43+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="• Set up and requirements"/>
-<meta name="twitter:description" content="Setting things up in Anaconda Before we can work with BioPython, we will need the library to be install as part of your Python interpreter. We do this by XXXXX
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg"/>
+<meta name="twitter:title" content="• Working with sequences"/>
+<meta name="twitter:description" content="Seq The main module to get to grips with in Biopython is Seq. This is the primary interface to sequence data that you will work with. It is imported as:
+from Bio.Seq import Seq Using Seq we can create sequence objects from standard Python strings:
+my_dna = Seq(&#34;AGTACACTGGTT&#34;) RNA You can the corresponding RNA sequence from a DNA sequence by using the transcribe method:
+my_rna = my_dna.transcribe() Once you have an RNA sequence, you can again do standard operations on it, such as getting the complement:"/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://alleetanner.github.io/biopython/posts/00intro/" /><link rel="prev" href="https://alleetanner.github.io/biopython/posts/01sequences/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/biopython/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://alleetanner.github.io/biopython/posts/01sequences/" /><link rel="prev" href="https://alleetanner.github.io/biopython/posts/02sequences/" /><link rel="next" href="https://alleetanner.github.io/biopython/posts/00intro/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/biopython/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "• Set up and requirements",
+        "headline": "• Working with sequences",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/00intro\/"
-        },"genre": "posts","wordcount":  48 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/00intro\/","datePublished": "2022-11-01T00:00:00+01:00","dateModified": "2022-11-13T14:42:30+00:00","publisher": {
+            "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/01sequences\/"
+        },"genre": "posts","wordcount":  332 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/01sequences\/","datePublished": "2022-11-01T00:00:00+01:00","dateModified": "2022-11-13T15:03:43+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -73,10 +73,10 @@ code goes herer next setion blakfahuir wrafguighbarg"/>
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">• Set up and requirements</h1><h2 class="single-subtitle">Creating a suitable environment for running BioPython</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">• Working with sequences</h1><h2 class="single-subtitle">The ultimate biological microscope</h2><div class="post-meta">
             <div class="post-meta-line">
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;48 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;332 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -86,42 +86,126 @@ code goes herer next setion blakfahuir wrafguighbarg"/>
   <ul>
     <li>
       <ul>
-        <li><a href="#setting-things-up-in-anaconda">Setting things up in Anaconda</a></li>
+        <li><a href="#seq"><code>Seq</code></a></li>
         <li><a href="#another-section">Another section</a></li>
+        <li><a href="#exercise">Exercise</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="setting-things-up-in-anaconda">Setting things up in Anaconda</h3>
-<p>Before we can work with BioPython, we will need the library to be install as part of your Python interpreter. We do this by XXXXX</p>
-<p><div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Warning1</li>
-<li>Warning2</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Info1</li>
-<li>Info2</li>
-</ul>
-</div>
-        </div>
-    </div></p>
+            </div><div class="content" id="content"><h3 id="seq"><code>Seq</code></h3>
+<p>The main module to get to grips with in Biopython is Seq. This is the primary interface to sequence data that you will work with. It is imported as:</p>
+<pre tabindex="0"><code>from Bio.Seq import Seq
+</code></pre><p>Using <code>Seq</code> we can create sequence objects from standard Python strings:</p>
+<pre tabindex="0"><code>my_dna = Seq(&#34;AGTACACTGGTT&#34;)
+</code></pre><h4 id="rna">RNA</h4>
+<p>You can the corresponding RNA sequence from a DNA sequence by using the transcribe method:</p>
+<pre tabindex="0"><code>my_rna = my_dna.transcribe()
+</code></pre><p>Once you have an RNA sequence, you can again do standard operations on it, such as getting the complement:</p>
+<pre tabindex="0"><code>my_rna.complement_rna()
+</code></pre><p>Seq(&lsquo;UCAUGUGACCAA&rsquo;)</p>
+<p>It is also possible to convert back from an RNA sequence to a DNA sequence:</p>
+<p>my_dna_from_rna = my_rna.back_transcribe()</p>
+<p>Which, if it&rsquo;s working correctly should give us back the original data:</p>
+<p>my_dna == my_dna_from_rna</p>
+<p>True</p>
+<p>Translation</p>
+<p>Once we have an RNA sequence, you can get the expressed protein with translate:</p>
+<p>my_protein = my_rna.translate()</p>
+<p>my_protein</p>
+<p>Seq(&lsquo;STLV&rsquo;)</p>
 <h3 id="another-section">Another section</h3>
 <p>blahfdajkfhu aefuibahj rwefyugr</p>
 <pre tabindex="0"><code>code goes herer
 </code></pre><p>next setion blakfahuir wrafguighbarg</p>
+<h3 id="exercise">Exercise</h3>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Let&rsquo;s put together some of the functions we have used so far to manipulate some sequence information. Look at the script below and complete the gaps. When run on the command line, your script should neatly output the manipulations to the incoming raw DNA.</p>
+<p>Answer these questions once you are finished:</p>
+<ul>
+<li>Which of these two reading frames is probably correct?</li>
+<li>Why?</li>
+</ul>
+<pre tabindex="0"><code>from Bio.Seq import Seq
+
+
+raw_dna = Seq(&#34;TTACCAAAAACCCCTTTGGGAAAGCAT&#34;)
+
+print(f&#34;My incoming raw DNA:       {____________________}&#34;)
+
+complement = ____________________
+
+print(f&#34;Complementary strand:      {____________________}&#34;)
+
+transcribed_forward = ____________________
+
+print(f&#34;Complement transcription:  {____________________}&#34;)
+
+amino_acids_forward = ____________________
+
+print(f&#34;Amino acid translation:    {____________________}&#34;)
+
+
+
+dna_reverse = ____________________
+
+print(f&#34;As a reverse complement:   {____________________}&#34;)
+
+transcribed_backward = ____________________
+
+print(f&#34;Reverse transcription:     {____________________}&#34;)
+
+amino_acids_backward = ____________________
+
+print(f&#34;Amino acids reading &lt;-     {____________________}&#34;)
+</code></pre></div>
+        </div>
+    </div>
+<div class="details admonition warning">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>from Bio.Seq import Seq
+
+
+raw_dna = Seq(&#34;TTACCAAAAACCCCTTTGGGAAAGCAT&#34;)
+
+print(f&#34;My incoming DNA:           {raw_dna}&#34;)
+
+complement = raw_dna.complement()
+
+print(f&#34;Complementary strand:      {complement}&#34;)
+
+transcribed_forward = complement.transcribe()
+
+print(f&#34;Complement transcription:  {transcribed_forward}&#34;)
+
+amino_acids_forward = transcribed_forward.translate()
+
+print(f&#34;Amino acid translation:    {amino_acids_forward}&#34;)
+
+
+# From here we will work with reverse complements
+
+dna_reverse = raw_dna.reverse_complement()
+
+print(f&#34;As a reverse complement:   {dna_reverse}&#34;)
+
+transcribed_backward = dna_reverse.transcribe()
+
+print(f&#34;Reverse transcription:     {transcribed_backward}&#34;)
+
+amino_acids_backward = transcribed_backward.translate()
+
+print(f&#34;Amino acids reading &lt;-     {amino_acids_backward}&#34;)
+</code></pre></div>
+        </div>
+    </div>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -143,7 +227,8 @@ code goes herer next setion blakfahuir wrafguighbarg"/>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/biopython/posts/01sequences/" class="prev" rel="prev" title="• Working with sequences"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>• Working with sequences</a></div>
+    <div class="post-nav"><a href="/biopython/posts/02sequences/" class="prev" rel="prev" title="• Sequences and repositories"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>• Sequences and repositories</a>
+            <a href="/biopython/posts/00intro/" class="next" rel="next" title="• Set up and requirements">• Set up and requirements<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">
