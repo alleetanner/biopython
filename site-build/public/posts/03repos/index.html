@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/03repos/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-03T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-13T16:33:47+00:00" />
+<meta property="article:modified_time" content="2022-11-13T16:44:03+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Acquiring sequence data"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/"
-        },"genre": "posts","wordcount":  234 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/","datePublished": "2022-11-03T00:00:00+01:00","dateModified": "2022-11-13T16:33:47+00:00","publisher": {
+        },"genre": "posts","wordcount":  301 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/","datePublished": "2022-11-03T00:00:00+01:00","dateModified": "2022-11-13T16:44:03+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -88,7 +88,8 @@
 </nav></div>
             </div><div class="content" id="content"><h3 id="understanding-genetic-repositories">Understanding genetic repositories</h3>
 <p>While basic methods of sequencing have existed since the 1960s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as &ldquo;high-throughput&rdquo; or &ldquo;next-generation&rdquo; sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups. As an example of this, sequencing the human genome in 2000 required many specialist research groups, several years, and <a href="https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost" target="_blank" rel="noopener noreffer">$100 million dollars</a>
-; by 2010 this had dropped to a matter of weeks and $100,000, and in 2022 a human genome can be sequenced for around $800, in a matter of days.</p>
+; by 2010 this had dropped to a matter of weeks and $100,000, and in 2022 a human genome can be sequenced for around $800, in a matter of days. As such, research data has followed a parallel of <a href="https://www.wikiwand.com/en/Moore%27s_law" target="_blank" rel="noopener noreffer">Moore&rsquo;s Law</a>
+, roughly doubling every 18 months.</p>
 <p>Given the vast amount of data being produced, international consortia were established, with the goal of making any and all bioinformatic research data available to the world, for free (well, ultimately funded by the tax-payer, as with all public research). Most journals will require that sequence information produced in the research process leading to publication is deposited with one of the major repositories. These repos should be seen as wonders of the modern scientific world! The openly-accessible data they contain drive forward research in medicine, biology, mathematics, information theory, even nanotechnology and biocomputing.</p>
 <p><div class="details admonition info open">
         <div class="details-summary admonition-title">
@@ -96,8 +97,10 @@
         </div>
         <div class="details-content">
             <div class="admonition-content"><ul>
-<li>Warning1</li>
-<li>Warning2</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/genbank/" target="_blank" rel="noopener noreffer">NCBI Genbank</a>
+: this is the USA-based national repo, containing a wide-variety of databases. The biggest of these are &ldquo;genome&rdquo;, &ldquo;gene&rdquo;, and &ldquo;protein&rdquo;, as well as pre-assembly reads, for example in &ldquo;SRA&rdquo;, the sequence read archive. As of 2022, it contains around 240 million sequences, of around 1.5 trillion nucleotides.</li>
+<li>Ensembl</li>
+<li>ExPASy</li>
 </ul>
 </div>
         </div>
