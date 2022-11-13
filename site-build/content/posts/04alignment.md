@@ -1,8 +1,8 @@
 ---
-title: "‣ Streamlit and data visualisations"
-subtitle: "Getting your numbers to say something"
+title: "‣ Multiple Sequence Alignments"
+subtitle: "Comparison and homology at the molecular level."
 
-date: 2022-09-14T00:00:00+01:00
+date: 2022-10-04T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
@@ -16,9 +16,9 @@ code:
 math:
   enable: true
 share:
-  enable: true
+  enable: false
 comment:
-  enable: true
+  enable: false
 ---
 
 ### Section title
