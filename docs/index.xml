@@ -7,10 +7,10 @@
             <atom:link href="https://alleetanner.github.io/biopython/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>• Set up and requirements</title>
-    <link>https://alleetanner.github.io/biopython/posts/00intro/</link>
+    <link>https://alleetanner.github.io/biopython/posts/00setup/</link>
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/biopython/posts/00intro/</guid>
+    <guid>https://alleetanner.github.io/biopython/posts/00setup/</guid>
     <description><![CDATA[Setting things up in Anaconda Before we can work with BioPython, we will need the library to be install as part of your Python interpreter. We do this by XXXXX
 Warning   Warning1 Warning2     Info   Info1 Info2    
 Another section blahfdajkfhu aefuibahj rwefyugr
