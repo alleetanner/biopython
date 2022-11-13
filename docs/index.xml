@@ -28,6 +28,19 @@ Another section blahfdajkfhu aefuibahj rwefyugr
 code goes herer next setion blakfahuir wrafguighbarg]]></description>
 </item>
 <item>
+    <title>‣ Multiple Sequence Alignments</title>
+    <link>https://alleetanner.github.io/biopython/posts/04alignment/</link>
+    <pubDate>Tue, 04 Oct 2022 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/biopython/posts/04alignment/</guid>
+    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
+Warning   Warning1 Warning2     Info   Info1 Info2    
+Another section blahfdajkfhu aefuibahj rwefyugr
+code goes herer next setion blakfahuir wrafguighbarg
+Exercise Questions  a question box
+ q1 q2     ]]></description>
+</item>
+<item>
     <title>• Acquiring sequence data</title>
     <link>https://alleetanner.github.io/biopython/posts/03repos/</link>
     <pubDate>Mon, 03 Oct 2022 00:00:00 &#43;0100</pubDate>
@@ -47,19 +60,6 @@ Exercise Questions  a question box
     <pubDate>Thu, 15 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/05deploying/</guid>
-    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     ]]></description>
-</item>
-<item>
-    <title>‣ Streamlit and data visualisations</title>
-    <link>https://alleetanner.github.io/biopython/posts/04visuals/</link>
-    <pubDate>Wed, 14 Sep 2022 00:00:00 &#43;0100</pubDate>
-    <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/biopython/posts/04visuals/</guid>
     <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
 Warning   Warning1 Warning2     Info   Info1 Info2    
 Another section blahfdajkfhu aefuibahj rwefyugr
