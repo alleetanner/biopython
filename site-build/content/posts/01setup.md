@@ -21,11 +21,11 @@ comment:
   enable: false
 ---
 
-### Setting things up in Anaconda
+### Anaconda and Jupyter Lab
 
-Before we can work with BioPython, we will need the library to be install as part of your Python interpreter. We do this by XXXXX
+In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal). 
 
-
+If you haven't already, download (Anaconda)(https://www.anaconda.com/). Anaconda is a platform providing data science tools for Python and R. The standard install includes things like Jupyter Notebooks (a browser-based IDE for creating hybrid documents of runnable code, with Markdown blocks to document what the code is doing), and Jupyter Lab (a browser-based environment providing a text editor, terminal, and Python console). We will be working in Jupyter Lab - from the Anaconda Navigator starting screen, click the Jupyter Lab button and it will start a session in a new tab in your default browser.
 
 {{< admonition type="warning" open=true >}}
 - Warning1
