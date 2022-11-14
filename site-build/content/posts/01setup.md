@@ -37,7 +37,7 @@ Finally, we need to download BioPython and install it as part of your local Pyth
 #### BioPython for Anaconda
 In your Anaconda Navigator window (the one with the launch buttons, not the tab in your browser), click the `Environments` tab to the left. You should have `base(root)` selected in the second column. On the right column, from the drop-down select `Not installed`, and type `biopython` in the search box to the right. Select the BioPython package, click `Apply`, and then confirm the install. This might take a couple of minutes.
 
-![The Anaconda Environment window]([https://github.com/alleetanner/biopython/blob/main/assets/anaconda-env-screen.png#center)
+![The Anaconda Environment window](https://github.com/alleetanner/biopython/blob/main/assets/anaconda-env-screen.png#center)
 
 #### BioPython in the terminal
 Admittedly, this can be confusing, but your terminal might be using its own version of Python. So, we should install BioPython there too. In your Jupyter Lab tab in your browser, go to the terminal and enter
