@@ -22,7 +22,7 @@ comment:
 ---
 
 
-## `Seq`
+## BioPython's `Seq` class
 
 `Seq` is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as "methods". If this is confusing, don't worry too much! It just means that we can make special strings with `Seq`, and each also has special actions that can be done to it. It makes manipulating sequencing information easy, with a clean syntax. 
 
@@ -140,7 +140,7 @@ dna_seq = Seq("TTACCAAAAACCCCTTTGGGAAAGCAT")
 complement_transcribe_translate(___)
 
 # call my function "reverse_translate" from above
-reverse(___)
+reverse_translate(___)
 ```
 {{< /admonition >}}
 
@@ -202,7 +202,7 @@ dna_seq = Seq("TTACCAAAAACCCCTTTGGGAAAGCAT")
 complement_transcribe_translate(dna_seq)
 
 # call my function "reverse_translate" from above
-reverse(dna_seq)
+reverse_translate(dna_seq)
 ```
 {{< /admonition >}}
 
