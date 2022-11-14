@@ -45,7 +45,7 @@ Exercise Questions  a question box
     <pubDate>Wed, 02 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/02sequences/</guid>
-    <description><![CDATA[Seq Seq is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as &ldquo;methods&rdquo;. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, and each also has special actions that can be done to it.]]></description>
+    <description><![CDATA[BioPython&rsquo;s Seq class Seq is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as &ldquo;methods&rdquo;. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, and each also has special actions that can be done to it.]]></description>
 </item>
 <item>
     <title>• Set up and requirements</title>

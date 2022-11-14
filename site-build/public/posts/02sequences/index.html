@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>• Working with sequences - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Working with sequences" />
-<meta property="og:description" content="Seq Seq is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as &ldquo;methods&rdquo;. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, and each also has special actions that can be done to it." />
+<meta property="og:description" content="BioPython&rsquo;s Seq class Seq is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as &ldquo;methods&rdquo;. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, and each also has special actions that can be done to it." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/02sequences/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-02T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-14T12:54:56+00:00" />
+<meta property="article:modified_time" content="2022-11-14T13:12:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Working with sequences"/>
-<meta name="twitter:description" content="Seq Seq is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as &ldquo;methods&rdquo;. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, and each also has special actions that can be done to it."/>
+<meta name="twitter:description" content="BioPython&rsquo;s Seq class Seq is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as &ldquo;methods&rdquo;. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, and each also has special actions that can be done to it."/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://alleetanner.github.io/biopython/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://alleetanner.github.io/biopython/favicon-32x32.png">
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/02sequences\/"
-        },"genre": "posts","wordcount":  896 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/02sequences\/","datePublished": "2022-11-02T00:00:00+01:00","dateModified": "2022-11-14T12:54:56+00:00","publisher": {
+        },"genre": "posts","wordcount":  898 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/02sequences\/","datePublished": "2022-11-02T00:00:00+01:00","dateModified": "2022-11-14T13:12:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -76,7 +76,7 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#seq"><code>Seq</code></a>
+    <li><a href="#biopythons-seq-class">BioPython&rsquo;s <code>Seq</code> class</a>
       <ul>
         <li><a href="#transcription">Transcription</a></li>
         <li><a href="#translation">Translation</a></li>
@@ -85,7 +85,7 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="seq"><code>Seq</code></h2>
+            </div><div class="content" id="content"><h2 id="biopythons-seq-class">BioPython&rsquo;s <code>Seq</code> class</h2>
 <p><code>Seq</code> is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as &ldquo;methods&rdquo;. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with <code>Seq</code>, and each also has special actions that can be done to it. It makes manipulating sequencing information easy, with a clean syntax.</p>
 <p>In your Jupyter Lab text editor, start a new script by importing <code>Seq</code> like this:</p>
 <pre tabindex="0"><code>from Bio.Seq import Seq
@@ -178,7 +178,7 @@ print(protein_seq)
 </span></span><span class="line"><span class="cl"><span class="n">complement_transcribe_translate</span><span class="p">(</span><span class="n">___</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># call my function &#34;reverse_translate&#34; from above</span>
-</span></span><span class="line"><span class="cl"><span class="n">reverse</span><span class="p">(</span><span class="n">___</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">reverse_translate</span><span class="p">(</span><span class="n">___</span><span class="p">)</span>
 </span></span></code></pre></div></div>
         </div>
     </div>
@@ -243,7 +243,7 @@ print(protein_seq)
 </span></span><span class="line"><span class="cl"><span class="n">complement_transcribe_translate</span><span class="p">(</span><span class="n">dna_seq</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># call my function &#34;reverse_translate&#34; from above</span>
-</span></span><span class="line"><span class="cl"><span class="n">reverse</span><span class="p">(</span><span class="n">dna_seq</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">reverse_translate</span><span class="p">(</span><span class="n">dna_seq</span><span class="p">)</span>
 </span></span></code></pre></div></div>
         </div>
     </div>
