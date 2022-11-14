@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/02sequences/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-02T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-14T12:46:34+00:00" />
+<meta property="article:modified_time" content="2022-11-14T12:54:56+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Working with sequences"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/02sequences\/"
-        },"genre": "posts","wordcount":  793 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/02sequences\/","datePublished": "2022-11-02T00:00:00+01:00","dateModified": "2022-11-14T12:46:34+00:00","publisher": {
+        },"genre": "posts","wordcount":  896 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/02sequences\/","datePublished": "2022-11-02T00:00:00+01:00","dateModified": "2022-11-14T12:54:56+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -191,6 +191,16 @@ print(protein_seq)
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">complement_transcribe_translate</span><span class="p">(</span><span class="n">dna</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Take some DNA, and print out some conversions:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    the complementary strand,
+</span></span></span><span class="line"><span class="cl"><span class="s2">    the transcription of the complementary strand,
+</span></span></span><span class="line"><span class="cl"><span class="s2">    the amino acid translation of this complement.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Args: DNA as a Seq object.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Returns: nothing, this just prints to the terminal.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;My incoming DNA:           </span><span class="si">{</span><span class="n">dna</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
@@ -202,9 +212,19 @@ print(protein_seq)
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="n">amino_acids_forward</span> <span class="o">=</span> <span class="n">transcribed_forward</span><span class="o">.</span><span class="n">translate</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Amino acid translation:    </span><span class="si">{</span><span class="n">amino_acids_forward</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">dna</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">reverse_translate</span><span class="p">(</span><span class="n">___</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Take some DNA, and print out some conversions:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    the reverse complement,
+</span></span></span><span class="line"><span class="cl"><span class="s2">    the reverse transcription,
+</span></span></span><span class="line"><span class="cl"><span class="s2">    the amino acid translation of reverse transcription.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Args: DNA as a Seq object.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Returns: nothing, this just prints to the terminal.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="n">dna_reverse</span> <span class="o">=</span> <span class="n">dna</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;As a reverse complement:   </span><span class="si">{</span><span class="n">dna_reverse</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
@@ -216,10 +236,14 @@ print(protein_seq)
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Amino acids reading &lt;-     </span><span class="si">{</span><span class="n">amino_acids_backward</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">raw_dna</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="s2">&#34;TTACCAAAAACCCCTTTGGGAAAGCAT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># here is my incoming DNA sequence, made into a Seq object</span>
+</span></span><span class="line"><span class="cl"><span class="n">dna_seq</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="s2">&#34;TTACCAAAAACCCCTTTGGGAAAGCAT&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">complement_transcribe_translate</span><span class="p">(</span><span class="n">raw_dna</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">reverse</span><span class="p">(</span><span class="n">raw_dna</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># call my function &#34;complement_transcribe_translate&#34; from above</span>
+</span></span><span class="line"><span class="cl"><span class="n">complement_transcribe_translate</span><span class="p">(</span><span class="n">dna_seq</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># call my function &#34;reverse_translate&#34; from above</span>
+</span></span><span class="line"><span class="cl"><span class="n">reverse</span><span class="p">(</span><span class="n">dna_seq</span><span class="p">)</span>
 </span></span></code></pre></div></div>
         </div>
     </div>
