@@ -4,6 +4,7 @@ defaultContentLanguage = "en"
 languageName = "English"
 title = "BioPython"
 theme = "LoveIt"
+canonifyURLs = true
 
 # default amount of posts in each pages
 paginate = 20
