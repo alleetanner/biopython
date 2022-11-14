@@ -30,12 +30,13 @@ Exercise Questions  a question box
  q1 q2     ]]></description>
 </item>
 <item>
-    <title>• Genetic data repositories</title>
+    <title>• Sequence repositories</title>
     <link>https://alleetanner.github.io/biopython/posts/03repos/</link>
     <pubDate>Thu, 03 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/03repos/</guid>
-    <description><![CDATA[Sequence repositories While basic methods of sequencing have existed since the 1970s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as &ldquo;high-throughput&rdquo; or &ldquo;next-generation&rdquo; sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups. To illustrate this, sequencing a human genome in 2000 required many specialist research groups, several years, and $100 million dollars ; by 2010 this had dropped to a matter of weeks and $100,000.]]></description>
+    <description><![CDATA[Sequence repositories While basic methods of sequencing have existed since the 1970s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as &ldquo;high-throughput&rdquo; or &ldquo;next-generation&rdquo; sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups.
+The genetic revolution To illustrate this, sequencing a human genome in 2000 required many specialist research groups, several years, and $100 million dollars ; by 2010 this had dropped to a matter of weeks and $100,000.]]></description>
 </item>
 <item>
     <title>• Working with sequences</title>
