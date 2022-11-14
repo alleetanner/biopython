@@ -40,14 +40,18 @@ dna_seq = Seq(dna_string)
 print(dna_seq)
 ```
 
-Save your file, and in the terminal run the file using `python`. This command _could_ be done with a single command of `dna_seq = Seq("CATTACTTTGGCGGAAAAATATTT")`, but we'll keep it as two steps for clarity. You might be reading sequence information in from a file, so it is worth being explicit about where the data is coming from. We can examine these, so let's do that with
+(This command _could_ be done with a single command of `dna_seq = Seq("CATTACTTTGGCGGAAAAATATTT")`, but we'll keep it as two steps for clarity. You might be reading sequence information in from a file, so it is worth being explicit about where the data is coming from.)
+
+Save your file, and in the terminal run the file using `python`. 
+
+We can examine our `dna_seq` object, so let's do that with:
 
 ```
 print(type(dna_seq))
 print(dir(dna_seq))
 ```
 
-These will print out what kind of object our `dna_seq` is, as well as the methods associated with it. Don't worry too much about all the dunders there, but notice the methods, at the end of the list. You can learn more about how to use these methods in [the BioPython documentation for `Seq`](https://biopython.org/wiki/Seq). Remove these `type` and `dir` lines from your script, they will make your terminal a bit messy and hard to read!
+These will print out what kind of object our `dna_seq` is, as well as the methods associated with it. Don't worry too much about all the `__dunders__` there, but notice the methods, at the end of the list. You can learn more about how to use these methods in [the BioPython documentation for `Seq`](https://biopython.org/wiki/Seq). Remove these `type` and `dir` lines from your script, they will make your terminal a bit messy and hard to read!
 
 {{< admonition type="info" title="Remember to save your script!" open=false >}}
 It is very easy to forget to save your script before running it! Jupyter Lab will tell you if a file is modified without saving, with the circle in the tab title. A `ctrl-S` will save it quickly. Also remember to be in the right folder in the terminal, when you are running your script.
@@ -83,7 +87,7 @@ else:
 ```
 
 ### Translation
-The next thing we might want to do with this nucleotide sequence is see what amino acid sequence it would translate to (let's assume our sequence is protein-coding for a very tiny polypeptide!). 
+The next thing we might want to do with this nucleotide sequence is see what amino acid sequence it would translate to (let's assume our sequence is protein-coding for a tiny polypeptide!). 
 ```
 protein_seq = rna_seq.translate()
 print(protein_seq)
@@ -163,7 +167,7 @@ def complement_transcribe_translate(dna):
     
     print(f"My incoming DNA:           {dna}")
     
-    complement = raw_dna.complement()
+    complement = dna.complement()
     print(f"Complementary strand:      {complement}")
     
     transcribed_forward = complement.transcribe()
