@@ -24,53 +24,64 @@ comment:
 
 ### `Seq`
 
-The main module to get to grips with in Biopython is Seq. This is the primary interface to sequence data that you will work with. It is imported as:
+`Seq` is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as "methods". If this is confusing, don't worry too much! It just means that we can make special strings with `Seq`, and each also has special actions that can be done to it. It makes manipulating sequencing information easy, with a clean syntax. `Seq` is imported like this:
 
 ```
 from Bio.Seq import Seq
 ```
 
-Using `Seq` we can create sequence objects from standard Python strings:
+Let's start by creating a short string of DNA. We can then call `Seq` on it to create a new object, called `dna_seq`. 
 
 ```
-my_dna = Seq("AGTACACTGGTT")
+dna_string = "TTACCAAAAACCCCTTTGGGAAAGCAT"
+dna_seq = Seq(raw_dna)
 ```
 
-#### RNA
-
-You can the corresponding RNA sequence from a DNA sequence by using the transcribe method:
+This command _could_ be done with a single command of `dna_seq = Seq("TTACCAAAAACCCCTTTGGGAAAGCAT")`, but we'll keep it as two steps for clarity. You might be reading sequence information in from a file, so it is worth being explicit about where the data is coming from. We can examine these, so lets do that with
 
 ```
-my_rna = my_dna.transcribe()
+print(type(dna_seq))
+print(dir(dna_seq))
+```
+These will print out what kind of object our `dna_seq` is, as well as the methods associated with it. Don't worry too much about all the dunders there, but notice the methods, at the end of the list.
+
+
+### Transcription
+
+You'll see one of the methods is `transcribe()`, so let's do that and turn our DNA into RNA:
+
+```
+rna_seq = dna_seq.transcribe()
+print(rna_seq)
 ```
 
-Once you have an RNA sequence, you can again do standard operations on it, such as getting the complement:
+We might also want to get the complement of this RNA strand. Since `rna_seq` is also a `Seq` object, we can call one of the methods, `complement_rna()`:
 
 ```
-my_rna.complement_rna()
+rna_complement = rna_seq.complement_rna()
+print(rna_complement)
 ```
-
-Seq('UCAUGUGACCAA')
 
 It is also possible to convert back from an RNA sequence to a DNA sequence:
 
-my_dna_from_rna = my_rna.back_transcribe()
+```
+dna_from_rna = rna_seq.back_transcribe()
+```
 
 Which, if it's working correctly should give us back the original data:
 
-my_dna == my_dna_from_rna
+```
+print(dna_seq == dna_from_rna)
+```
 
-True
 
-Translation
-
-Once we have an RNA sequence, you can get the expressed protein with translate:
-
-my_protein = my_rna.translate()
-
-my_protein
-
-Seq('STLV')
+### Translation
+The next thing we might want to do with this nucleotide sequence is see what amino acid sequence it would translate to. 
+```
+protein_seq = rna_seq.translate()
+print(protein_seq)
+```
+Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence to break this kind of translation. There are two primary ways of doing this - what are they?
 
 
 
