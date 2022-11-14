@@ -6,16 +6,16 @@
         <meta name="robots" content="noodp" />
         <title>• Set up and requirements - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Set up and requirements" />
 <meta property="og:description" content="Anaconda and Jupyter Lab In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal).
-If you haven&rsquo;t already, download (Anaconda)(https://www.anaconda.com/) . Anaconda is a platform providing data science tools for Python and R." />
+If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providing data science tools for Python and R." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/01setup/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-01T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-14T10:15:08+00:00" />
+<meta property="article:modified_time" content="2022-11-14T11:14:59+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Set up and requirements"/>
 <meta name="twitter:description" content="Anaconda and Jupyter Lab In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal).
-If you haven&rsquo;t already, download (Anaconda)(https://www.anaconda.com/) . Anaconda is a platform providing data science tools for Python and R."/>
+If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providing data science tools for Python and R."/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,8 @@ If you haven&rsquo;t already, download (Anaconda)(https://www.anaconda.com/) . A
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/01setup\/"
-        },"genre": "posts","wordcount":  175 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/01setup\/","datePublished": "2022-11-01T00:00:00+01:00","dateModified": "2022-11-14T10:15:08+00:00","publisher": {
+        },"genre": "posts","wordcount":  553 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/01setup\/","datePublished": "2022-11-01T00:00:00+01:00","dateModified": "2022-11-14T11:14:59+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -81,43 +81,36 @@ If you haven&rsquo;t already, download (Anaconda)(https://www.anaconda.com/) . A
     <li>
       <ul>
         <li><a href="#anaconda-and-jupyter-lab">Anaconda and Jupyter Lab</a></li>
-        <li><a href="#another-section">Another section</a></li>
+        <li><a href="#installing-biopython">Installing BioPython</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h3 id="anaconda-and-jupyter-lab">Anaconda and Jupyter Lab</h3>
 <p>In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal).</p>
-<p>If you haven&rsquo;t already, download (Anaconda)(<a href="https://www.anaconda.com/%29" target="_blank" rel="noopener noreffer">https://www.anaconda.com/)</a>
+<p>If you haven&rsquo;t already, download <a href="https://www.anaconda.com/" target="_blank" rel="noopener noreffer">Anaconda</a>
 . Anaconda is a platform providing data science tools for Python and R. The standard install includes things like Jupyter Notebooks (a browser-based IDE for creating hybrid documents of runnable code, with Markdown blocks to document what the code is doing), and Jupyter Lab (a browser-based environment providing a text editor, terminal, and Python console). We will be working in Jupyter Lab - from the Anaconda Navigator starting screen, click the Jupyter Lab button and it will start a session in a new tab in your default browser.</p>
-<p><div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Warning1</li>
-<li>Warning2</li>
-</ul>
-</div>
-        </div>
-    </div>
+<p>For this workshop we will need both a text editor and a terminal pane in this tab. You can open these by clicking on the associated icons on the start screen, or by going <code>File</code> &gt; <code>New</code> &gt; <code>Text file</code> and <code>File</code> &gt; <code>New</code> &gt; <code>Terminal</code>. Arrange these as you like by dragging the tabs - we usually teach with a text editor on the left and a terminal on the right. Also, created a new folder to work in, by navigating using the folder icon in the menu on the left and creating one. Make sure you move into this folder in your terminal, and when you save your text file ensure it is in this folder.</p>
+<h3 id="installing-biopython">Installing BioPython</h3>
+<p>Finally, we need to download BioPython and install it as part of your local Python. We will do this both for Anaconda, and in the terminal - they may be using different installs of Python, so we will install it both ways to be sure!</p>
+<h4 id="biopython-for-anaconda">BioPython for Anaconda</h4>
+<p>In your Anaconda Navigator window (the one with the launch buttons, not the tab in your browser), click the <code>Environments</code> tab to the left. You should have <code>base(root)</code> selected in the second column. On the right column, from the drop-down select <code>Not installed</code>, and type <code>biopython</code> in the search box to the right. Select the BioPython package, click <code>Apply</code>, and then confirm the install. This might take a couple of minutes.</p>
+<p>image</p>
+<h4 id="biopython-in-the-terminal">BioPython in the terminal</h4>
+<p>Admittedly, this can be confusing, but your terminal might be using its own version of Python. So, we should install BioPython there too. In your Jupyter Lab tab in your browser, go to the terminal and enter</p>
+<pre tabindex="0"><code>pip install biopython
+</code></pre><p>and follow the prompts to download and install the package. We should be ready to go now!</p>
 <div class="details admonition info open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Info1</li>
-<li>Info2</li>
-</ul>
+            <div class="admonition-content"><p><code>pip</code> is a package manager for Python. Whenever we run an <code>import</code> command in Python, it will look for modules and libraries to import, first in your working folder (where you might have put your own modules), then in Python&rsquo;s local repository of installed packages. Apart from standard packages fundamental to Python, we have to download and install anything else (sometimes called 3rd party packages).</p>
+<p>That is where <code>pip</code> comes it. It will search package repositories, typically <a href="https://pypi.org/" target="_blank" rel="noopener noreffer">PyPI</a>
+, download the appropriate package, and install it, along with any other dependencies it might need.</p>
 </div>
         </div>
-    </div></p>
-<h3 id="another-section">Another section</h3>
-<p>blahfdajkfhu aefuibahj rwefyugr</p>
-<pre tabindex="0"><code>code goes herer
-</code></pre><p>next setion blakfahuir wrafguighbarg</p>
+    </div>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
