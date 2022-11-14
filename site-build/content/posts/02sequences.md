@@ -83,12 +83,12 @@ else:
 ```
 
 ### Translation
-The next thing we might want to do with this nucleotide sequence is see what amino acid sequence it would translate to. 
+The next thing we might want to do with this nucleotide sequence is see what amino acid sequence it would translate to (let's assume our sequence is protein-coding for a very tiny polypeptide!). 
 ```
 protein_seq = rna_seq.translate()
 print(protein_seq)
 ```
-Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence to break this kind of translation (you should be getting a `BiopthonWarning`, or a `Bio.Data.CodonTable.TranslationError` - read these tracebacks and pick out the important information it is giving you). There are two primary ways of doing this - what are they?
+Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence to break this kind of translation (you should be getting a `BiopythonWarning`, or a `Bio.Data.CodonTable.TranslationError` - read these tracebacks and pick out the important information it is giving you). There are two primary ways of doing this - what are they?
 
 ### Exercise
 {{< admonition type="question" title="Exercise" open=true >}}
@@ -173,7 +173,7 @@ def complement_transcribe_translate(dna):
     print(f"Amino acid translation:    {amino_acids_forward}")
     
     
-def reverse_translate(___):
+def reverse_translate(dna):
     """
     Take some DNA, and print out some conversions:
     the reverse complement,
