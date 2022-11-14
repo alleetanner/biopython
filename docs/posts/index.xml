@@ -54,10 +54,8 @@ my_rna = my_dna.transcribe() Once you have an RNA sequence, you can again do sta
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/01setup/</guid>
-    <description><![CDATA[Setting things up in Anaconda Before we can work with BioPython, we will need the library to be install as part of your Python interpreter. We do this by XXXXX
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg]]></description>
+    <description><![CDATA[Anaconda and Jupyter Lab In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal).
+If you haven&rsquo;t already, download (Anaconda)(https://www.anaconda.com/) . Anaconda is a platform providing data science tools for Python and R.]]></description>
 </item>
 </channel>
 </rss>
