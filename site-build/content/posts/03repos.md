@@ -48,7 +48,7 @@ Go back to your results list. Now, we are going to select a few of these, and ge
 - make sure each of then ten are from a different species (eg, don't get more than one from _Homo sapiens_)
 - make sure each one has a record with an amino acid length of between 600 and 690 aa,
 - don't worry if the record says `partial`, as long as it meets the above requirements.
-Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the "Summary". From the menu it shows, choose "FASTA (text)". This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today).
+Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the "Summary". From the menu it shows, choose "FASTA (text)". This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as `srp72.fas`.
 
 W
 
