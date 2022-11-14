@@ -1,0 +1,8 @@
+the path to the conda env python is
+/Users/at9362/opt/anaconda3/envs/python310/bin/python3.10
+
+
+aliased to
+conda-python="/Users/at9362/opt/anaconda3/envs/python310/bin/python3.10"
+
+I have no idea why conda isn't directly sending python there, with env activated?
