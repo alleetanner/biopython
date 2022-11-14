@@ -142,8 +142,6 @@ complement_transcribe_translate(___)
 # call my function "reverse_translate" from above
 reverse(___)
 ```
-
-
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Solution" open=false >}}
@@ -152,6 +150,16 @@ from Bio.Seq import Seq
 
 
 def complement_transcribe_translate(dna):
+    """
+    Take some DNA, and print out some conversions:
+    the complementary strand,
+    the transcription of the complementary strand,
+    the amino acid translation of this complement.
+    
+    Args: DNA as a Seq object.
+    
+    Returns: nothing, this just prints to the terminal.
+    """
     
     print(f"My incoming DNA:           {dna}")
     
@@ -163,9 +171,19 @@ def complement_transcribe_translate(dna):
     
     amino_acids_forward = transcribed_forward.translate()
     print(f"Amino acid translation:    {amino_acids_forward}")
-
-
-def reverse(dna):
+    
+    
+def reverse_translate(___):
+    """
+    Take some DNA, and print out some conversions:
+    the reverse complement,
+    the reverse transcription,
+    the amino acid translation of reverse transcription.
+    
+    Args: DNA as a Seq object.
+    
+    Returns: nothing, this just prints to the terminal.
+    """
     
     dna_reverse = dna.reverse_complement()
     print(f"As a reverse complement:   {dna_reverse}")
@@ -177,10 +195,14 @@ def reverse(dna):
     print(f"Amino acids reading <-     {amino_acids_backward}")
 
 
-raw_dna = Seq("TTACCAAAAACCCCTTTGGGAAAGCAT")
+# here is my incoming DNA sequence, made into a Seq object
+dna_seq = Seq("TTACCAAAAACCCCTTTGGGAAAGCAT")
 
-complement_transcribe_translate(raw_dna)
-reverse(raw_dna)
+# call my function "complement_transcribe_translate" from above
+complement_transcribe_translate(dna_seq)
+
+# call my function "reverse_translate" from above
+reverse(dna_seq)
 ```
 {{< /admonition >}}
 
