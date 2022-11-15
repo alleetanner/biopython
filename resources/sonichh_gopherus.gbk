@@ -1,0 +1,61 @@
+LOCUS       XP_050796403             424 aa            linear   VRT 02-OCT-2022
+DEFINITION  sonic hedgehog protein isoform X1 [Gopherus flavomarginatus].
+ACCESSION   XP_050796403
+VERSION     XP_050796403.1
+DBLINK      BioProject: PRJNA885463
+DBSOURCE    REFSEQ: accession XM_050940446.1
+KEYWORDS    RefSeq.
+SOURCE      Gopherus flavomarginatus (Mexican gopher tortoise)
+  ORGANISM  Gopherus flavomarginatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Testudinata; Testudines; Cryptodira; Durocryptodira;
+            Testudinoidea; Testudinidae; Gopherus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NC_066618) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI RefSeq
+            Annotation Status           :: Full annotation
+            Annotation Name             :: Gopherus flavomarginatus Annotation
+                                           Release 100
+            Annotation Version          :: 100
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 10.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..424
+                     /organism="Gopherus flavomarginatus"
+                     /isolate="rGopFla2"
+                     /db_xref="taxon:286002"
+                     /chromosome="2"
+                     /tissue_type="blood"
+                     /dev_stage="juvenile"
+                     /country="USA: Raton, New Mexico"
+                     /lat_lon="36.88 N 104.97 W"
+                     /collection_date="2018-07-31"
+                     /collected_by="Taylor Edwards"
+     Protein         1..424
+                     /product="sonic hedgehog protein isoform X1"
+                     /calculated_mol_wt=46643
+     CDS             1..424
+                     /gene="LOC127045060"
+                     /coded_by="XM_050940446.1:227..1501"
+                     /db_xref="GeneID:127045060"
+ORIGIN      
+        1 mdemllltri llvgficvll vssgltcgpg rgigkrrhpk kltplaykqf ipnvaektlg
+       61 asgryegkis rnserfkelt pnynpdiifk deentgadrl mtqrckdkln alaisvmnqw
+      121 pgvklrvteg wdedghhsee slhyegravd ittsdrdrsk ygmlarlave agfdwvyyes
+      181 kahihcsvka ensvaaksgg cfpgsatvhl eqggtkrvrd lspgdrvlaa daqgrllysd
+      241 flafldrehg apklfyviet rqprarlllt aahllfvapp hnhsqpepar sralfasrvr
+      301 pgqrvyvlge ggrrllpaav hsvslreeas gayapltaqg tilinrvlas cyavieehsw
+      361 ahwafapfrl ahallavlsp saglseaepa ppglhwysrl lyrlgswvld sdslhplgma
+      421 vqas
+//
