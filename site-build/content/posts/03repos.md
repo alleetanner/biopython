@@ -39,7 +39,7 @@ Given the vast amount of data being produced, international consortia were estab
 ## Using repositories manually
 Before we use BioPython to carry out a query, we will get familiar with a sequence archive using a browser. The key point here is that, as a starting point for answering a research question, we should become familiar with searching "as a human", before automating such searches.
 
-Let's visit [GenBank](https://www.ncbi.nlm.nih.gov/genbank/). It is worth getting familiar with at least the major sections of GenBank. (If the interface feels a bit out-of-date, you'll just have to get used to that! Research never moves as fast a commerce in terms of presentation, but the data remains the same. Consider the clunkiness as endearing!)
+Let's visit [GenBank](https://www.ncbi.nlm.nih.gov/genbank/). It is worth getting familiar with at least the major sections of GenBank.
 
 ### Making your own FASTA files
 We are going to search for a well-characterised, ultra-conserved gene, that we are going to use for some common bioinformatics tasks. By the dropdown, select "Protein" - this is the name of the database we will be searching. Note the others in the menu - some are major DBs like gene and genome, others are more niche. In the search box, enter `signal recognition particle 72`. This is a ubiquitous gene in eukaryotes, and arguably in prokaryotes too.
@@ -51,34 +51,62 @@ Go back to your results list. Now, we are going to select a few of these, and ge
 - make sure each of then ten are from a different species (eg, don't get more than one from _Homo sapiens_)
 - make sure each one has a record with an amino acid length of between 600 and 690 aa,
 - don't worry if the record says `partial`, as long as it meets the above requirements.
-Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the "Summary". From the menu it shows, choose "FASTA (text)". This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as `srp72.fas`.
+Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the "Summary". From the menu it shows, choose "FASTA (text)". This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as `srp72_multi.fas`.
 
-### Parsing FASTA with BioPython
-We will now write a script to read this file.
+For the exercises in the following section, we want to make one more FASTA file. This will be similar to `srp72_multi.fas` that you just made, but contain a single sequence. Go back to NCBI, and your list of SRP72 matches. Choose one more record (again, meeting the above criteria), from a species you have not already chosen. Click through and look at the main record, then find the FASTA for that gene. As before, copy and paste it into a new file in Jupyter, with the name `srp72_single.fas`.
 
-## Using BioPython to retrieve FASTA for you
-Blah
-
-
-
-
-
-
+### Exercise
+{{< admonition type="Exercise" title="Sequence formats" open=true >}}
+Sequences come in a variety of formats. Look at the following data, and identify what format it is in
+- Format 1
 ```
-code goes herer
+>gi|5524211|gb|AAD44166.1| cytochrome b [Elephas maximus maximus]
+LCLYTHIGRNIYYGSYLYSETWNTGIMLLLITMATAFMGYVLPWGQMSFWGATVITNLFSAIPYIGT
 ```
-next setion blakfahuir wrafguighbarg
-
-#### Exercise
-{{< admonition type="question" title="Exercise" open=true >}}
-a question box
-- q1
-- q2
+- Format 2
+```
+5 34
+Molossus_molossus          MASGGGVAVASLWTEVNRCGQSGDYTRALKALTKI
+Rousettus_aegyptiacus      MSDVAKWEKQLERLLAEGGESAKVIAAIDKILSAS
+Pipistrellus_kuhlii        MKILQKAEDLCRHSLSEDSDGTEEDPQAELAIIHG
+Rhinolophus_ferrumequinum  MASGGSGGVSVPALWSEVNRYGQNGDFTRALKTVN
+Phyllostomus_discolor      MKILQKAEDLCRHSLSEDSDGTEEDPQAELAIIHG
+```
+- Format 3
+```
+@MN00537:51:000H2K25G:1:11101:2213:1092 1:N:0:9
+CTCCAGTCCTTACTCCCATATCTAACCTCTTACCCCTACNTCATAGGTANACATTTTA
++
+ZTTHJFFFFAAAABBBABBACCCAAAADFFFFFABDDDFFAAHHJIILPPPLUUUVZZ
+```
+- Format 4
+```
+LOCUS       AB000263             368 bp    mRNA    linear   PRI 05-FEB-1999
+DEFINITION  Homo sapiens mRNA for prepro cortistatin like peptide, complete
+            cds.
+ACCESSION   AB000263
+ORIGIN      
+        1 acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg
+       61 ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg
+```
+- Format 5
+```
+ID   AB000263 standard; RNA; PRI; 368 BP.
+XX
+AC   AB000263;
+XX
+DE   Homo sapiens mRNA for prepro cortistatin like peptide, complete cds.
+XX
+SQ   Sequence 368 BP;
+     acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg        60
+     ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg       120
+```
 {{< /admonition >}}
 
-#### Exercise
-{{< admonition type="note" title="Solution" open=false >}}
-a note box
-- dfdsafg
-- q2
+{{< admonition type="warning" title="Solutions" open=false >}}
+- Format 1: [FASTA](https://www.wikiwand.com/en/FASTA_format)
+- Format 2: [PHYLIP](https://www.wikiwand.com/en/PHYLIP)
+- Format 3: [FASTQ](https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html)
+- Format 4: [GenBank](https://www.genomatix.de/online_help/help/sequence_formats.html)
+- Format 5: [EMBL](https://www.genomatix.de/online_help/help/sequence_formats.html)
 {{< /admonition >}}
