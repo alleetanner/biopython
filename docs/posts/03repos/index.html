@@ -10,7 +10,7 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/03repos/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-03T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-14T16:59:42+00:00" />
+<meta property="article:modified_time" content="2022-11-15T11:35:14+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Sequence repositories"/>
@@ -28,8 +28,8 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/"
-        },"genre": "posts","wordcount":  833 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/","datePublished": "2022-11-03T00:00:00+01:00","dateModified": "2022-11-14T16:59:42+00:00","publisher": {
+        },"genre": "posts","wordcount":  990 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/","datePublished": "2022-11-03T00:00:00+01:00","dateModified": "2022-11-15T11:35:14+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -86,12 +86,7 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
     <li><a href="#using-repositories-manually">Using repositories manually</a>
       <ul>
         <li><a href="#making-your-own-fasta-files">Making your own FASTA files</a></li>
-        <li><a href="#parsing-fasta-with-biopython">Parsing FASTA with BioPython</a></li>
-      </ul>
-    </li>
-    <li><a href="#using-biopython-to-retrieve-fasta-for-you">Using BioPython to retrieve FASTA for you</a>
-      <ul>
-        <li></li>
+        <li><a href="#exercise">Exercise</a></li>
       </ul>
     </li>
   </ul>
@@ -124,7 +119,7 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
 <h2 id="using-repositories-manually">Using repositories manually</h2>
 <p>Before we use BioPython to carry out a query, we will get familiar with a sequence archive using a browser. The key point here is that, as a starting point for answering a research question, we should become familiar with searching &ldquo;as a human&rdquo;, before automating such searches.</p>
 <p>Let&rsquo;s visit <a href="https://www.ncbi.nlm.nih.gov/genbank/" target="_blank" rel="noopener noreffer">GenBank</a>
-. It is worth getting familiar with at least the major sections of GenBank. (If the interface feels a bit out-of-date, you&rsquo;ll just have to get used to that! Research never moves as fast a commerce in terms of presentation, but the data remains the same. Consider the clunkiness as endearing!)</p>
+. It is worth getting familiar with at least the major sections of GenBank.</p>
 <h3 id="making-your-own-fasta-files">Making your own FASTA files</h3>
 <p>We are going to search for a well-characterised, ultra-conserved gene, that we are going to use for some common bioinformatics tasks. By the dropdown, select &ldquo;Protein&rdquo; - this is the name of the database we will be searching. Note the others in the menu - some are major DBs like gene and genome, others are more niche. In the search box, enter <code>signal recognition particle 72</code>. This is a ubiquitous gene in eukaryotes, and arguably in prokaryotes too.</p>
 <p>The search results will be shown - above the results, change the results per page from <code>20 per page</code> to <code>100 per page</code>. Have a look down the results, and see what details you can recognise. Open one by clicking the link, and have a look over the details that typically accompany an accession.</p>
@@ -134,38 +129,78 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
 <li>make sure each of then ten are from a different species (eg, don&rsquo;t get more than one from <em>Homo sapiens</em>)</li>
 <li>make sure each one has a record with an amino acid length of between 600 and 690 aa,</li>
 <li>don&rsquo;t worry if the record says <code>partial</code>, as long as it meets the above requirements.
-Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the &ldquo;Summary&rdquo;. From the menu it shows, choose &ldquo;FASTA (text)&rdquo;. This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as <code>srp72.fas</code>.</li>
+Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the &ldquo;Summary&rdquo;. From the menu it shows, choose &ldquo;FASTA (text)&rdquo;. This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as <code>srp72_multi.fas</code>.</li>
 </ul>
-<h3 id="parsing-fasta-with-biopython">Parsing FASTA with BioPython</h3>
-<p>We will now write a script to read this file.</p>
-<h2 id="using-biopython-to-retrieve-fasta-for-you">Using BioPython to retrieve FASTA for you</h2>
-<p>Blah</p>
-<pre tabindex="0"><code>code goes herer
-</code></pre><p>next setion blakfahuir wrafguighbarg</p>
-<h4 id="exercise">Exercise</h4>
-<div class="details admonition question open">
+<p>For the exercises in the following section, we want to make one more FASTA file. This will be similar to <code>srp72_multi.fas</code> that you just made, but contain a single sequence. Go back to NCBI, and your list of SRP72 matches. Choose one more record (again, meeting the above criteria), from a species you have not already chosen. Click through and look at the main record, then find the FASTA for that gene. As before, copy and paste it into a new file in Jupyter, with the name <code>srp72_single.fas</code>.</p>
+<h3 id="exercise">Exercise</h3>
+<div class="details admonition Exercise open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Sequence formats<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>a question box</p>
+            <div class="admonition-content"><p>Sequences come in a variety of formats. Look at the following data, and identify what format it is in</p>
 <ul>
-<li>q1</li>
-<li>q2</li>
+<li>Format 1</li>
 </ul>
-</div>
+<pre tabindex="0"><code>&gt;gi|5524211|gb|AAD44166.1| cytochrome b [Elephas maximus maximus]
+LCLYTHIGRNIYYGSYLYSETWNTGIMLLLITMATAFMGYVLPWGQMSFWGATVITNLFSAIPYIGT
+</code></pre><ul>
+<li>Format 2</li>
+</ul>
+<pre tabindex="0"><code>5 34
+Molossus_molossus          MASGGGVAVASLWTEVNRCGQSGDYTRALKALTKI
+Rousettus_aegyptiacus      MSDVAKWEKQLERLLAEGGESAKVIAAIDKILSAS
+Pipistrellus_kuhlii        MKILQKAEDLCRHSLSEDSDGTEEDPQAELAIIHG
+Rhinolophus_ferrumequinum  MASGGSGGVSVPALWSEVNRYGQNGDFTRALKTVN
+Phyllostomus_discolor      MKILQKAEDLCRHSLSEDSDGTEEDPQAELAIIHG
+</code></pre><ul>
+<li>Format 3</li>
+</ul>
+<pre tabindex="0"><code>@MN00537:51:000H2K25G:1:11101:2213:1092 1:N:0:9
+CTCCAGTCCTTACTCCCATATCTAACCTCTTACCCCTACNTCATAGGTANACATTTTA
++
+ZTTHJFFFFAAAABBBABBACCCAAAADFFFFFABDDDFFAAHHJIILPPPLUUUVZZ
+</code></pre><ul>
+<li>Format 4</li>
+</ul>
+<pre tabindex="0"><code>LOCUS       AB000263             368 bp    mRNA    linear   PRI 05-FEB-1999
+DEFINITION  Homo sapiens mRNA for prepro cortistatin like peptide, complete
+            cds.
+ACCESSION   AB000263
+ORIGIN      
+        1 acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg
+       61 ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg
+</code></pre><ul>
+<li>Format 5</li>
+</ul>
+<pre tabindex="0"><code>ID   AB000263 standard; RNA; PRI; 368 BP.
+XX
+AC   AB000263;
+XX
+DE   Homo sapiens mRNA for prepro cortistatin like peptide, complete cds.
+XX
+SQ   Sequence 368 BP;
+     acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg        60
+     ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg       120
+</code></pre></div>
         </div>
     </div>
-<h4 id="exercise-1">Exercise</h4>
-<div class="details admonition note">
+<div class="details admonition warning">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Solutions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>a note box</p>
-<ul>
-<li>dfdsafg</li>
-<li>q2</li>
+            <div class="admonition-content"><ul>
+<li>Format 1: <a href="https://www.wikiwand.com/en/FASTA_format" target="_blank" rel="noopener noreffer">FASTA</a>
+</li>
+<li>Format 2: <a href="https://www.wikiwand.com/en/PHYLIP" target="_blank" rel="noopener noreffer">PHYLIP</a>
+</li>
+<li>Format 3: <a href="https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html" target="_blank" rel="noopener noreffer">FASTQ</a>
+</li>
+<li>Format 4: <a href="https://www.genomatix.de/online_help/help/sequence_formats.html" target="_blank" rel="noopener noreffer">GenBank</a>
+</li>
+<li>Format 5: <a href="https://www.genomatix.de/online_help/help/sequence_formats.html" target="_blank" rel="noopener noreffer">EMBL</a>
+</li>
 </ul>
 </div>
         </div>
@@ -174,7 +209,7 @@ Once you have selected 10 (or so) that you like, scroll to the very bottom (or t
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-11-14</span>
+                <span>Updated on 2022-11-15</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
