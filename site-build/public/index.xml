@@ -19,17 +19,13 @@ Exercise Questions  a question box
  q1 q2     ]]></description>
 </item>
 <item>
-    <title>• Multiple Sequence Alignments</title>
-    <link>https://alleetanner.github.io/biopython/posts/04alignment/</link>
+    <title>• Input and Output</title>
+    <link>https://alleetanner.github.io/biopython/posts/04inputandoutput/</link>
     <pubDate>Fri, 04 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/biopython/posts/04alignment/</guid>
-    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     ]]></description>
+    <guid>https://alleetanner.github.io/biopython/posts/04inputandoutput/</guid>
+    <description><![CDATA[GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
+import urllib urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument). Now we are going to use BioPython to read it into an object, with SeqIO.]]></description>
 </item>
 <item>
     <title>• Sequence repositories</title>

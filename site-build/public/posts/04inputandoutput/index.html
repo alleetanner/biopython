@@ -4,40 +4,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>• Phylogenetics - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Phylogenetics" />
-<meta property="og:description" content="Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     " />
+        <title>• Input and Output - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Input and Output" />
+<meta property="og:description" content="GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
+import urllib urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument). Now we are going to use BioPython to read it into an object, with SeqIO." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://alleetanner.github.io/biopython/posts/05phylogenetics/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-11-05T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-13T15:44:22+00:00" />
+<meta property="og:url" content="https://alleetanner.github.io/biopython/posts/04inputandoutput/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-04T00:00:00+01:00" />
+<meta property="article:modified_time" content="2022-11-15T12:40:25+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="• Phylogenetics"/>
-<meta name="twitter:description" content="Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     "/>
+<meta name="twitter:title" content="• Input and Output"/>
+<meta name="twitter:description" content="GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
+import urllib urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument). Now we are going to use BioPython to read it into an object, with SeqIO."/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://alleetanner.github.io/biopython/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://alleetanner.github.io/biopython/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://alleetanner.github.io/biopython/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://alleetanner.github.io/biopython/apple-touch-icon.png"><link rel="mask-icon" href="https://alleetanner.github.io/biopython/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="https://alleetanner.github.io/biopython/site.webmanifest"><link rel="canonical" href="https://alleetanner.github.io/biopython/posts/05phylogenetics/" /><link rel="prev" href="https://alleetanner.github.io/biopython/posts/04inputandoutput/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="https://alleetanner.github.io/biopython/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://alleetanner.github.io/biopython/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://alleetanner.github.io/biopython/apple-touch-icon.png"><link rel="mask-icon" href="https://alleetanner.github.io/biopython/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="https://alleetanner.github.io/biopython/site.webmanifest"><link rel="canonical" href="https://alleetanner.github.io/biopython/posts/04inputandoutput/" /><link rel="prev" href="https://alleetanner.github.io/biopython/posts/03repos/" /><link rel="next" href="https://alleetanner.github.io/biopython/posts/05phylogenetics/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="https://alleetanner.github.io/biopython/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "• Phylogenetics",
+        "headline": "• Input and Output",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/05phylogenetics\/"
-        },"genre": "posts","wordcount":  32 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/05phylogenetics\/","datePublished": "2022-11-05T00:00:00+01:00","dateModified": "2022-11-13T15:44:22+00:00","publisher": {
+            "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/"
+        },"genre": "posts","wordcount":  329 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-15T12:40:25+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -77,7 +69,7 @@ Exercise Questions  a question box
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">• Phylogenetics</h1><h2 class="single-subtitle">Species and gene trees.</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">• Input and Output</h1><h2 class="single-subtitle">Running sequence information through BioPython.</h2><div class="post-meta">
             <div class="post-meta-line"></div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -86,7 +78,7 @@ Exercise Questions  a question box
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#seqrecord-objects"><code>SeqRecord</code> objects</a>
       <ul>
         <li><a href="#section-title">Section title</a></li>
         <li><a href="#another-section">Another section</a></li>
@@ -95,7 +87,23 @@ Exercise Questions  a question box
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="section-title">Section title</h3>
+            </div><div class="content" id="content"><h1 id="genbank-files">GenBank files</h1>
+<p>We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use <code>urllib</code>, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines</p>
+<pre tabindex="0"><code>import urllib
+urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;, &#34;sonic-hh-gopherus.gbk&#34;)
+</code></pre><p><code>urllib</code> is being asked to go to an address (first argument), and save it in a file called <code>sonic-hh-gopherus.gbk</code> (the second argument). Now we are going to use BioPython to read it into an object, with <code>SeqIO.parse</code>. We need to specify the filename (the one we just downloaded using <code>urllib</code>), and the format it is in. If we pass &ldquo;genbank&rdquo; (or &ldquo;gb&rdquo;) as the second argument then it will read it as a GenBank file:</p>
+<pre tabindex="0"><code>record_iterator = SeqIO.parse(&#34;sonic-hh-gopherus.gbk&#34;, &#34;genbank&#34;)
+</code></pre><p>We are calling our object variable <code>record_iterator</code>, because it could contain many records, but for now it just contains one. We can access this single record by calling <a href="https://docs.python.org/3/library/functions.html#next" target="_blank" rel="noopener noreffer"><code>next</code></a>
+:</p>
+<pre tabindex="0"><code>gbk_record = next(record_iterator)
+</code></pre><p>GenBank files usually contain a lot more information than a FASTA so more of the fields of the SeqRecord will be filled in. This means that we can, for example, see the record contents:</p>
+<pre tabindex="0"><code>print(gbk_record.annotations)
+</code></pre><p>So, have the above five lines of code saved in a file, and run it in the Jupyter terminal. Inspect the output to get familiar with what information a GenBank record typically contains. (Some records are comprehensively annotated, others can be very sparse! This one is quite good.) We could also isolate just the sequence data with</p>
+<pre tabindex="0"><code>print(gbk_record.seq)
+</code></pre><h1 id="fasta-files">FASTA files</h1>
+<h2 id="seqrecord-objects"><code>SeqRecord</code> objects</h2>
+<p>If you have a FASTA file with a single sequence in it, the simplest way to read it in is with SeqIO.read. This takes two arguments, the name of the file you want to open, and the format that file is in.</p>
+<h3 id="section-title">Section title</h3>
 <ul>
 <li>bullet1</li>
 <li>bullt2</li>
@@ -147,7 +155,7 @@ Exercise Questions  a question box
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-11-13</span>
+                <span>Updated on 2022-11-15</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
@@ -164,7 +172,8 @@ Exercise Questions  a question box
         </section>
     </div>
 
-    <div class="post-nav"><a href="https://alleetanner.github.io/biopython/posts/04inputandoutput/" class="prev" rel="prev" title="• Input and Output"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>• Input and Output</a></div>
+    <div class="post-nav"><a href="https://alleetanner.github.io/biopython/posts/03repos/" class="prev" rel="prev" title="• Sequence repositories"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>• Sequence repositories</a>
+            <a href="https://alleetanner.github.io/biopython/posts/05phylogenetics/" class="next" rel="next" title="• Phylogenetics">• Phylogenetics<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">
