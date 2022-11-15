@@ -1,0 +1,66 @@
+LOCUS       XP_007433256             426 aa            linear   VRT 24-MAY-2018
+DEFINITION  sonic hedgehog protein [Python bivittatus].
+ACCESSION   XP_007433256
+VERSION     XP_007433256.1
+DBLINK      BioProject: PRJNA238085
+DBSOURCE    REFSEQ: accession XM_007433194.2
+KEYWORDS    RefSeq.
+SOURCE      Python bivittatus (Burmese python)
+  ORGANISM  Python bivittatus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Lepidosauria; Squamata; Bifurcata; Unidentata; Episquamata;
+            Toxicofera; Serpentes; Henophidia; Pythonidae; Python.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006534185.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Name             :: Python bivittatus Annotation Release
+                                           102
+            Annotation Version          :: 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 8.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..426
+                     /organism="Python bivittatus"
+                     /db_xref="taxon:176946"
+                     /chromosome="Unknown"
+                     /sex="female"
+                     /tissue_type="liver"
+                     /country="USA: Texas"
+     Protein         1..426
+                     /product="sonic hedgehog protein"
+                     /calculated_mol_wt=46989
+     Region          40..185
+                     /region_name="HH_signal"
+                     /note="Hedgehog amino-terminal signalling domain;
+                     pfam01085"
+                     /db_xref="CDD:426037"
+     Region          187..415
+                     /region_name="Hint"
+                     /note="Hint module; pfam01079"
+                     /db_xref="CDD:426033"
+     CDS             1..426
+                     /gene="SHH"
+                     /coded_by="XM_007433194.2:92..1372"
+                     /db_xref="GeneID:103063349"
+ORIGIN      
+        1 mllrrrsgll plclgalfls aglacgpgrg fgkrrhpkkl tplaykqfip nvaektlgas
+       61 gryegkisrn serfkeltpn ynpdiifkde entgadrlmt qrckdklnal aisvmnqwpg
+      121 vklrvtegwd edghhseesl hyegravdit tsdrdrskyg mlarlaveag fdwvyyeska
+      181 hihcsvkaen svaaksggcf pgsawvnlee ggtklvkdlr pgdrvlaadv hgqlfysefl
+      241 afldredppv hklfyvietq rpqtrlllta ahllfvappq nhshsqpqpi fasrvqpgqq
+      301 vyvlgqggqt llqaavhsvs lqeeasgaya pltaqgtili nqvlascyav ieehswahwa
+      361 fapfrmahav lamldpegls spllfpaaap eessslagvh wysrllyhig rwildsetmh
+      421 plgmas
+//
