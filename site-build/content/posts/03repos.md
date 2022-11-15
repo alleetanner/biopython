@@ -65,7 +65,7 @@ LCLYTHIGRNIYYGSYLYSETWNTGIMLLLITMATAFMGYVLPWGQMSFWGATVITNLFSAIPYIGT
 ```
 - Format 2
 ```
-5 34
+5 36
 Molossus_molossus          MASGGGVAVASLWTEVNRCGQSGDYTRALKALTKI
 Rousettus_aegyptiacus      MSDVAKWEKQLERLLAEGGESAKVIAAIDKILSAS
 Pipistrellus_kuhlii        MKILQKAEDLCRHSLSEDSDGTEEDPQAELAIIHG
@@ -101,6 +101,17 @@ SQ   Sequence 368 BP;
      acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg        60
      ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg       120
 ```
+- Format 6
+```
+gi|6273285|gb|AF191659.1|AF191      TATATA----------ATATATTTCAAATTTCCTTATATACCCAAATATA
+gi|6273284|gb|AF191658.1|AF191      TATATATA--------ATATATTTCAAATTTCCTTATATACCCAAATATA
+gi|6273287|gb|AF191661.1|AF191      TATATA----------ATATATTTCAAATTTCCTTATATATCCAAATATA
+gi|6273286|gb|AF191660.1|AF191      TATATA----------ATATATTTATAATTTCCTTATATATCCAAATATA
+gi|6273290|gb|AF191664.1|AF191      TATATATATA------ATATATTTCAAATTCCCTTATATATCCAAATATA
+gi|6273289|gb|AF191663.1|AF191      TATATATATA------ATATATTTCAAATTCCCTTATATATCCAAATATA
+gi|6273291|gb|AF191665.1|AF191      TATATATATATATATAATATATTTCAAATTCCCTTATATATCCAAATATA
+                                    ******          ********  **** ********* *********
+```
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Solutions" open=false >}}
@@ -109,4 +120,5 @@ SQ   Sequence 368 BP;
 - Format 3: [FASTQ](https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html)
 - Format 4: [GenBank](https://www.genomatix.de/online_help/help/sequence_formats.html)
 - Format 5: [EMBL](https://www.genomatix.de/online_help/help/sequence_formats.html)
+- Format 6: [CLUSTAL](https://bioperl.org/formats/alignment_formats/ClustalW_multiple_alignment_format)
 {{< /admonition >}}
