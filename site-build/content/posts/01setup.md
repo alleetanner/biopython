@@ -41,13 +41,20 @@ In your Anaconda Navigator window (the one with the launch buttons, not the tab 
 
 #### BioPython in the terminal
 Admittedly, this can be confusing, but your terminal might be using its own version of Python. So, we should install BioPython there too. In your Jupyter Lab tab in your browser, go to the terminal and enter
-```
+
+```shell
 pip install biopython
 ```
+
 and follow the prompts to download and install the package. We should be ready to go now!
 
-{{< admonition type="info" open=true >}}
-`pip` is a package manager for Python. Whenever we run an `import` command in Python, it will look for modules and libraries to import, first in your working folder (where you might have put your own modules), then in Python's local repository of installed packages. Apart from standard packages fundamental to Python, we have to download and install anything else (sometimes called 3rd party packages).
+{{< admonition type="info" title="Package managers" open=true >}}
+`pip` is a package manager for Python. Whenever we run an `import` command, Python will look for modules and libraries to import, first in your working folder (where you might have put your own modules), then in Python's local folders of installed packages (ie, back near your operating system file - so you won't see them unless you go looking for them!). Apart from Python standard libraries (like `math` and `sys` for example), we have to download and install anything else (sometimes called 3rd party packages).
 
-That is where `pip` comes it. It will search package repositories, typically [PyPI](https://pypi.org/), download the appropriate package, and install it, along with any other dependencies it might need.
+That is where `pip` comes it. It will search package repositories, typically [PyPI](https://pypi.org/), download the appropriate package, and install it, along with any other dependencies it might need. Here are some further `pip` commands, to examine what you have currently installed, etc:
+```shell
+pip list
+pip info
+pip help
+```
 {{< /admonition >}}
