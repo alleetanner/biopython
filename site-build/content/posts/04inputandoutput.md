@@ -20,8 +20,8 @@ share:
 comment:
   enable: false
 ---
-
-## GenBank files
+## Input
+### GenBank files
 We'll start by looking at the contents of a GenBank file. Through this you will also learn how to use `urllib`, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
 
 ```python
@@ -55,8 +55,8 @@ So, have the above five lines of code saved in a file, and run it in the Jupyter
 print(gbk_record.seq)
 ```
 
-## FASTA files
-### `SeqRecord` objects
+### FASTA files
+#### `SeqRecord` objects
 If you have a FASTA file with a single sequence in it, we can read it in with `SeqIO.read`. This takes two arguments, the name of the file you want to open, and the format that file is in.
 
 ```python
@@ -98,8 +98,6 @@ for record in fasta_batch:
     print(record.description)
 ```
 
-
-Normal text body.
 ### Exercise
 {{< admonition type="exercise" title="Exercise" open=true >}}
 Create a Python script:
@@ -109,10 +107,10 @@ Create a Python script:
 - Outside of the function, create a variable with your batch of fastas in it (see the `SeqIO.parse` section above).
 - Outside of the function, create a variable containing a string to search for (keep it short and simple (say, 3 AAs), and demonstrate a positive match and a negative match).
 - Call your function, passing in the iterable and the target motif.
-- *Bonus* Have the function report if no results were found.
+- *Bonus!*  Have the function report if no results were found.
 {{< /admonition >}}
 
-{{< admonition type="warning" title="Solution" open=false >}}
+{{< admonition type="tip" title="Solution" open=false >}}
 ```python
 from Bio import SeqIO
 
@@ -151,3 +149,58 @@ motif = "RDA"
 fasta_search(fasta_batch, motif)
 ```
 {{< /admonition >}}
+
+## Output
+We have seen how `Bio.SeqIO.parse` is used for sequence input (reading files), and now we’ll look at `Bio.SeqIO.write` which is for sequence output (writing files). This function takes three arguments: [1] some `SeqRecord` object(s), [2] a filename to write to, and [3] a sequence format.
+
+Here is an example, where we start by creating a few `SeqRecord` objects the hard way (by hand, rather than by loading them from a file):
+
+```python
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+
+rec1 = SeqRecord(
+    Seq(
+        "MMYQQGCFAGGTVLRLAKDLAENNRGARVLVVCSEITAVTFRGPSETHLDSMVGQALFGD"
+        "SSACKSLKEAFTPLGISQQLLWWLQ",
+    ),
+    id="gi|14150838|gb|AAK54648.1|AF376133_1",
+    description="chalcone synthase [Cucumis sativus]",
+)
+
+rec2 = SeqRecord(
+    Seq(
+        "YPDYYFRITNREHKAELKEKFQRMCDKSMIKKRYMYLTEEILKENPSMCEYMAPSLDARQ"
+        "DMVVVEIPKLGKEAAVKAIKEWGQAA",
+    ),
+    id="gi|13919613|gb|AAK7873142.1|",
+    description="chalcone synthase [Fragaria vesca subsp. bracteata]",
+)
+
+rec3 = SeqRecord(
+    Seq(
+        "QQGCFAGGTVLRLAKDLAENNRGAKRYMYLTEEAAVKALLILKENPSMCEYMAPSLDARQ"
+        "VVCSEITAVTFRGPEAAVKAIKEWGQ",
+    ),
+    id="gi|48373667|gb|AAK33312.1|",
+    description="chalcone synthase [Quercus robur]",
+)
+
+# create a list of SeqRecords
+my_records = [rec1, rec2, rec3]
+
+# run SeqIO.write to create an output file
+SeqIO.write(my_records, "my_example.fas", "fasta")
+```
+{{< admonition type="warning" title="Be careful!" open=true >}}
+Writing out files like this *will permanently overwrite any existing files of the same name!* Always be careful with names and paths that you are writing to. 
+{{< /admonition >}}
+
+### Exercise
+{{< admonition type="exercise" title="Exercise" open=true >}}
+Have a little walk, or even do some stretches. Maybe just in the room if it is raining. Outside is better, but admittedly it is often winter. Sometimes just looking out the window will do.
+{{< /admonition >}}
+
+
+
