@@ -10,7 +10,7 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/04inputandoutput/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-04T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-16T15:14:55+00:00" />
+<meta property="article:modified_time" content="2022-11-16T15:43:59+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Input and Output"/>
@@ -29,7 +29,7 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/"
         },"genre": "posts","wordcount":  778 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-16T15:14:55+00:00","publisher": {
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-16T15:43:59+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -90,46 +90,46 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 </nav></div>
             </div><div class="content" id="content"><h2 id="genbank-files">GenBank files</h2>
 <p>We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use <code>urllib</code>, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines</p>
-<pre tabindex="0"><code>import urllib
-
-url = &#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;
-
-urllib.request.urlretrieve(url, &#34;sonic-hh-gopherus.gbk&#34;)
-</code></pre><p><code>urllib</code> is being asked to go to an address (first argument), and save it in a file called <code>sonic-hh-gopherus.gbk</code> (the second argument). Now we are going to use BioPython to read it into an object, with <code>SeqIO.parse</code>. We need to specify the filename (the one we just downloaded using <code>urllib</code>), and the format it is in. If we pass &ldquo;genbank&rdquo; (or &ldquo;gb&rdquo;) as the second argument then it will read it as a GenBank file:</p>
-<pre tabindex="0"><code>record_iterator = SeqIO.parse(&#34;sonic-hh-gopherus.gbk&#34;, &#34;genbank&#34;)
-</code></pre><p>We are calling our object variable <code>record_iterator</code>, because it could contain many records, but for now it just contains one. We can access this single record by calling <a href="https://docs.python.org/3/library/functions.html#next" target="_blank" rel="noopener noreffer"><code>next</code></a>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">urllib</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&#34;sonic-hh-gopherus.gbk&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><code>urllib</code> is being asked to go to an address (first argument), and save it in a file called <code>sonic-hh-gopherus.gbk</code> (the second argument). Now we are going to use BioPython to read it into an object, with <code>SeqIO.parse</code>. We need to specify the filename (the one we just downloaded using <code>urllib</code>), and the format it is in. If we pass &ldquo;genbank&rdquo; (or &ldquo;gb&rdquo;) as the second argument then it will read it as a GenBank file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">record_iterator</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;sonic-hh-gopherus.gbk&#34;</span><span class="p">,</span> <span class="s2">&#34;genbank&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>We are calling our object variable <code>record_iterator</code>, because it could contain many records, but for now it just contains one. We can access this single record by calling <a href="https://docs.python.org/3/library/functions.html#next" target="_blank" rel="noopener noreffer"><code>next</code></a>
 :</p>
-<pre tabindex="0"><code>gbk_record = next(record_iterator)
-</code></pre><p>GenBank files usually contain a lot more information than a FASTA so more of the fields of the SeqRecord will be filled in. This means that we can, for example, see the record contents:</p>
-<pre tabindex="0"><code>print(gbk_record.annotations)
-</code></pre><p>So, have the above five lines of code saved in a file, and run it in the Jupyter terminal. Inspect the output to get familiar with what information a GenBank record typically contains. (Some records are comprehensively annotated, others can be very sparse! This one is quite good.) We could also isolate just the sequence data with</p>
-<pre tabindex="0"><code>print(gbk_record.seq)
-</code></pre><h2 id="fasta-files">FASTA files</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">gbk_record</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">record_iterator</span><span class="p">)</span>
+</span></span></code></pre></div><p>GenBank files usually contain a lot more information than a FASTA so more of the fields of the SeqRecord will be filled in. This means that we can, for example, see the record contents:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">gbk_record</span><span class="o">.</span><span class="n">annotations</span><span class="p">)</span>
+</span></span></code></pre></div><p>So, have the above five lines of code saved in a file, and run it in the Jupyter terminal. Inspect the output to get familiar with what information a GenBank record typically contains. (Some records are comprehensively annotated, others can be very sparse! This one is quite good.) We could also isolate just the sequence data with</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">gbk_record</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="fasta-files">FASTA files</h2>
 <h3 id="seqrecord-objects"><code>SeqRecord</code> objects</h3>
 <p>If you have a FASTA file with a single sequence in it, we can read it in with <code>SeqIO.read</code>. This takes two arguments, the name of the file you want to open, and the format that file is in.</p>
-<pre tabindex="0"><code>srp72_record = SeqIO.read(&#34;srp72_single.fas&#34;, &#34;fasta&#34;)
-print(srp72_record)
-</code></pre><p>As with a GenBank file, you can also isolate just the sequence information by using <code>.seq</code> on the object:</p>
-<pre tabindex="0"><code>print(srp72_record.seq)
-</code></pre><h3 id="working-with-fastas-containing-multiple-sequences">Working with FASTAs containing multiple sequences</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">srp72_record</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&#34;srp72_single.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">srp72_record</span><span class="p">)</span>
+</span></span></code></pre></div><p>As with a GenBank file, you can also isolate just the sequence information by using <code>.seq</code> on the object:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">srp72_record</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="working-with-fastas-containing-multiple-sequences">Working with FASTAs containing multiple sequences</h3>
 <p>FASTA files often contain many sequences. These can represent a range of genomic data, for example transcriptomic fragments, a set of genes all from the same organism, or a set of the same gene from a range of organisms.</p>
 <p>To work with these kinds of files, BioPython provides <code>SeqIO.parse</code>. This gives you an iterable object, which can, for example, can be looped with a <code>for</code> loop. Here we are working with the <code>srp72.fas</code> file that you made in the previous section, which should contain multiple sequences.</p>
-<pre tabindex="0"><code>fasta_batch = SeqIO.parse(&#34;srp72.fas&#34;, &#34;fasta&#34;)
-
-for record in fasta_batch:
-    print(record.description)
-for record in fasta_batch:
-    print(record.description)
-</code></pre><p>Note that the type of the object returned by <code>SeqIO.parse</code> is known as a <em>generator</em>. One of the features of a generator in Python is that you can only loop over them once before they are exhausted (this is very useful for memory and speed-critical processes). In the above code snippet, if there was a second loop taking in <code>fasta_batch</code>, it would do nothing!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fasta_batch</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;srp72.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fasta_batch</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fasta_batch</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</span></span></code></pre></div><p>Note that the type of the object returned by <code>SeqIO.parse</code> is known as a <em>generator</em>. One of the features of a generator in Python is that you can only loop over them once before they are exhausted (this is very useful for memory and speed-critical processes). In the above code snippet, if there was a second loop taking in <code>fasta_batch</code>, it would do nothing!</p>
 <p>Typically to resolve this we <em>cast</em> the generator to a list, which can be iterated over as many times as you like:</p>
-<pre tabindex="0"><code>fasta_batch = list(SeqIO.parse(&#34;srp72.fas&#34;, &#34;fasta&#34;))
-
-for record in fasta_batch:
-    print(record.description)
-# this repeat will now work!
-for record in fasta_batch:
-    print(record.description)
-</code></pre><p>Normal text body.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fasta_batch</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;srp72.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fasta_batch</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># this repeat will now work!</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fasta_batch</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</span></span></code></pre></div><p>Normal text body.</p>
 <h3 id="exercise">Exercise</h3>
 <div class="details admonition exercise open">
         <div class="details-summary admonition-title">
@@ -157,7 +157,7 @@ for record in fasta_batch:
             <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python3" data-lang="Python3"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fasta_search</span><span class="p">(</span><span class="n">fastas</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
