@@ -46,7 +46,7 @@ Save your file, and in the terminal run the file using `python`.
 
 We can examine our `dna_seq` object, so let's do that with:
 
-```Python3
+```python
 print(type(dna_seq))
 print(dir(dna_seq))
 ```
@@ -60,26 +60,28 @@ It is very easy to forget to save your script before running it! Jupyter Lab wil
 ### Transcription
 
 You'll see one of the methods of `Seq` is `transcribe()`, so let's do that and turn our DNA into RNA:
-```
+
+```python
 rna_seq = dna_seq.transcribe()
 print(rna_seq)
 ```
 
 We might also want to get the complement of this RNA strand. Since `rna_seq` is also a `Seq` object, we can call one of the methods, `complement_rna()`:
-```
+
+```python
 rna_complement = rna_seq.complement_rna()
 print(rna_complement)
 ```
 
 It is also possible to convert back from an RNA sequence to a DNA sequence:
 
-```
+```python
 dna_from_rna = rna_seq.back_transcribe()
 ```
 
 Which, if it's working correctly should give us back the original data - we can check that by asking "are these two objects identical?", like this:
 
-```
+```python
 if dna_seq == dna_from_rna:
     print("Yes, they are identical.")
 else:
@@ -88,10 +90,12 @@ else:
 
 ### Translation
 The next thing we might want to do with this nucleotide sequence is see what amino acid sequence it would translate to (let's assume our sequence is protein-coding for a tiny polypeptide!). 
-```
+
+```python
 protein_seq = rna_seq.translate()
 print(protein_seq)
 ```
+
 Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence to break this kind of translation (you should be getting a `BiopythonWarning`, or a `Bio.Data.CodonTable.TranslationError` - read these tracebacks and pick out the important information it is giving you). There are two primary ways of doing this - what are they?
 
 ### Exercise
@@ -103,7 +107,7 @@ Once you have a working script, use it to answer these questions:
 - Why?
 - Is this 5' to 3', or 3' to 5'?
 
-```Python3
+```python
 from Bio.Seq import Seq
 
 
@@ -149,7 +153,7 @@ reverse_translate(___)
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Solution" open=false >}}
-```Python3
+```python
 from Bio.Seq import Seq
 
 
