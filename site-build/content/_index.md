@@ -1,12 +1,9 @@
 ### University of Bristol ∙ Research Computing Training
 
-[Biopython](https://biopython.org/) is a Python library for working with DNA, RNA and protein sequences. It also allows data to be retrieved from genetic repositories (digital stores of sequence information produced by research groups globally) such as NCBI GenBank and Ensembl.
-
-In this course we will introduce some of the basics of Biopython and how it can support you in your workflows. The library has a range of features needed for this kind of work, including:
+[Biopython](https://biopython.org/) is a Python library for working with DNA, RNA and protein sequences. In this course we will introduce some of the basics of Biopython and how it can support you in your workflows. The library has a range of features needed for this kind of work, including:
 
 - standard operations on sequences such as transcription, complements and translation,
 - reading and writing many common file formats such as FASTA, GenBank and BLAST,
-- accessing many online databases such as NCBI,
 - running tools like Blast directly,
 - and support for performing alignments, for downstream tasks such as phylogenetic inference.
 
