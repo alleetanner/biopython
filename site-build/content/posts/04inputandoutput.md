@@ -123,7 +123,6 @@ def fasta_search(fastas, target):
              target - the sequence to find (string)
     Returns: Nothing.
     """
-
     # create hit success boolean
     match_success = False
     
@@ -139,6 +138,7 @@ def fasta_search(fastas, target):
     # report if nothing was found.
     if match_success == False:
         print(f"No matches found for target {target}")
+
 
 # parse in my fasta file
 fasta_batch = list(SeqIO.parse("srp72.fas", "fasta"))
@@ -193,7 +193,7 @@ my_records = [rec1, rec2, rec3]
 # run SeqIO.write to create an output file
 SeqIO.write(my_records, "my_example.fas", "fasta")
 ```
-{{< admonition type="warning" title="Be careful!" open=true >}}
+{{< admonition type="warning" title="Be careful!" open=false >}}
 Writing out files like this *will permanently overwrite any existing files of the same name!* Always be careful with names and paths that you are writing to. 
 {{< /admonition >}}
 
