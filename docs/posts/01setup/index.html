@@ -10,7 +10,7 @@ If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providi
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/01setup/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-01T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-16T15:35:48+00:00" />
+<meta property="article:modified_time" content="2022-11-16T21:06:43+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Set up and requirements"/>
@@ -28,8 +28,8 @@ If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providi
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/01setup\/"
-        },"genre": "posts","wordcount":  594 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/01setup\/","datePublished": "2022-11-01T00:00:00+01:00","dateModified": "2022-11-16T15:35:48+00:00","publisher": {
+        },"genre": "posts","wordcount":  615 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/01setup\/","datePublished": "2022-11-01T00:00:00+01:00","dateModified": "2022-11-16T21:06:43+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -78,41 +78,26 @@ If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providi
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#anaconda-and-jupyter-lab">Anaconda and Jupyter Lab</a></li>
+    <li><a href="#installing-biopython">Installing BioPython</a>
       <ul>
-        <li><a href="#anaconda-and-jupyter-lab">Anaconda and Jupyter Lab</a></li>
-        <li><a href="#installing-biopython">Installing BioPython</a></li>
+        <li><a href="#biopython-for-anaconda">BioPython for Anaconda</a></li>
+        <li><a href="#biopython-in-the-terminal">BioPython in the terminal</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="anaconda-and-jupyter-lab">Anaconda and Jupyter Lab</h3>
+            </div><div class="content" id="content"><h2 id="anaconda-and-jupyter-lab">Anaconda and Jupyter Lab</h2>
 <p>In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal).</p>
 <p>If you haven&rsquo;t already, download <a href="https://www.anaconda.com/" target="_blank" rel="noopener noreffer">Anaconda</a>
 . Anaconda is a platform providing data science tools for Python and R. The standard install includes things like Jupyter Notebooks (a browser-based IDE for creating hybrid documents of runnable code, with Markdown blocks to document what the code is doing), and Jupyter Lab (a browser-based environment providing a text editor, terminal, and Python console). We will be working in Jupyter Lab - from the Anaconda Navigator starting screen, click the Jupyter Lab button and it will start a session in a new tab in your default browser.</p>
-<p><img
-        class="lazyload"
-        src="https://alleetanner.github.io/biopython/svg/loading.min.svg"
-        data-src="https://alleetanner.github.io/biopython/assets/jupyter-lab-screen.png"
-        data-srcset="https://alleetanner.github.io/biopython/assets/jupyter-lab-screen.png, https://alleetanner.github.io/biopython/assets/jupyter-lab-screen.png 1.5x, https://alleetanner.github.io/biopython/assets/jupyter-lab-screen.png 2x"
-        data-sizes="auto"
-        alt="/assets/jupyter-lab-screen.png"
-        title="The Anaconda launch window" /></p>
 <p>For this workshop we will need both a text editor and a terminal pane in this tab. You can open these by clicking on the associated icons on the start screen, or by going <code>File</code> &gt; <code>New</code> &gt; <code>Text file</code> and <code>File</code> &gt; <code>New</code> &gt; <code>Terminal</code>. Arrange these as you like by dragging the tabs - we usually teach with a text editor on the left and a terminal on the right. Also, created a new folder to work in, by navigating using the folder icon in the menu on the left and creating one. Make sure you move into this folder in your terminal, and when you save your text file ensure it is in this folder.</p>
-<h3 id="installing-biopython">Installing BioPython</h3>
+<h2 id="installing-biopython">Installing BioPython</h2>
 <p>Finally, we need to download BioPython and install it as part of your local Python. We will do this both for Anaconda, and in the terminal - they may be using different installs of Python, so we will install it both ways to be sure!</p>
-<h4 id="biopython-for-anaconda">BioPython for Anaconda</h4>
+<h3 id="biopython-for-anaconda">BioPython for Anaconda</h3>
 <p>In your Anaconda Navigator window (the one with the launch buttons, not the tab in your browser), click the <code>Environments</code> tab to the left. You should have <code>base(root)</code> selected in the second column. On the right column, from the drop-down select <code>Not installed</code>, and type <code>biopython</code> in the search box to the right. Select the BioPython package, click <code>Apply</code>, and then confirm the install. This might take a couple of minutes.</p>
-<p><img
-        class="lazyload"
-        src="https://alleetanner.github.io/biopython/svg/loading.min.svg"
-        data-src="https://alleetanner.github.io/biopython/assets/anaconda-env-screen.png"
-        data-srcset="https://alleetanner.github.io/biopython/assets/anaconda-env-screen.png, https://alleetanner.github.io/biopython/assets/anaconda-env-screen.png 1.5x, https://alleetanner.github.io/biopython/assets/anaconda-env-screen.png 2x"
-        data-sizes="auto"
-        alt="/assets/anaconda-env-screen.png"
-        title="The Anaconda Environment window" /></p>
-<h4 id="biopython-in-the-terminal">BioPython in the terminal</h4>
-<p>Admittedly, this can be confusing, but your terminal might be using its own version of Python. So, we should install BioPython there too. In your Jupyter Lab tab in your browser, go to the terminal and enter</p>
+<h3 id="biopython-in-the-terminal">BioPython in the terminal</h3>
+<p>If you are using Windows, the terminal that Jupyter provides should be running the install of Python that we just installed BioPython for. However sometimes (especially on MacOS), it might not be using the same Python install. If you are having issues running BioPython in the Jupyter terminal, try installing BioPython there: go to the terminal and enter</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pip install biopython
 </span></span></code></pre></div><p>and follow the prompts to download and install the package. We should be ready to go now!</p>
 <div class="details admonition info open">
