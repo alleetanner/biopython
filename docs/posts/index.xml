@@ -4,17 +4,12 @@
         <link>https://alleetanner.github.io/biopython/posts/</link>
         <description>All Posts | BioPython</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 05 Nov 2022 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://alleetanner.github.io/biopython/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>• Phylogenetics</title>
-    <link>https://alleetanner.github.io/biopython/posts/05phylogenetics/</link>
+    <title>• Alignments</title>
+    <link>https://alleetanner.github.io/biopython/posts/05alignments/</link>
     <pubDate>Sat, 05 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/biopython/posts/05phylogenetics/</guid>
-    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     ]]></description>
+    <guid>https://alleetanner.github.io/biopython/posts/05alignments/</guid>
+    <description><![CDATA[Multiple Alignment Sequences Multiple Sequence Alignments are a collection of sequences which have been arranged vertically, usually with the insertion of gap characters, such that all the sequence strings are the same length. Each position along an alignment is an assertion of homology: we are expressing an evolutionary relationship between each nucleotide, codon, or amino acid (characteristics of the genotype). This is directly analagous to a character matrix, where our observations are on expressed phenotypes.]]></description>
 </item>
 <item>
     <title>• Input and Output</title>
