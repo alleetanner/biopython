@@ -6,16 +6,16 @@
         <meta name="robots" content="noodp" />
         <title>• Input and Output - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Input and Output" />
 <meta property="og:description" content="GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
-import urllib urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument). Now we are going to use BioPython to read it into an object, with SeqIO." />
+import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34; urllib.request.urlretrieve(url, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/04inputandoutput/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-04T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-15T12:40:25+00:00" />
+<meta property="article:modified_time" content="2022-11-16T15:14:55+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Input and Output"/>
 <meta name="twitter:description" content="GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
-import urllib urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument). Now we are going to use BioPython to read it into an object, with SeqIO."/>
+import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34; urllib.request.urlretrieve(url, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument)."/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://alleetanner.github.io/biopython/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://alleetanner.github.io/biopython/favicon-32x32.png">
@@ -28,8 +28,8 @@ import urllib urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/"
-        },"genre": "posts","wordcount":  329 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-15T12:40:25+00:00","publisher": {
+        },"genre": "posts","wordcount":  778 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-16T15:14:55+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -78,19 +78,23 @@ import urllib urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#seqrecord-objects"><code>SeqRecord</code> objects</a>
+    <li><a href="#genbank-files">GenBank files</a></li>
+    <li><a href="#fasta-files">FASTA files</a>
       <ul>
-        <li><a href="#section-title">Section title</a></li>
-        <li><a href="#another-section">Another section</a></li>
+        <li><a href="#seqrecord-objects"><code>SeqRecord</code> objects</a></li>
+        <li><a href="#working-with-fastas-containing-multiple-sequences">Working with FASTAs containing multiple sequences</a></li>
         <li><a href="#exercise">Exercise</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="genbank-files">GenBank files</h1>
+            </div><div class="content" id="content"><h2 id="genbank-files">GenBank files</h2>
 <p>We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use <code>urllib</code>, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines</p>
 <pre tabindex="0"><code>import urllib
-urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;, &#34;sonic-hh-gopherus.gbk&#34;)
+
+url = &#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;
+
+urllib.request.urlretrieve(url, &#34;sonic-hh-gopherus.gbk&#34;)
 </code></pre><p><code>urllib</code> is being asked to go to an address (first argument), and save it in a file called <code>sonic-hh-gopherus.gbk</code> (the second argument). Now we are going to use BioPython to read it into an object, with <code>SeqIO.parse</code>. We need to specify the filename (the one we just downloaded using <code>urllib</code>), and the format it is in. If we pass &ldquo;genbank&rdquo; (or &ldquo;gb&rdquo;) as the second argument then it will read it as a GenBank file:</p>
 <pre tabindex="0"><code>record_iterator = SeqIO.parse(&#34;sonic-hh-gopherus.gbk&#34;, &#34;genbank&#34;)
 </code></pre><p>We are calling our object variable <code>record_iterator</code>, because it could contain many records, but for now it just contains one. We can access this single record by calling <a href="https://docs.python.org/3/library/functions.html#next" target="_blank" rel="noopener noreffer"><code>next</code></a>
@@ -100,62 +104,102 @@ urllib.request.urlretrieve(&#34;https://raw.githubusercontent.com/alleetanner/bi
 <pre tabindex="0"><code>print(gbk_record.annotations)
 </code></pre><p>So, have the above five lines of code saved in a file, and run it in the Jupyter terminal. Inspect the output to get familiar with what information a GenBank record typically contains. (Some records are comprehensively annotated, others can be very sparse! This one is quite good.) We could also isolate just the sequence data with</p>
 <pre tabindex="0"><code>print(gbk_record.seq)
-</code></pre><h1 id="fasta-files">FASTA files</h1>
-<h2 id="seqrecord-objects"><code>SeqRecord</code> objects</h2>
-<p>If you have a FASTA file with a single sequence in it, the simplest way to read it in is with SeqIO.read. This takes two arguments, the name of the file you want to open, and the format that file is in.</p>
-<h3 id="section-title">Section title</h3>
-<ul>
-<li>bullet1</li>
-<li>bullt2</li>
-</ul>
-<p>Normal text body.</p>
-<p><div class="details admonition warning open">
+</code></pre><h2 id="fasta-files">FASTA files</h2>
+<h3 id="seqrecord-objects"><code>SeqRecord</code> objects</h3>
+<p>If you have a FASTA file with a single sequence in it, we can read it in with <code>SeqIO.read</code>. This takes two arguments, the name of the file you want to open, and the format that file is in.</p>
+<pre tabindex="0"><code>srp72_record = SeqIO.read(&#34;srp72_single.fas&#34;, &#34;fasta&#34;)
+print(srp72_record)
+</code></pre><p>As with a GenBank file, you can also isolate just the sequence information by using <code>.seq</code> on the object:</p>
+<pre tabindex="0"><code>print(srp72_record.seq)
+</code></pre><h3 id="working-with-fastas-containing-multiple-sequences">Working with FASTAs containing multiple sequences</h3>
+<p>FASTA files often contain many sequences. These can represent a range of genomic data, for example transcriptomic fragments, a set of genes all from the same organism, or a set of the same gene from a range of organisms.</p>
+<p>To work with these kinds of files, BioPython provides <code>SeqIO.parse</code>. This gives you an iterable object, which can, for example, can be looped with a <code>for</code> loop. Here we are working with the <code>srp72.fas</code> file that you made in the previous section, which should contain multiple sequences.</p>
+<pre tabindex="0"><code>fasta_batch = SeqIO.parse(&#34;srp72.fas&#34;, &#34;fasta&#34;)
+
+for record in fasta_batch:
+    print(record.description)
+for record in fasta_batch:
+    print(record.description)
+</code></pre><p>Note that the type of the object returned by <code>SeqIO.parse</code> is known as a <em>generator</em>. One of the features of a generator in Python is that you can only loop over them once before they are exhausted (this is very useful for memory and speed-critical processes). In the above code snippet, if there was a second loop taking in <code>fasta_batch</code>, it would do nothing!</p>
+<p>Typically to resolve this we <em>cast</em> the generator to a list, which can be iterated over as many times as you like:</p>
+<pre tabindex="0"><code>fasta_batch = list(SeqIO.parse(&#34;srp72.fas&#34;, &#34;fasta&#34;))
+
+for record in fasta_batch:
+    print(record.description)
+# this repeat will now work!
+for record in fasta_batch:
+    print(record.description)
+</code></pre><p>Normal text body.</p>
+<h3 id="exercise">Exercise</h3>
+<div class="details admonition exercise open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Warning1</li>
-<li>Warning2</li>
+            <div class="admonition-content"><p>Create a Python script:</p>
+<ul>
+<li>Create a function which takes two arguments: [1] an iterable object made by <code>SeqIO.parse</code>, [2] a target sequence motif to find.
+<ul>
+<li>In the function, loop over each record in the iterable.</li>
+<li>If the target sequence is found in a record, <code>print</code> something to the terminal to say it was found, and which record it was.</li>
+</ul>
+</li>
+<li>Outside of the function, create a variable with your batch of fastas in it (see the <code>SeqIO.parse</code> section above).</li>
+<li>Outside of the function, create a variable containing a string to search for (keep it short and simple (say, 3 AAs), and demonstrate a positive match and a negative match).</li>
+<li>Call your function, passing in the iterable and the target motif.</li>
+<li><em>Bonus</em> Have the function report if no results were found.</li>
 </ul>
 </div>
         </div>
     </div>
-<div class="details admonition info open">
+<div class="details admonition warning">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Info1</li>
-<li>Info2</li>
-</ul>
-</div>
-        </div>
-    </div></p>
-<h3 id="another-section">Another section</h3>
-<p>blahfdajkfhu aefuibahj rwefyugr</p>
-<pre tabindex="0"><code>code goes herer
-</code></pre><p>next setion blakfahuir wrafguighbarg</p>
-<h3 id="exercise">Exercise</h3>
-<div class="details admonition question open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Questions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>a question box</p>
-<ul>
-<li>q1</li>
-<li>q2</li>
-</ul>
-</div>
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python3" data-lang="Python3"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fasta_search</span><span class="p">(</span><span class="n">fastas</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Search for a sequence motif in multiple FASTA records.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Args:    fastas - SeqIO iterable
+</span></span></span><span class="line"><span class="cl"><span class="s2">             target - the sequence to find (string)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Returns: Nothing.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># create hit success boolean</span>
+</span></span><span class="line"><span class="cl">    <span class="n">match_success</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fasta_batch</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;MATCH FOUND FOR TARGET </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># HIT! toggle my success boolean</span>
+</span></span><span class="line"><span class="cl">            <span class="n">match_success</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># report if nothing was found.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">match_success</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;No matches found for target </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># parse in my fasta file</span>
+</span></span><span class="line"><span class="cl"><span class="n">fasta_batch</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;srp72.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># declare what I am looking for, as a string</span>
+</span></span><span class="line"><span class="cl"><span class="n">motif</span> <span class="o">=</span> <span class="s2">&#34;RDA&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># call the function!</span>
+</span></span><span class="line"><span class="cl"><span class="n">fasta_search</span><span class="p">(</span><span class="n">fasta_batch</span><span class="p">,</span> <span class="n">motif</span><span class="p">)</span>
+</span></span></code></pre></div></div>
         </div>
     </div>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-11-15</span>
+                <span>Updated on 2022-11-16</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
