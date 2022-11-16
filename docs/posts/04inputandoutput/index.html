@@ -10,7 +10,7 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/04inputandoutput/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-04T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-16T16:38:22+00:00" />
+<meta property="article:modified_time" content="2022-11-16T16:45:13+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Input and Output"/>
@@ -29,7 +29,7 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/"
         },"genre": "posts","wordcount":  989 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-16T16:38:22+00:00","publisher": {
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-16T16:45:13+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -173,7 +173,6 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 </span></span></span><span class="line"><span class="cl"><span class="s2">             target - the sequence to find (string)
 </span></span></span><span class="line"><span class="cl"><span class="s2">    Returns: Nothing.
 </span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># create hit success boolean</span>
 </span></span><span class="line"><span class="cl">    <span class="n">match_success</span> <span class="o">=</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl">    
@@ -189,6 +188,7 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 </span></span><span class="line"><span class="cl">    <span class="c1"># report if nothing was found.</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">match_success</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;No matches found for target </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># parse in my fasta file</span>
 </span></span><span class="line"><span class="cl"><span class="n">fasta_batch</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;srp72.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">))</span>
@@ -239,7 +239,7 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># run SeqIO.write to create an output file</span>
 </span></span><span class="line"><span class="cl"><span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">my_records</span><span class="p">,</span> <span class="s2">&#34;my_example.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><div class="details admonition warning open">
+</span></span></code></pre></div><div class="details admonition warning">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Be careful!<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
