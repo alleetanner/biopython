@@ -56,7 +56,7 @@ Once you have selected 10 (or so) that you like, scroll to the very bottom (or t
 For the exercises in the following section, we want to make one more FASTA file. This will be similar to `srp72_multi.fas` that you just made, but contain a single sequence. Go back to NCBI, and your list of SRP72 matches. Choose one more record (again, meeting the above criteria), from a species you have not already chosen. Click through and look at the main record, then find the FASTA for that gene. As before, copy and paste it into a new file in Jupyter, with the name `srp72_single.fas`.
 
 ### Exercise
-{{< admonition type="Exercise" title="Sequence formats" open=true >}}
+{{< admonition type="note" title="Exercise" open=true >}}
 Sequences come in a variety of formats. Look at the following data, and identify what format it is in
 - Format 1
 ```
@@ -114,7 +114,7 @@ gi|6273291|gb|AF191665.1|AF191      TATATATATATATATAATATATTTCAAATTCCCTTATATATCCA
 ```
 {{< /admonition >}}
 
-{{< admonition type="warning" title="Solutions" open=false >}}
+{{< admonition type="tip" title="Solutions" open=false >}}
 - Format 1: [FASTA](https://www.wikiwand.com/en/FASTA_format)
 - Format 2: [PHYLIP](https://www.wikiwand.com/en/PHYLIP)
 - Format 3: [FASTQ](https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html)
