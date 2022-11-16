@@ -99,7 +99,7 @@ print(protein_seq)
 Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence to break this kind of translation (you should be getting a `BiopythonWarning`, or a `Bio.Data.CodonTable.TranslationError` - read these tracebacks and pick out the important information it is giving you). There are two primary ways of doing this - what are they?
 
 ### Exercise
-{{< admonition type="question" title="Exercise" open=true >}}
+{{< admonition type="exercise" title="Exercise" open=true >}}
 Let's put together some of the methods we have used so far, and arrange them in functions. Create a new script in Jupyter Lab, and build a DNA translator, using the script below as a guide (ie, fill the `___` gaps!). When run on the command line, your script should neatly output the manipulations to the incoming raw DNA.
 
 Once you have a working script, use it to answer these questions:
