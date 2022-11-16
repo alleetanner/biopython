@@ -99,7 +99,7 @@ for record in fasta_batch:
 ```
 
 ### Exercise
-{{< admonition type="exercise" title="Exercise" open=true >}}
+{{< admonition type="note" title="Exercise" open=true >}}
 Create a Python script:
 - Create a function which takes two arguments: [1] an iterable object made by `SeqIO.parse`, [2] a target sequence motif to find.
   - In the function, loop over each record in the iterable.
@@ -198,7 +198,7 @@ Writing out files like this *will permanently overwrite any existing files of th
 {{< /admonition >}}
 
 ### Exercise
-{{< admonition type="exercise" title="Exercise" open=true >}}
+{{< admonition type="note" title="Exercise" open=true >}}
 Have a little walk, or even do some stretches. Maybe just in the room if it is raining. Outside is better, but admittedly it is often winter. Sometimes just looking out the window will do.
 {{< /admonition >}}
 
