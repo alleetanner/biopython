@@ -21,11 +21,11 @@ comment:
   enable: false
 ---
 
-## Multiple Alignment Sequences
+## Multiple Sequence Alignments
 
-Multiple Sequence Alignments are a collection of sequences which have been arranged vertically, usually with the insertion of gap characters, such that all the sequence strings are the same length. Each position along an alignment is *an assertion of homology*: we are expressing an evolutionary relationship between each nucleotide, codon, or amino acid (characteristics of the genotype). This is directly analagous to a character matrix, where our observations are on expressed phenotypes. Alignment can be regarded as a matrix of letters, where each row is held as a `SeqRecord` object internally.
+Multiple Sequence Alignments are a collection of sequences which have been arranged to form a *matrix* with every sequence being the same length. This arrangement is usually done by insertion of gap. Each position along an alignment is *an assertion of homology*: we are expressing an evolutionary relationship between each nucleotide, codon, or amino acid (characteristics of the *genotype*). This is analagous to a trait character matrix, where our observations are on morphological, behavioural or other outcomes of gene expression (characteristics of the *phenotype*).
 
-The `MultipleSeqAlignment` object holds this kind of data, and the `AlignIO` module is used for reading and writing these as various file formats.
+Alignment can be regarded as a matrix of letters, where each row is held as a `SeqRecord` object internally. The `MultipleSeqAlignment` object holds this kind of data, and the `AlignIO` module is used for reading and writing these as various file formats.
 
 For this section we need to download some files which we will be reading in. Create a small Python script to download these from a URL:
 
