@@ -28,13 +28,13 @@ comment:
 
 In your Jupyter Lab text editor, start a new script by importing `Seq` like this:
 
-```
+```python
 from Bio.Seq import Seq
 ```
 
 Let's start by creating a short string of DNA. We can then call `Seq` on it to create a new object, called `dna_seq`. 
 
-```
+```python
 dna_string = "CATTACTTTGGCGGAAAAATATTT"
 dna_seq = Seq(dna_string)
 print(dna_seq)
@@ -46,7 +46,7 @@ Save your file, and in the terminal run the file using `python`.
 
 We can examine our `dna_seq` object, so let's do that with:
 
-```
+```Python3
 print(type(dna_seq))
 print(dir(dna_seq))
 ```
