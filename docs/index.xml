@@ -24,7 +24,7 @@ Exercise Questions  a question box
     <pubDate>Fri, 04 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/04inputandoutput/</guid>
-    <description><![CDATA[GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
+    <description><![CDATA[Input GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
 import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34; urllib.request.urlretrieve(url, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument).]]></description>
 </item>
 <item>

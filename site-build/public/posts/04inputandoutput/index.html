@@ -5,16 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>• Input and Output - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Input and Output" />
-<meta property="og:description" content="GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
+<meta property="og:description" content="Input GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
 import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34; urllib.request.urlretrieve(url, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/04inputandoutput/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-04T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-16T15:43:59+00:00" />
+<meta property="article:modified_time" content="2022-11-16T16:35:30+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Input and Output"/>
-<meta name="twitter:description" content="GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
+<meta name="twitter:description" content="Input GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
 import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34; urllib.request.urlretrieve(url, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument)."/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://alleetanner.github.io/biopython/favicon.ico" />
@@ -28,8 +28,8 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/"
-        },"genre": "posts","wordcount":  778 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-16T15:43:59+00:00","publisher": {
+        },"genre": "posts","wordcount":  989 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-16T16:35:30+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -78,17 +78,23 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#genbank-files">GenBank files</a></li>
-    <li><a href="#fasta-files">FASTA files</a>
+    <li><a href="#input">Input</a>
       <ul>
-        <li><a href="#seqrecord-objects"><code>SeqRecord</code> objects</a></li>
+        <li><a href="#genbank-files">GenBank files</a></li>
+        <li><a href="#fasta-files">FASTA files</a></li>
         <li><a href="#working-with-fastas-containing-multiple-sequences">Working with FASTAs containing multiple sequences</a></li>
         <li><a href="#exercise">Exercise</a></li>
       </ul>
     </li>
+    <li><a href="#output">Output</a>
+      <ul>
+        <li><a href="#exercise-1">Exercise</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="genbank-files">GenBank files</h2>
+            </div><div class="content" id="content"><h2 id="input">Input</h2>
+<h3 id="genbank-files">GenBank files</h3>
 <p>We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use <code>urllib</code>, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">urllib</span>
 </span></span><span class="line"><span class="cl">
@@ -104,8 +110,8 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">gbk_record</span><span class="o">.</span><span class="n">annotations</span><span class="p">)</span>
 </span></span></code></pre></div><p>So, have the above five lines of code saved in a file, and run it in the Jupyter terminal. Inspect the output to get familiar with what information a GenBank record typically contains. (Some records are comprehensively annotated, others can be very sparse! This one is quite good.) We could also isolate just the sequence data with</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">gbk_record</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="fasta-files">FASTA files</h2>
-<h3 id="seqrecord-objects"><code>SeqRecord</code> objects</h3>
+</span></span></code></pre></div><h3 id="fasta-files">FASTA files</h3>
+<h4 id="seqrecord-objects"><code>SeqRecord</code> objects</h4>
 <p>If you have a FASTA file with a single sequence in it, we can read it in with <code>SeqIO.read</code>. This takes two arguments, the name of the file you want to open, and the format that file is in.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">srp72_record</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&#34;srp72_single.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">srp72_record</span><span class="p">)</span>
@@ -129,8 +135,7 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 </span></span><span class="line"><span class="cl"><span class="c1"># this repeat will now work!</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fasta_batch</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
-</span></span></code></pre></div><p>Normal text body.</p>
-<h3 id="exercise">Exercise</h3>
+</span></span></code></pre></div><h3 id="exercise">Exercise</h3>
 <div class="details admonition exercise open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -147,14 +152,14 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 <li>Outside of the function, create a variable with your batch of fastas in it (see the <code>SeqIO.parse</code> section above).</li>
 <li>Outside of the function, create a variable containing a string to search for (keep it short and simple (say, 3 AAs), and demonstrate a positive match and a negative match).</li>
 <li>Call your function, passing in the iterable and the target motif.</li>
-<li><em>Bonus</em> Have the function report if no results were found.</li>
+<li><em>Bonus!</em>  Have the function report if no results were found.</li>
 </ul>
 </div>
         </div>
     </div>
-<div class="details admonition warning">
+<div class="details admonition tip">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
@@ -193,6 +198,62 @@ import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython
 </span></span><span class="line"><span class="cl"><span class="c1"># call the function!</span>
 </span></span><span class="line"><span class="cl"><span class="n">fasta_search</span><span class="p">(</span><span class="n">fasta_batch</span><span class="p">,</span> <span class="n">motif</span><span class="p">)</span>
 </span></span></code></pre></div></div>
+        </div>
+    </div>
+<h2 id="output">Output</h2>
+<p>We have seen how <code>Bio.SeqIO.parse</code> is used for sequence input (reading files), and now we’ll look at <code>Bio.SeqIO.write</code> which is for sequence output (writing files). This function takes three arguments: [1] some <code>SeqRecord</code> object(s), [2] a filename to write to, and [3] a sequence format.</p>
+<p>Here is an example, where we start by creating a few <code>SeqRecord</code> objects the hard way (by hand, rather than by loading them from a file):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio.Seq</span> <span class="kn">import</span> <span class="n">Seq</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio.SeqRecord</span> <span class="kn">import</span> <span class="n">SeqRecord</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rec1</span> <span class="o">=</span> <span class="n">SeqRecord</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Seq</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;MMYQQGCFAGGTVLRLAKDLAENNRGARVLVVCSEITAVTFRGPSETHLDSMVGQALFGD&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;SSACKSLKEAFTPLGISQQLLWWLQ&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">id</span><span class="o">=</span><span class="s2">&#34;gi|14150838|gb|AAK54648.1|AF376133_1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;chalcone synthase [Cucumis sativus]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rec2</span> <span class="o">=</span> <span class="n">SeqRecord</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Seq</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;YPDYYFRITNREHKAELKEKFQRMCDKSMIKKRYMYLTEEILKENPSMCEYMAPSLDARQ&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;DMVVVEIPKLGKEAAVKAIKEWGQAA&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">id</span><span class="o">=</span><span class="s2">&#34;gi|13919613|gb|AAK7873142.1|&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;chalcone synthase [Fragaria vesca subsp. bracteata]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rec3</span> <span class="o">=</span> <span class="n">SeqRecord</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Seq</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;QQGCFAGGTVLRLAKDLAENNRGAKRYMYLTEEAAVKALLILKENPSMCEYMAPSLDARQ&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;VVCSEITAVTFRGPEAAVKAIKEWGQ&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">id</span><span class="o">=</span><span class="s2">&#34;gi|48373667|gb|AAK33312.1|&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;chalcone synthase [Quercus robur]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create a list of SeqRecords</span>
+</span></span><span class="line"><span class="cl"><span class="n">my_records</span> <span class="o">=</span> <span class="p">[</span><span class="n">rec1</span><span class="p">,</span> <span class="n">rec2</span><span class="p">,</span> <span class="n">rec3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run SeqIO.write to create an output file</span>
+</span></span><span class="line"><span class="cl"><span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">my_records</span><span class="p">,</span> <span class="s2">&#34;my_example.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Be careful!<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Writing out files like this <em>will permanently overwrite any existing files of the same name!</em> Always be careful with names and paths that you are writing to.</div>
+        </div>
+    </div>
+<h3 id="exercise-1">Exercise</h3>
+<div class="details admonition exercise open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Have a little walk, or even do some stretches. Maybe just in the room if it is raining. Outside is better, but admittedly it is often winter. Sometimes just looking out the window will do.</div>
         </div>
     </div>
 </div><div class="post-footer" id="post-footer">
