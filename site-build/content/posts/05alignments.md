@@ -177,7 +177,6 @@ my_alignments = [align1, aln_seed]
 AlignIO.write(my_alignments, "mixed.phy", "phylip")
 ```
 
-## Exercise
-{{< admonition type="note" title="Exercise" open=true >}}
-Read in the alignment in `PF05371_seed.sth` and write it out in PHYLIP format.
-{{< /admonition >}}
+### Creating alignments from unaligned sequences
+BioPython does not include any alignment algorithms itself, but does provide wrappers to call aligners on the command line. As such, to run these you will need software install, for example `muscle` or `clustalw`, for the wrappers to call - please look up the method to install this for your OS's command line. If you are working on HPC in an institute with a biological sciences department, `muscle` will typically be available on your clusters.
+BioPython documentation provides [instructions](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec93) on how to run aligners, but to be honest I think you are better running these directly from the command line! If you have many files to align, you might want to apply [shell loops](https://linuxize.com/post/bash-for-loop/) to your files.
