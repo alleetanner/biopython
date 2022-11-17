@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/05alignments/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-05T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-16T21:29:47+00:00" />
+<meta property="article:modified_time" content="2022-11-17T14:57:19+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Alignments"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/05alignments\/"
-        },"genre": "posts","wordcount":  723 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/05alignments\/","datePublished": "2022-11-05T00:00:00+01:00","dateModified": "2022-11-16T21:29:47+00:00","publisher": {
+        },"genre": "posts","wordcount":  830 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/05alignments\/","datePublished": "2022-11-05T00:00:00+01:00","dateModified": "2022-11-17T14:57:19+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -82,9 +82,9 @@
         <li><a href="#single-alignments">Single alignments</a></li>
         <li><a href="#multiple-alignments">Multiple Alignments</a></li>
         <li><a href="#writing-alignments">Writing Alignments</a></li>
+        <li><a href="#creating-alignments-from-unaligned-sequences">Creating alignments from unaligned sequences</a></li>
       </ul>
     </li>
-    <li><a href="#exercise">Exercise</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="multiple-sequence-alignments">Multiple Sequence Alignments</h2>
@@ -194,20 +194,16 @@ ACTGCTAGDTAG tata
 </code></pre><p>Now let&rsquo;s try to output, in PHYLIP format, these alignments in a file with the <code>Phage_Coat_Gp8</code> alignments.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">my_alignments</span> <span class="o">=</span> <span class="p">[</span><span class="n">align1</span><span class="p">,</span> <span class="n">aln_seed</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">AlignIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">my_alignments</span><span class="p">,</span> <span class="s2">&#34;mixed.phy&#34;</span><span class="p">,</span> <span class="s2">&#34;phylip&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="exercise">Exercise</h2>
-<div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">Read in the alignment in <code>PF05371_seed.sth</code> and write it out in PHYLIP format.</div>
-        </div>
-    </div>
+</span></span></code></pre></div><h3 id="creating-alignments-from-unaligned-sequences">Creating alignments from unaligned sequences</h3>
+<p>BioPython does not include any alignment algorithms itself, but does provide wrappers to call aligners on the command line. As such, to run these you will need software install, for example <code>muscle</code> or <code>clustalw</code>, for the wrappers to call - please look up the method to install this for your OS&rsquo;s command line. If you are working on HPC in an institute with a biological sciences department, <code>muscle</code> will typically be available on your clusters.
+BioPython documentation provides <a href="http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec93" target="_blank" rel="noopener noreffer">instructions</a>
+ on how to run aligners, but to be honest I think you are better running these directly from the command line! If you have many files to align, you might want to apply <a href="https://linuxize.com/post/bash-for-loop/" target="_blank" rel="noopener noreffer">shell loops</a>
+ to your files.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-11-16</span>
+                <span>Updated on 2022-11-17</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
