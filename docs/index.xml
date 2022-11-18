@@ -3,9 +3,17 @@
         <title>BioPython</title>
         <link>https://alleetanner.github.io/biopython/</link>
         <description>BioPython</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 05 Nov 2022 00:00:00 &#43;0100</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 06 Nov 2022 00:00:00 &#43;0100</lastBuildDate>
             <atom:link href="https://alleetanner.github.io/biopython/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>• Scripting Tools</title>
+    <link>https://alleetanner.github.io/biopython/posts/06scriptingtools/</link>
+    <pubDate>Sun, 06 Nov 2022 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/biopython/posts/06scriptingtools/</guid>
+    <description><![CDATA[The bio Multiple Sequence Alignments are a collection of sequences which have been arranged to form a matrix with every sequence being the same length. This arrangement is usually done by insertion of gap. Each position along an alignment is an assertion of homology: we are expressing an evolutionary relationship between each nucleotide, codon, or amino acid (characteristics of the genotype). This is analagous to a trait character matrix, where our observations are on morphological, behavioural or other outcomes of gene expression (characteristics of the phenotype).]]></description>
+</item>
+<item>
     <title>• Alignments</title>
     <link>https://alleetanner.github.io/biopython/posts/05alignments/</link>
     <pubDate>Sat, 05 Nov 2022 00:00:00 &#43;0100</pubDate>
