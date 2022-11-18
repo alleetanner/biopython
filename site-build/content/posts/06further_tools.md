@@ -22,7 +22,7 @@ comment:
 ---
 
 ## The `bio` package
-We used this command line package [`bio`](https://www.bioinfo.help/). As of late 2022, this is clean and streamlined set of command line tools for bioinformatics tasks. *I appreciate that this is accompanied by a book which is paywalled but I will look into whether I can get access for students! Let me know if you are particularly interested in this!* However, just the command line glossary is very useful, which you can install with
+We used this command line package [`bio`](https://www.bioinfo.help/). Behind the scenes, `bio` is written in Python, using the BioPython library, but in a nice clean way interfacing with the command line. *I appreciate that this is accompanied by a book which is paywalled but I will look into whether I can get access for students! Let me know if you are particularly interested in this!* However, just the command line glossary is very useful, which you can install with
 ```shell
 bio --download
 ```
