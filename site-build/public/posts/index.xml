@@ -17,8 +17,10 @@
     <pubDate>Fri, 04 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/04inputandoutput/</guid>
-    <description><![CDATA[Input GenBank files We&rsquo;ll start by looking at the contents of a GenBank file. Through this you will also learn how to use urllib, a standard Python library for getting raw data from internet pages. Create a new file, and add these lines
-import urllib url = &#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34; urllib.request.urlretrieve(url, &#34;sonic-hh-gopherus.gbk&#34;) urllib is being asked to go to an address (first argument), and save it in a file called sonic-hh-gopherus.gbk (the second argument).]]></description>
+    <description><![CDATA[Input GenBank files Let&rsquo;s look at GenBank files, acquired on the command line or in Python. We will use a command line package called bio - see section 6 for more details on this package. Install bio in your terminal with
+pip install bio we can see what bio can do by running the command
+bio help we are going to acquire by accession number using bio, with
+bio fetch XP_050796403 notice this command just blasts out the results to the terminal output, but we want this in a file!]]></description>
 </item>
 <item>
     <title>• Sequence repositories</title>
