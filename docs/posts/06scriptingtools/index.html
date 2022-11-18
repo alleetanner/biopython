@@ -4,16 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>• Scripting Tools - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Scripting Tools" />
-<meta property="og:description" content="The bio Multiple Sequence Alignments are a collection of sequences which have been arranged to form a matrix with every sequence being the same length. This arrangement is usually done by insertion of gap. Each position along an alignment is an assertion of homology: we are expressing an evolutionary relationship between each nucleotide, codon, or amino acid (characteristics of the genotype). This is analagous to a trait character matrix, where our observations are on morphological, behavioural or other outcomes of gene expression (characteristics of the phenotype)." />
+        <title>• Further tools and resources - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Further tools and resources" />
+<meta property="og:description" content="The bio package We used this command line package bio . As of late 2022, this is clean and streamlined set of command line tools for bioinformatics tasks. I appreciate that this is accompanied by a book which is paywalled but I will look into whether I can provide access for students. However, just the command line glossary is very useful, which you can install with
+bio --download after this is downloaded, you can get (very succinct) definitions of bioinformatics terms, for example" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/06scriptingtools/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-06T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-18T11:07:25+00:00" />
+<meta property="article:modified_time" content="2022-11-18T11:28:06+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="• Scripting Tools"/>
-<meta name="twitter:description" content="The bio Multiple Sequence Alignments are a collection of sequences which have been arranged to form a matrix with every sequence being the same length. This arrangement is usually done by insertion of gap. Each position along an alignment is an assertion of homology: we are expressing an evolutionary relationship between each nucleotide, codon, or amino acid (characteristics of the genotype). This is analagous to a trait character matrix, where our observations are on morphological, behavioural or other outcomes of gene expression (characteristics of the phenotype)."/>
+<meta name="twitter:title" content="• Further tools and resources"/>
+<meta name="twitter:description" content="The bio package We used this command line package bio . As of late 2022, this is clean and streamlined set of command line tools for bioinformatics tasks. I appreciate that this is accompanied by a book which is paywalled but I will look into whether I can provide access for students. However, just the command line glossary is very useful, which you can install with
+bio --download after this is downloaded, you can get (very succinct) definitions of bioinformatics terms, for example"/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://alleetanner.github.io/biopython/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://alleetanner.github.io/biopython/favicon-32x32.png">
@@ -21,13 +23,13 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "• Scripting Tools",
+        "headline": "• Further tools and resources",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/06scriptingtools\/"
-        },"genre": "posts","wordcount":  829 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/06scriptingtools\/","datePublished": "2022-11-06T00:00:00+01:00","dateModified": "2022-11-18T11:07:25+00:00","publisher": {
+        },"genre": "posts","wordcount":  181 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/06scriptingtools\/","datePublished": "2022-11-06T00:00:00+01:00","dateModified": "2022-11-18T11:28:06+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -67,7 +69,7 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">• Scripting Tools</h1><h2 class="single-subtitle">Bringing shell scripts and python scripts together</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">• Further tools and resources</h1><h2 class="single-subtitle">Bringing shell scripts and python scripts together</h2><div class="post-meta">
             <div class="post-meta-line"></div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -76,129 +78,22 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#the-bio">The <code>bio</code></a>
-      <ul>
-        <li><a href="#parsing-or-reading-sequence-alignments">Parsing or Reading Sequence Alignments</a></li>
-        <li><a href="#single-alignments">Single alignments</a></li>
-        <li><a href="#multiple-alignments">Multiple Alignments</a></li>
-        <li><a href="#writing-alignments">Writing Alignments</a></li>
-        <li><a href="#creating-alignments-from-unaligned-sequences">Creating alignments from unaligned sequences</a></li>
-      </ul>
-    </li>
+    <li><a href="#the-bio-package">The <code>bio</code> package</a></li>
+    <li><a href="#the-diytranscriptomicscom-community-and-workspace">The <code>diytranscriptomics.com</code> community and workspace</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="the-bio">The <code>bio</code></h2>
-<p>Multiple Sequence Alignments are a collection of sequences which have been arranged to form a <em>matrix</em> with every sequence being the same length. This arrangement is usually done by insertion of gap. Each position along an alignment is <em>an assertion of homology</em>: we are expressing an evolutionary relationship between each nucleotide, codon, or amino acid (characteristics of the <em>genotype</em>). This is analagous to a trait character matrix, where our observations are on morphological, behavioural or other outcomes of gene expression (characteristics of the <em>phenotype</em>).</p>
-<p>Alignment can be regarded as a matrix of letters, where each row is held as a <code>SeqRecord</code> object internally. The <code>MultipleSeqAlignment</code> object holds this kind of data, and the <code>AlignIO</code> module is used for reading and writing these as various file formats.</p>
-<p>For this section we need to download some files which we will be reading in. Create a small Python script to download these from a URL:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">urllib</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&#34;PF05371_seed.sth&#34;</span><span class="p">,</span> <span class="s2">&#34;dummy_aln.phy&#34;</span><span class="p">]:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;https://milliams.com/courses/biopython/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="parsing-or-reading-sequence-alignments">Parsing or Reading Sequence Alignments</h3>
-<p>Much like <code>SeqIO</code>, <code>AlignIO</code> contains two functions for reading in sequence alignments:</p>
-<ul>
-<li><code>read()</code> will return a single MultipleSeqAlignment object</li>
-<li><code>parse()</code> will return an iterator which gives MultipleSeqAlignment objects</li>
-</ul>
-<p>Both functions require two arguments:</p>
-<ul>
-<li>A string specifying the name of the file to open.</li>
-<li>A string specifying the alignment format. <a href="http://biopython.org/wiki/AlignIO" target="_blank" rel="noopener noreffer">See here for a full listing of supported formats</a>
-</li>
-</ul>
-<h3 id="single-alignments">Single alignments</h3>
-<p>Let&rsquo;s start with a single alignments file which contains the seed alignment for the <code>Phage_Coat_Gp8 (PF05371)</code> PFAM entry. The file contains a lot of annotation information but let&rsquo;s just go ahead and load it in to see how it looks:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">AlignIO</span>
-</span></span><span class="line"><span class="cl"><span class="n">aln_seed</span> <span class="o">=</span> <span class="n">AlignIO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&#34;PF05371_seed.sth&#34;</span><span class="p">,</span> <span class="s2">&#34;stockholm&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">aln_seed</span><span class="p">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>Alignment with 7 rows and 52 columns
-AEPNAATNYATEAMDSLKTQAIDLISQTWPVVTTVVVAGLVIRL...SKA COATB_BPIKE/30-81
-AEPNAATNYATEAMDSLKTQAIDLISQTWPVVTTVVVAGLVIKL...SRA Q9T0Q8_BPIKE/1-52
-DGTSTATSYATEAMNSLKTQATDLIDQTWPVVTSVAVAGLAIRL...SKA COATB_BPI22/32-83
-AEGDDP---AKAAFNSLQASATEYIGYAWAMVVVIVGATIGIKL...SKA COATB_BPM13/24-72
-AEGDDP---AKAAFDSLQASATEYIGYAWAMVVVIVGATIGIKL...SKA COATB_BPZJ2/1-49
-AEGDDP---AKAAFDSLQASATEYIGYAWAMVVVIVGATIGIKL...SKA Q9T0Q9_BPFD/1-49
-FAADDATSQAKAAFDSLTAQATEMSGYAWALVVLVVGATVGIKL...SRA COATB_BPIF1/22-73
-</code></pre><p>Note in the above output the sequences have been elided in the middle (<code>...</code>). We could instead write our own code to format this as we please by iterating over the rows as <code>SeqRecord</code> objects and printing the first 50 values of each sequence:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">aln_seed</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">record</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>AEPNAATNYATEAMDSLKTQAIDLISQTWPVVTTVVVAGLVIRLFKKFSS - COATB_BPIKE/30-81
-AEPNAATNYATEAMDSLKTQAIDLISQTWPVVTTVVVAGLVIKLFKKFVS - Q9T0Q8_BPIKE/1-52
-DGTSTATSYATEAMNSLKTQATDLIDQTWPVVTSVAVAGLAIRLFKKFSS - COATB_BPI22/32-83
-AEGDDP---AKAAFNSLQASATEYIGYAWAMVVVIVGATIGIKLFKKFTS - COATB_BPM13/24-72
-AEGDDP---AKAAFDSLQASATEYIGYAWAMVVVIVGATIGIKLFKKFAS - COATB_BPZJ2/1-49
-AEGDDP---AKAAFDSLQASATEYIGYAWAMVVVIVGATIGIKLFKKFTS - Q9T0Q9_BPFD/1-49
-FAADDATSQAKAAFDSLTAQATEMSGYAWALVVLVVGATVGIKLFKKFVS - COATB_BPIF1/22-73
-</code></pre><p>With any supported file format, we can load an alignment in the same way just by changing the format string. For example, use <code>phylip</code> for PHYLIP files, <code>nexus</code> for NEXUS files or <code>emboss</code> for the alignments output by the EMBOSS tools.</p>
-<h3 id="multiple-alignments">Multiple Alignments</h3>
-<p>In general, Alignment files often contain multiples alignments, and to read these files we must use the AlignIO.parse function.</p>
-<p>We have previously downloaded a file called <code>dummy_aln.phy</code> which contains some dummy alignment information in PHYLIP format. If we wanted to read this in using <code>AlignIO</code> we could use:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">aln_dummy</span> <span class="o">=</span> <span class="n">AlignIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;dummy_aln.phy&#34;</span><span class="p">,</span> <span class="s2">&#34;phylip&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">alignment</span> <span class="ow">in</span> <span class="n">aln_dummy</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">alignment</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;---&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>Alignment with 5 rows and 6 columns
-AAACCA Alpha
-AAACCC Beta
-ACCCCA Gamma
-CCCAAC Delta
-CCCAAA Epsilon
----
-Alignment with 5 rows and 6 columns
-AAACAA Alpha
-AAACCC Beta
-ACCCAA Gamma
-CCCACC Delta
-CCCAAA Epsilon
----
-Alignment with 5 rows and 6 columns
-AAAAAC Alpha
-AAACCC Beta
-AACAAC Gamma
-CCCCCA Delta
-CCCAAC Epsilon
----
-</code></pre><p>The <code>.parse()</code> function returns an iterator. If we want to keep all the alignments in memory at once, then we need to turn the iterator into a list, just as we did with <code>SeqIO.parse</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">alignments</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">AlignIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;dummy_aln.phy&#34;</span><span class="p">,</span> <span class="s2">&#34;phylip&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">second_aln</span> <span class="o">=</span> <span class="n">alignments</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">second_aln</span><span class="p">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>Alignment with 5 rows and 6 columns
-AAACAA Alpha
-AAACCC Beta
-ACCCAA Gamma
-CCCACC Delta
-CCCAAA Epsilon
-</code></pre><h3 id="writing-alignments">Writing Alignments</h3>
-<p>Now we’ll look at <code>AlignIO.write()</code> which is used for alignments output (writing files).</p>
-<p>This function takes three arguments:</p>
-<ul>
-<li>Some MultipleSeqAlignment objects</li>
-<li>A string specifying a handle or a filename to write to</li>
-<li>A lower case string specifying the sequence format.</li>
-</ul>
-<p>We start by creating a <code>MultipleSeqAlignment</code> object the hard way (by hand!). Note we create some <code>SeqRecord</code> objects to construct the alignment from.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio.Align</span> <span class="kn">import</span> <span class="n">MultipleSeqAlignment</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio.Seq</span> <span class="kn">import</span> <span class="n">Seq</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio.SeqRecord</span> <span class="kn">import</span> <span class="n">SeqRecord</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">align1</span> <span class="o">=</span> <span class="n">MultipleSeqAlignment</span><span class="p">([</span>
-</span></span><span class="line"><span class="cl">    <span class="n">SeqRecord</span><span class="p">(</span><span class="n">Seq</span><span class="p">(</span><span class="s2">&#34;ACTGCTAGCTAG&#34;</span><span class="p">),</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&#34;toto&#34;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="n">SeqRecord</span><span class="p">(</span><span class="n">Seq</span><span class="p">(</span><span class="s2">&#34;ACT-CTAGCTAG&#34;</span><span class="p">),</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&#34;titi&#34;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="n">SeqRecord</span><span class="p">(</span><span class="n">Seq</span><span class="p">(</span><span class="s2">&#34;ACTGCTAGDTAG&#34;</span><span class="p">),</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&#34;tata&#34;</span><span class="p">),])</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">align1</span><span class="p">)</span>
-</span></span></code></pre></div><pre tabindex="0"><code>Alignment with 3 rows and 12 columns
-ACTGCTAGCTAG toto
-ACT-CTAGCTAG titi
-ACTGCTAGDTAG tata
-</code></pre><p>Now let&rsquo;s try to output, in PHYLIP format, these alignments in a file with the <code>Phage_Coat_Gp8</code> alignments.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">my_alignments</span> <span class="o">=</span> <span class="p">[</span><span class="n">align1</span><span class="p">,</span> <span class="n">aln_seed</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="n">AlignIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">my_alignments</span><span class="p">,</span> <span class="s2">&#34;mixed.phy&#34;</span><span class="p">,</span> <span class="s2">&#34;phylip&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="creating-alignments-from-unaligned-sequences">Creating alignments from unaligned sequences</h3>
-<p>BioPython does not include any alignment algorithms itself, but does provide wrappers to call aligners on the command line. As such, to run these you will need software install, for example <code>muscle</code> or <code>clustalw</code>, for the wrappers to call - please look up the method to install this for your OS&rsquo;s command line. If you are working on HPC in an institute with a biological sciences department, <code>muscle</code> will typically be available on your clusters.
-BioPython documentation provides <a href="http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec93" target="_blank" rel="noopener noreffer">instructions</a>
- on how to run aligners, but to be honest I think you are better running these directly from the command line! If you have many files to align, you might want to apply <a href="https://linuxize.com/post/bash-for-loop/" target="_blank" rel="noopener noreffer">shell loops</a>
- to your files.</p>
+            </div><div class="content" id="content"><h2 id="the-bio-package">The <code>bio</code> package</h2>
+<p>We used this command line package <a href="https://www.bioinfo.help/" target="_blank" rel="noopener noreffer"><code>bio</code></a>
+. As of late 2022, this is clean and streamlined set of command line tools for bioinformatics tasks. I appreciate that this is accompanied by a book which is paywalled but I will look into whether I can provide access for students. However, just the command line glossary is very useful, which you can install with</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bio --download
+</span></span></code></pre></div><p>after this is downloaded, you can get (very succinct) definitions of bioinformatics terms, for example</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bio explain nucleotide_binding_site
+</span></span></code></pre></div><p>also, see that asking for an ambiguous term, for example</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bio explain nucleotide
+</span></span></code></pre></div><p>will return a list of topics relavent to the query (in this case, nucleotides), that you can then ask for the entry on. I find this a useful way of clarifying terms, and a way of starting more in-depth research of a particular topic.</p>
+<h2 id="the-diytranscriptomicscom-community-and-workspace">The <code>diytranscriptomics.com</code> community and workspace</h2>
+<p>In <a href="https://diytranscriptomics.com/" target="_blank" rel="noopener noreffer">DIYtranscriptomics</a>
+ you can find courses, lectures and guides on transcriptomic topics. This work does use <code>R</code> as their processing language, so that might be useful to see how things are done there.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
