@@ -10,7 +10,7 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/03repos/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-03T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-16T16:37:19+00:00" />
+<meta property="article:modified_time" content="2022-11-18T10:27:50+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Sequence repositories"/>
@@ -28,8 +28,8 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/"
-        },"genre": "posts","wordcount":  1013 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/","datePublished": "2022-11-03T00:00:00+01:00","dateModified": "2022-11-16T16:37:19+00:00","publisher": {
+        },"genre": "posts","wordcount":  1017 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/","datePublished": "2022-11-03T00:00:00+01:00","dateModified": "2022-11-18T10:27:50+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -87,6 +87,7 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
       <ul>
         <li><a href="#making-your-own-fasta-files">Making your own FASTA files</a></li>
         <li><a href="#exercise">Exercise</a></li>
+        <li><a href="#exercise-1">Exercise</a></li>
       </ul>
     </li>
   </ul>
@@ -123,19 +124,28 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
 <h3 id="making-your-own-fasta-files">Making your own FASTA files</h3>
 <p>We are going to search for a well-characterised, ultra-conserved gene, that we are going to use for some common bioinformatics tasks. By the dropdown, select &ldquo;Protein&rdquo; - this is the name of the database we will be searching. Note the others in the menu - some are major DBs like gene and genome, others are more niche. In the search box, enter <code>signal recognition particle 72</code>. This is a ubiquitous gene in eukaryotes, and arguably in prokaryotes too.</p>
 <p>The search results will be shown - above the results, change the results per page from <code>20 per page</code> to <code>100 per page</code>. Have a look down the results, and see what details you can recognise. Open one by clicking the link, and have a look over the details that typically accompany an accession.</p>
-<p>Go back to your results list. Now, we are going to select a few of these, and get the protein sequences as a FASTA file. Select by ticking the box next to a record:</p>
-<ul>
-<li>choose ten records</li>
-<li>make sure each of then ten are from a different species (eg, don&rsquo;t get more than one from <em>Homo sapiens</em>)</li>
-<li>make sure each one has a record with an amino acid length of between 600 and 690 aa,</li>
-<li>don&rsquo;t worry if the record says <code>partial</code>, as long as it meets the above requirements.
-Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the &ldquo;Summary&rdquo;. From the menu it shows, choose &ldquo;FASTA (text)&rdquo;. This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as <code>srp72_multi.fas</code>.</li>
-</ul>
-<p>For the exercises in the following section, we want to make one more FASTA file. This will be similar to <code>srp72_multi.fas</code> that you just made, but contain a single sequence. Go back to NCBI, and your list of SRP72 matches. Choose one more record (again, meeting the above criteria), from a species you have not already chosen. Click through and look at the main record, then find the FASTA for that gene. As before, copy and paste it into a new file in Jupyter, with the name <code>srp72_single.fas</code>.</p>
 <h3 id="exercise">Exercise</h3>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise 1<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Go back to your results list. Now, we are going to select a few of these, and get the protein sequences as a FASTA file. Select by ticking the box next to a record:</p>
+<ul>
+<li>choose ten records</li>
+<li>make sure each of these ten are from a different species (eg, don&rsquo;t get more than one from <em>Homo sapiens</em>)</li>
+<li>make sure each one has a record with an amino acid length of between 600 and 690 aa,</li>
+<li>don&rsquo;t worry if the record says <code>partial</code>, as long as it meets the above requirements.</li>
+<li>Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the &ldquo;Summary&rdquo;. From the menu it shows, choose &ldquo;FASTA (text)&rdquo;. This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as <code>srp72_multi.fas</code>.</li>
+</ul>
+<p>For the exercises in the following section, we want to make one more FASTA file. This will be similar to <code>srp72_multi.fas</code> that you just made, but contain a single sequence. Go back to NCBI, and your list of SRP72 matches. Choose one more record (again, meeting the above criteria), from a species you have not already chosen. Click through and look at the main record, then find the FASTA for that gene. As before, copy and paste it into a new file in Jupyter, with the name <code>srp72_single.fas</code>.</p>
+</div>
+        </div>
+    </div>
+<h3 id="exercise-1">Exercise</h3>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise 2<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>Sequences come in a variety of formats. Look at the following data, and identify what format it is in</p>
@@ -222,7 +232,7 @@ gi|6273291|gb|AF191665.1|AF191      TATATATATATATATAATATATTTCAAATTCCCTTATATATCCA
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-11-16</span>
+                <span>Updated on 2022-11-18</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
