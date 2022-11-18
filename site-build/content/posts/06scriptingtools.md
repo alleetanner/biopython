@@ -36,5 +36,7 @@ bio explain nucleotide
 ```
 will return a list of topics relavent to the query (in this case, nucleotides), that you can then ask for the entry on. I find this a useful way of clarifying terms, and a way of starting more in-depth research of a particular topic.
 
+The `bio` package also has some nice [https://www.bioinfo.help/bio-tips.html](one-liners) which are well worth getting familiar with.
+
 ## The `diytranscriptomics.com` community and workspace
 In [DIYtranscriptomics](https://diytranscriptomics.com/) you can find courses, lectures and guides on transcriptomic topics. This work does use `R` as their processing language, so that might be useful to see how things are done there.
