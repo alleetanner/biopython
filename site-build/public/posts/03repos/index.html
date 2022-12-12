@@ -10,7 +10,7 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/03repos/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-03T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-18T10:27:50+00:00" />
+<meta property="article:modified_time" content="2022-12-12T15:20:09+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Sequence repositories"/>
@@ -28,8 +28,8 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/"
-        },"genre": "posts","wordcount":  1017 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/","datePublished": "2022-11-03T00:00:00+01:00","dateModified": "2022-11-18T10:27:50+00:00","publisher": {
+        },"genre": "posts","wordcount":  1057 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/03repos\/","datePublished": "2022-11-03T00:00:00+01:00","dateModified": "2022-12-12T15:20:09+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -69,7 +69,7 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">• Sequence repositories</h1><h2 class="single-subtitle">Python as a sequence search tool</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">• Sequence repositories</h1><h2 class="single-subtitle">Wonders of the scientific world!</h2><div class="post-meta">
             <div class="post-meta-line"></div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -83,11 +83,11 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
         <li><a href="#the-genetic-revolution">The genetic revolution</a></li>
       </ul>
     </li>
-    <li><a href="#using-repositories-manually">Using repositories manually</a>
+    <li><a href="#acquiring-bioinformatic-data">Acquiring bioinformatic data</a>
       <ul>
         <li><a href="#making-your-own-fasta-files">Making your own FASTA files</a></li>
-        <li><a href="#exercise">Exercise</a></li>
-        <li><a href="#exercise-1">Exercise</a></li>
+        <li><a href="#exercise-1">Exercise 1</a></li>
+        <li><a href="#exercise-2">Exercise 2</a></li>
       </ul>
     </li>
   </ul>
@@ -96,8 +96,8 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
 <p>While basic methods of sequencing have existed since the 1970s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as &ldquo;high-throughput&rdquo; or &ldquo;next-generation&rdquo; sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups.</p>
 <h3 id="the-genetic-revolution">The genetic revolution</h3>
 <p>To illustrate this, <a href="https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost" target="_blank" rel="noopener noreffer">sequencing a human genome in 2000 required many specialist research groups, several years, and $100 million dollars</a>
-; by 2010 this had dropped to a matter of weeks and $100,000. In 2022 a a human genome (or at least a full exome) can be sequenced for a few hundred dollars, in a matter of days - as such, aggregated bioinformatic data follows a parallel of <a href="https://www.wikiwand.com/en/Moore%27s_law" target="_blank" rel="noopener noreffer">Moore&rsquo;s Law</a>
-, roughly doubling every 18 months.</p>
+; by 2010 this had dropped to a matter of weeks and $100,000. In 2022 a human genome (or at least a full exome) can be sequenced for a few hundred dollars, in a matter of days - as such, aggregated bioinformatic data roughly follow <a href="https://www.wikiwand.com/en/Moore%27s_law" target="_blank" rel="noopener noreffer">Moore&rsquo;s Law</a>
+, doubling every 18 months.</p>
 <p>Given the vast amount of data being produced, international consortia were established, with the goal of making any and all bioinformatic research data available to the world, for free (well, ultimately funded by the tax-payer, as with all public research). Most journals will require that sequence information (produced in the research process leading to publication) is deposited with one of the major repositories. These repos should be seen as wonders of the modern scientific world! The openly-accessible data they contain drive forward research in medicine, biology, mathematics, information theory, even nanotechnology and biocomputing.</p>
 <div class="details admonition info">
         <div class="details-summary admonition-title">
@@ -117,35 +117,17 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
 </div>
         </div>
     </div>
-<h2 id="using-repositories-manually">Using repositories manually</h2>
-<p>Before we use BioPython to carry out a query, we will get familiar with a sequence archive using a browser. The key point here is that, as a starting point for answering a research question, we should become familiar with searching &ldquo;as a human&rdquo;, before automating such searches.</p>
+<h2 id="acquiring-bioinformatic-data">Acquiring bioinformatic data</h2>
+<p>Using a browser, we will explore a repository, and get hold of some data to work with in BioPython. A key point here is that, as a starting point for answering a research question, we should become familiar with searching &ldquo;as a human&rdquo;, before automating such searches.</p>
 <p>Let&rsquo;s visit <a href="https://www.ncbi.nlm.nih.gov/genbank/" target="_blank" rel="noopener noreffer">GenBank</a>
 . It is worth getting familiar with at least the major sections of GenBank.</p>
 <h3 id="making-your-own-fasta-files">Making your own FASTA files</h3>
-<p>We are going to search for a well-characterised, ultra-conserved gene, that we are going to use for some common bioinformatics tasks. By the dropdown, select &ldquo;Protein&rdquo; - this is the name of the database we will be searching. Note the others in the menu - some are major DBs like gene and genome, others are more niche. In the search box, enter <code>signal recognition particle 72</code>. This is a ubiquitous gene in eukaryotes, and arguably in prokaryotes too.</p>
-<p>The search results will be shown - above the results, change the results per page from <code>20 per page</code> to <code>100 per page</code>. Have a look down the results, and see what details you can recognise. Open one by clicking the link, and have a look over the details that typically accompany an accession.</p>
-<h3 id="exercise">Exercise</h3>
+<p>We are going to search for a well-characterised, ultra-conserved gene, that we are going to use for some common bioinformatics tasks. By the dropdown, select &ldquo;Protein&rdquo; - this is the name of the database we will be searching. Note the others in the menu - some are major DBs like <em>gene</em> and <em>genome</em>, others are more niche. In the search box, enter <code>signal recognition particle 72</code>. This is a ubiquitous gene in eukaryotes, and arguably in prokaryotes too.</p>
+<p>The search results will be shown - above the results, change the results per page from <code>20 per page</code> to <code>200 per page</code>. Have a look down the results, and see what details you can recognise. Open one by clicking the link, and have a look over the details that typically accompany an accession.</p>
+<h3 id="exercise-1">Exercise 1</h3>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise 1<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>Go back to your results list. Now, we are going to select a few of these, and get the protein sequences as a FASTA file. Select by ticking the box next to a record:</p>
-<ul>
-<li>choose ten records</li>
-<li>make sure each of these ten are from a different species (eg, don&rsquo;t get more than one from <em>Homo sapiens</em>)</li>
-<li>make sure each one has a record with an amino acid length of between 600 and 690 aa,</li>
-<li>don&rsquo;t worry if the record says <code>partial</code>, as long as it meets the above requirements.</li>
-<li>Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the &ldquo;Summary&rdquo;. From the menu it shows, choose &ldquo;FASTA (text)&rdquo;. This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as <code>srp72_multi.fas</code>.</li>
-</ul>
-<p>For the exercises in the following section, we want to make one more FASTA file. This will be similar to <code>srp72_multi.fas</code> that you just made, but contain a single sequence. Go back to NCBI, and your list of SRP72 matches. Choose one more record (again, meeting the above criteria), from a species you have not already chosen. Click through and look at the main record, then find the FASTA for that gene. As before, copy and paste it into a new file in Jupyter, with the name <code>srp72_single.fas</code>.</p>
-</div>
-        </div>
-    </div>
-<h3 id="exercise-1">Exercise</h3>
-<div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise 2<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>Sequences come in a variety of formats. Look at the following data, and identify what format it is in</p>
@@ -197,8 +179,6 @@ SQ   Sequence 368 BP;
 </ul>
 <pre tabindex="0"><code>gi|6273285|gb|AF191659.1|AF191      TATATA----------ATATATTTCAAATTTCCTTATATACCCAAATATA
 gi|6273284|gb|AF191658.1|AF191      TATATATA--------ATATATTTCAAATTTCCTTATATACCCAAATATA
-gi|6273287|gb|AF191661.1|AF191      TATATA----------ATATATTTCAAATTTCCTTATATATCCAAATATA
-gi|6273286|gb|AF191660.1|AF191      TATATA----------ATATATTTATAATTTCCTTATATATCCAAATATA
 gi|6273290|gb|AF191664.1|AF191      TATATATATA------ATATATTTCAAATTCCCTTATATATCCAAATATA
 gi|6273289|gb|AF191663.1|AF191      TATATATATA------ATATATTTCAAATTCCCTTATATATCCAAATATA
 gi|6273291|gb|AF191665.1|AF191      TATATATATATATATAATATATTTCAAATTCCCTTATATATCCAAATATA
@@ -228,11 +208,46 @@ gi|6273291|gb|AF191665.1|AF191      TATATATATATATATAATATATTTCAAATTCCCTTATATATCCA
 </div>
         </div>
     </div>
+<h3 id="exercise-2">Exercise 2</h3>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise 2<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li>Go back to your results list. We are going to make a <code>FASTA</code> file of one of these sequences.</li>
+</ol>
+<ul>
+<li>return to your list of results</li>
+<li>scroll down until you find a species you like the sound of</li>
+<li>make sure your record has an amino acid length of <strong>between 600 and 690 AA</strong></li>
+<li>avoid records that say, <code>isoform</code>, but don&rsquo;t worry if it says <code>partial</code></li>
+<li>click on <code>FASTA</code> to see the sequence for the record</li>
+<li>select and copy <em>just the FASTA data</em>, ie, starting with the <code>&gt;</code> character, and ending with the last AA position</li>
+<li>go to your Jupyter Lab session, create a new file, and paste this data in</li>
+<li>save this file <code>srp72_single.fas</code></li>
+</ul>
+<ol start="2">
+<li>We also want to acquire a <code>multiple FASTA</code> file - which is just a <code>FASTA</code> file with more than one sequence in it.</li>
+</ol>
+<ul>
+<li>return to your list of results and if you haven&rsquo;t already, ask it to show <code>200 per page</code></li>
+<li>have a browse down this list, and tick the select box on <strong>ten</strong> records:
+<ul>
+<li>make sure each of these ten are from a different species (eg, don&rsquo;t get more than one from <em>Homo sapiens</em>)</li>
+<li>as above, make sure each one has a record with an amino acid length of <strong>between 600 and 690 AA</strong> (avoid records that say, <code>isoform</code>, but don&rsquo;t worry if it says <code>partial</code>, as long as it is this length)</li>
+</ul>
+</li>
+<li>Once you have selected ten that you like, scroll to the very bottom (or the very top) of the records, and click on the &ldquo;Summary&rdquo;. From the menu it shows, choose <code>FASTA (text)</code>. This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (<code>ctrl-a</code>), and copy it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as <code>srp72_multi.fas</code></li>
+</ul>
+</div>
+        </div>
+    </div>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-11-18</span>
+                <span>Updated on 2022-12-12</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
