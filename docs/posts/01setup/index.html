@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>• Set up and requirements - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Set up and requirements" />
-<meta property="og:description" content="Anaconda and Jupyter Lab In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal).
-If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providing data science tools for Python and R." />
+<meta property="og:description" content="Anaconda and Jupyter Lab To provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other development platforms, for example VSCode or PyCharm , you are welcome to use these, but be sure you can also handle the other requirements for your set up (ie, how to install packages and how to access the terminal).
+If you haven&rsquo;t already, download and install Anaconda ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/01setup/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-01T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-16T21:06:43+00:00" />
+<meta property="article:modified_time" content="2022-12-12T11:47:12+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Set up and requirements"/>
-<meta name="twitter:description" content="Anaconda and Jupyter Lab In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal).
-If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providing data science tools for Python and R."/>
+<meta name="twitter:description" content="Anaconda and Jupyter Lab To provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other development platforms, for example VSCode or PyCharm , you are welcome to use these, but be sure you can also handle the other requirements for your set up (ie, how to install packages and how to access the terminal).
+If you haven&rsquo;t already, download and install Anaconda ."/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://alleetanner.github.io/biopython/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://alleetanner.github.io/biopython/favicon-32x32.png">
@@ -28,8 +28,8 @@ If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providi
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/01setup\/"
-        },"genre": "posts","wordcount":  615 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/01setup\/","datePublished": "2022-11-01T00:00:00+01:00","dateModified": "2022-11-16T21:06:43+00:00","publisher": {
+        },"genre": "posts","wordcount":  665 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/01setup\/","datePublished": "2022-11-01T00:00:00+01:00","dateModified": "2022-12-12T11:47:12+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -88,10 +88,12 @@ If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providi
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="anaconda-and-jupyter-lab">Anaconda and Jupyter Lab</h2>
-<p>In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal).</p>
-<p>If you haven&rsquo;t already, download <a href="https://www.anaconda.com/" target="_blank" rel="noopener noreffer">Anaconda</a>
-. Anaconda is a platform providing data science tools for Python and R. The standard install includes things like Jupyter Notebooks (a browser-based IDE for creating hybrid documents of runnable code, with Markdown blocks to document what the code is doing), and Jupyter Lab (a browser-based environment providing a text editor, terminal, and Python console). We will be working in Jupyter Lab - from the Anaconda Navigator starting screen, click the Jupyter Lab button and it will start a session in a new tab in your default browser.</p>
-<p>For this workshop we will need both a text editor and a terminal pane in this tab. You can open these by clicking on the associated icons on the start screen, or by going <code>File</code> &gt; <code>New</code> &gt; <code>Text file</code> and <code>File</code> &gt; <code>New</code> &gt; <code>Terminal</code>. Arrange these as you like by dragging the tabs - we usually teach with a text editor on the left and a terminal on the right. Also, created a new folder to work in, by navigating using the folder icon in the menu on the left and creating one. Make sure you move into this folder in your terminal, and when you save your text file ensure it is in this folder.</p>
+<p>To provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other development platforms, for example <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer">VSCode</a>
+ or <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener noreffer">PyCharm</a>
+, you are welcome to use these, but be sure you can also handle the other requirements for your set up (ie, how to install packages and how to access the terminal).</p>
+<p>If you haven&rsquo;t already, download and install <a href="https://www.anaconda.com/" target="_blank" rel="noopener noreffer">Anaconda</a>
+. Anaconda is a data science platform for working with Python and R (as well as other things). It includes Jupyter Lab (a browser-based environment providing <em>development tools</em> such as a text editor, terminal, and Python console), and Jupyter Notebooks (a browser-based IDE for creating &ldquo;Notebooks&rdquo;: <em>hybrid documents of runnable code, with Markdown</em> (ie, commentary) blocks to document what the code is doing and why). We will be working in Jupyter Lab - from the Anaconda Navigator starting screen, click the Jupyter Lab button and it will start a new tab in your default browser.</p>
+<p>For this workshop we will need both a text editor and a terminal pane in this tab. You can open these by clicking on the associated icons on the start screen, or by going <code>File</code> &gt; <code>New</code> &gt; <code>Text file</code> and <code>File</code> &gt; <code>New</code> &gt; <code>Terminal</code>. Arrange these as you like by dragging the tabs - we usually teach with a text editor on the left and a terminal on the right. Also, create a new folder to work in, by navigating using the folder icon in the menu on the left and creating one. Make sure you move into this folder in your terminal, and when you save your text file ensure it is in this folder.</p>
 <h2 id="installing-biopython">Installing BioPython</h2>
 <p>Finally, we need to download BioPython and install it as part of your local Python. We will do this both for Anaconda, and in the terminal - they may be using different installs of Python, so we will install it both ways to be sure!</p>
 <h3 id="biopython-for-anaconda">BioPython for Anaconda</h3>
@@ -105,8 +107,8 @@ If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providi
             <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Package managers<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p><code>pip</code> is a package manager for Python. Whenever we run an <code>import</code> command, Python will look for modules and libraries to import, first in your working folder (where you might have put your own modules), then in Python&rsquo;s local folders of installed packages (ie, back near your operating system file - so you won&rsquo;t see them unless you go looking for them!). Apart from Python standard libraries (like <code>math</code> and <code>sys</code> for example), we have to download and install anything else (sometimes called 3rd party packages).</p>
-<p>That is where <code>pip</code> comes it. It will search package repositories, typically <a href="https://pypi.org/" target="_blank" rel="noopener noreffer">PyPI</a>
+            <div class="admonition-content"><p><code>pip</code> is a package manager for Python. <code>conda</code> is the package manager for Anaconda. A package manager is a program which retrieves extra Python libraries, installs, updates, and generally organises your Python setup. Whenever we run an <code>import</code> command, Python will look for modules and libraries, first in your working folder (where you might have saved your own modules), then in Python&rsquo;s local folders of installed packages (ie, back near your operating system file - so you won&rsquo;t see them unless you go looking for them!). Apart from Python standard libraries (like <code>math</code> and <code>sys</code> for example), we have to download and install anything else (sometimes called <em>3rd party libraries</em>: things not made by you, nor included as base Python, but made by other developers).</p>
+<p>That is where <code>pip</code> (or <code>conda</code>) comes it. It will search package repositories, typically <a href="https://pypi.org/" target="_blank" rel="noopener noreffer">PyPI</a>
 , download the appropriate package, and install it, along with any other dependencies it might need. Here are some further <code>pip</code> commands, to examine what you have currently installed, etc:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pip list
 </span></span><span class="line"><span class="cl">pip info
@@ -118,7 +120,7 @@ If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providi
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-11-16</span>
+                <span>Updated on 2022-12-12</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>

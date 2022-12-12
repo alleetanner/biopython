@@ -53,8 +53,8 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/01setup/</guid>
-    <description><![CDATA[Anaconda and Jupyter Lab In order to provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other tools, such as PyCharm or VSCode, you are welcome to use these, but be sure you can also handle the specific requirements for your set up (ie, how to install packages and how to access the terminal).
-If you haven&rsquo;t already, download Anaconda . Anaconda is a platform providing data science tools for Python and R.]]></description>
+    <description><![CDATA[Anaconda and Jupyter Lab To provide a consistent interface, we will be using Jupyter Lab as our workspace. If you are familiar with other development platforms, for example VSCode or PyCharm , you are welcome to use these, but be sure you can also handle the other requirements for your set up (ie, how to install packages and how to access the terminal).
+If you haven&rsquo;t already, download and install Anaconda .]]></description>
 </item>
 </channel>
 </rss>
