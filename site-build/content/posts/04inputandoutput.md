@@ -1,6 +1,6 @@
 ---
-title: "• Input and Output"
-subtitle: "Running sequence information through BioPython."
+title: "• Working with FASTA"
+subtitle: "A standard format for bioinformatic data"
 
 date: 2022-11-04T00:00:00+01:00
 
@@ -20,76 +20,26 @@ share:
 comment:
   enable: false
 ---
-## Input
-### GenBank files
-Let's look at GenBank files, acquired on the command line or in Python. We will use a command line package called [`bio`](https://www.bioinfo.help/) - see section 6 for more details on this package. Install `bio` in your terminal with
 
-```shell
-pip install bio
-```
+## FASTA files
+### `SeqIO`
+`SeqIO` is used for managing sequences as _inputs_ and _outputs_. We are going to learn three methods from `SeqIO`:
+- `SeqIO.read` for bringing in single sequences
+- `SeqIO.parse` for working with multiple sequences, and
+- `SeqIO.write` for creating new files.
+In the previous section, we created two `FASTA` files: one a single sequence, the other a multi sequence. Let's start be reading in a single sequence
 
-we can see what `bio` can do by running the command
-
-```shell
-bio help
-```
-
-we are going to acquire by accession number using `bio`, with
-
-```shell
-bio fetch XP_050796403
-```
-
-notice this command just blasts out the results to the terminal output, but we want this in a file! Let's do that with a redirect:
-
-```shell
-bio fetch XP_050796403 > XP_050796403.gbk
-```
-
-*If `bio` isn't working for you (you might not have permissions or an ideal OS!), please create a new Python file, and add these lines
-
+#### `SeqIO.read`
+Start a fresh Python script. Let's read in the single `FASTA` file:
 ```python
-import urllib
+from Bio import SeqIO
 
-url = "https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk"
+fasta_file = "srp_single.fas"
+srp72_record = SeqIO.read(fasta_file, "fasta")
 
-urllib.request.urlretrieve(url, "XP_050796403.gbk")
-```
-
-`urllib` is a standard Python library for making requests to web pages. Here `urllib` being asked to go to an address (first argument), and save it in a file called `sonic-hh-gopherus.gbk` (the second argument). Now we are going to use BioPython to read it into an object, with `SeqIO.parse`. We need to specify the filename (the one we just downloaded using `urllib`), and the format it is in. If we pass "genbank" (or "gb") as the second argument then it will read it as a GenBank file:
-
-```python
-record_iterator = SeqIO.parse("XP_050796403.gbk", "genbank")
-```
-
-We are calling our object variable `record_iterator`, because it could contain many records, but for now it just contains one. We can access this single record by calling [`next`](https://docs.python.org/3/library/functions.html#next):
-
-```python
-gbk_record = next(record_iterator)
-```
-
-GenBank files usually contain a lot more information than a FASTA so more of the fields of the SeqRecord will be filled in. This means that we can, for example, see the record contents:
-
-```python
-print(gbk_record.annotations)
-```
-
-So, have the above five lines of code saved in a file, and run it in the Jupyter terminal. Inspect the output to get familiar with what information a GenBank record typically contains. (Some records are comprehensively annotated, others can be very sparse! This one is quite good.) We could also isolate just the sequence data with
-
-```python
-print(gbk_record.seq)
-```
-
-### FASTA files
-#### `SeqRecord` objects
-If you have a FASTA file with a single sequence in it, we can read it in with `SeqIO.read`. This takes two arguments, the name of the file you want to open, and the format that file is in. Let's read in the FASTA file (a single SRP72 sequence we made in the previous sections):
-
-```python
-srp72_record = SeqIO.read("srp72_single.fas", "fasta")
 print(srp72_record)
 ```
-
-As with a GenBank file, you can also isolate just the sequence information by using `.seq` on the object:
+Have a look at the output; you'll see that it has been turned into a `Seq` object. We can also just look at the sequence by using the attribute `.seq` on the object:
 
 ```python
 print(srp72_record.seq)
