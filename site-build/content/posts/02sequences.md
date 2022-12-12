@@ -106,12 +106,12 @@ print(protein_seq)
 
 Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence (say, apply indels, or include an invalid nucleotide) to break this kind of translation. You should be getting a `BiopythonWarning`, or a `Bio.Data.CodonTable.TranslationError` - read these tracebacks and pick out the important information it is giving you.
 
-### Creating a `function`
+### Create DNA reader `function`
 Let's build these into a function, for viewing the complement, transcription and translation of some DNA. Begin a new script with:
 ```python
 from Bio.Seq import Seq
 def complement_transcribe_translate(dna):
-    print(f"My incoming DNA:           {dna}")
+    print(f"My incoming DNA: {dna}")
 ```
 We begin with defining the function, give it a descriptive name, and declare that it takes one argument called `dna`. The function body is currently just printing out a confirmation of the input. Test that the function is working by creating a `Seq` object of the nucleotides `TTACCAAAAACCCCTTTGGGAAAGCAT`, and calling your function on it.
 
@@ -120,27 +120,27 @@ Let's expand on this, to satisfy our descriptive function name.
 from Bio.Seq import Seq
 
 def complement_transcribe_translate(dna):
-    print(f"My incoming DNA:           {dna}")
+    print(f"My incoming DNA: {dna}")
     
     complement = dna.complement()
-    print(f"Complementary strand:      {complement}")
+    print(f"Complementary strand: {complement}")
     
     transcribed_forward = complement.transcribe()
-    print(f"Complement transcription:  {transcribed_forward}")
+    print(f"Complement transcription: {transcribed_forward}")
     
     amino_acids_forward = transcribed_forward.translate()
-    print(f"Amino acid translation:    {amino_acids_forward}")
+    print(f"Amino acid translation: {amino_acids_forward}")
 
 dna_seq = Seq("TTACCAAAAACCCCTTTGGGAAAGCAT")
 
 complement_transcribe_translate(dna_seq)
 ```
 
-### Exercise 1
+### Exercise
 {{< admonition type="note" title="Exercise" open=true >}}
 Create a reverse DNA reader! 
-- Add to your script with the function `complement_transcribe_translate`, and add a new function to _reverse_ complement, translate and transcribe.
-- Use the script below as a template (ie, fill the `___` gaps!).
+- Building on your script from the last secion, add a new function to _reverse_ complement, translate and transcribe.
+- Use the code below as a template (ie, fill the `___` gaps!).
 - When run on the command line, your script should neatly output the manipulations to the incoming raw DNA.
 - Include a `docstring`, add `#comments` and format your functions neatly!
 
