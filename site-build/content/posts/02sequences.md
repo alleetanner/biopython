@@ -110,12 +110,13 @@ Note that this will always translate forward using the first nucleotide as the o
 Let's build these into a function, for viewing the complement, transcription and translation of some DNA. Begin a new script with:
 ```python
 from Bio.Seq import Seq
+
 def complement_transcribe_translate(dna):
     print(f"My incoming DNA: {dna}")
 ```
 We begin with defining the function, give it a descriptive name, and declare that it takes one argument called `dna`. The function body is currently just printing out a confirmation of the input. Test that the function is working by creating a `Seq` object of the nucleotides `TTACCAAAAACCCCTTTGGGAAAGCAT`, and calling your function on it.
 
-Let's expand on this, to satisfy our descriptive function name.
+Let's expand on this, using `Seq` methods, to satisfy our descriptive function name!
 ```python
 from Bio.Seq import Seq
 
