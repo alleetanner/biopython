@@ -36,4 +36,4 @@ bio explain nucleotide
 ```
 will return a list of topics relavent to the query (in this case, nucleotides), that you can then ask for the entry on. I find this a useful way of clarifying terms, and a way of starting more in-depth research of a particular topic.
 
-The `bio` package also has some nice (one-liners)[https://www.bioinfo.help/bio-tips.html] which are worth getting familiar with.
+The `bio` package also has some nice [one-liners](https://www.bioinfo.help/bio-tips.html) which are worth getting familiar with.
