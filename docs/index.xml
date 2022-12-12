@@ -22,15 +22,13 @@
     <description><![CDATA[Multiple Sequence Alignments Multiple Sequence Alignments are a collection of sequences which have been arranged to form a matrix with every sequence being the same length. This arrangement is usually done by insertion of gap. Each position along an alignment is an assertion of homology: we are expressing an evolutionary relationship between each nucleotide, codon, or amino acid (characteristics of the genotype). This is analagous to a trait character matrix, where our observations are on morphological, behavioural or other outcomes of gene expression (characteristics of the phenotype).]]></description>
 </item>
 <item>
-    <title>• Input and Output</title>
+    <title>• Working with FASTA</title>
     <link>https://alleetanner.github.io/biopython/posts/04inputandoutput/</link>
     <pubDate>Fri, 04 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/04inputandoutput/</guid>
-    <description><![CDATA[Input GenBank files Let&rsquo;s look at GenBank files, acquired on the command line or in Python. We will use a command line package called bio - see section 6 for more details on this package. Install bio in your terminal with
-pip install bio we can see what bio can do by running the command
-bio help we are going to acquire by accession number using bio, with
-bio fetch XP_050796403 notice this command just blasts out the results to the terminal output, but we want this in a file!]]></description>
+    <description><![CDATA[FASTA files SeqIO SeqIO is used for managing sequences as inputs and outputs. We are going to learn three methods from SeqIO:
+ SeqIO.read for bringing in single sequences SeqIO.parse for working with multiple sequences, and SeqIO.write for creating new files. In the previous section, we created two FASTA files: one a single sequence, the other a multi sequence. Let&rsquo;s start be reading in a single sequence  SeqIO.read Start a fresh Python script.]]></description>
 </item>
 <item>
     <title>• Sequence repositories</title>

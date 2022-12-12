@@ -4,22 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>• Input and Output - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Input and Output" />
-<meta property="og:description" content="Input GenBank files Let&rsquo;s look at GenBank files, acquired on the command line or in Python. We will use a command line package called bio - see section 6 for more details on this package. Install bio in your terminal with
-pip install bio we can see what bio can do by running the command
-bio help we are going to acquire by accession number using bio, with
-bio fetch XP_050796403 notice this command just blasts out the results to the terminal output, but we want this in a file!" />
+        <title>• Working with FASTA - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Working with FASTA" />
+<meta property="og:description" content="FASTA files SeqIO SeqIO is used for managing sequences as inputs and outputs. We are going to learn three methods from SeqIO:
+ SeqIO.read for bringing in single sequences SeqIO.parse for working with multiple sequences, and SeqIO.write for creating new files. In the previous section, we created two FASTA files: one a single sequence, the other a multi sequence. Let&rsquo;s start be reading in a single sequence  SeqIO.read Start a fresh Python script." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/04inputandoutput/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-04T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-11-18T11:05:17+00:00" />
+<meta property="article:modified_time" content="2022-12-12T16:48:46+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="• Input and Output"/>
-<meta name="twitter:description" content="Input GenBank files Let&rsquo;s look at GenBank files, acquired on the command line or in Python. We will use a command line package called bio - see section 6 for more details on this package. Install bio in your terminal with
-pip install bio we can see what bio can do by running the command
-bio help we are going to acquire by accession number using bio, with
-bio fetch XP_050796403 notice this command just blasts out the results to the terminal output, but we want this in a file!"/>
+<meta name="twitter:title" content="• Working with FASTA"/>
+<meta name="twitter:description" content="FASTA files SeqIO SeqIO is used for managing sequences as inputs and outputs. We are going to learn three methods from SeqIO:
+ SeqIO.read for bringing in single sequences SeqIO.parse for working with multiple sequences, and SeqIO.write for creating new files. In the previous section, we created two FASTA files: one a single sequence, the other a multi sequence. Let&rsquo;s start be reading in a single sequence  SeqIO.read Start a fresh Python script."/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://alleetanner.github.io/biopython/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://alleetanner.github.io/biopython/favicon-32x32.png">
@@ -27,13 +23,13 @@ bio fetch XP_050796403 notice this command just blasts out the results to the te
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "• Input and Output",
+        "headline": "• Working with FASTA",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/"
-        },"genre": "posts","wordcount":  1100 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-11-18T11:05:17+00:00","publisher": {
+        },"genre": "posts","wordcount":  791 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-12-12T16:48:46+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -73,7 +69,7 @@ bio fetch XP_050796403 notice this command just blasts out the results to the te
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">• Input and Output</h1><h2 class="single-subtitle">Running sequence information through BioPython.</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">• Working with FASTA</h1><h2 class="single-subtitle">A standard format for bioinformatic data</h2><div class="post-meta">
             <div class="post-meta-line"></div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -82,10 +78,9 @@ bio fetch XP_050796403 notice this command just blasts out the results to the te
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#input">Input</a>
+    <li><a href="#fasta-files">FASTA files</a>
       <ul>
-        <li><a href="#genbank-files">GenBank files</a></li>
-        <li><a href="#fasta-files">FASTA files</a></li>
+        <li><a href="#seqio"><code>SeqIO</code></a></li>
         <li><a href="#working-with-fastas-containing-multiple-sequences">Working with FASTAs containing multiple sequences</a></li>
         <li><a href="#exercise">Exercise</a></li>
       </ul>
@@ -97,38 +92,24 @@ bio fetch XP_050796403 notice this command just blasts out the results to the te
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="input">Input</h2>
-<h3 id="genbank-files">GenBank files</h3>
-<p>Let&rsquo;s look at GenBank files, acquired on the command line or in Python. We will use a command line package called <a href="https://www.bioinfo.help/" target="_blank" rel="noopener noreffer"><code>bio</code></a>
- - see section 6 for more details on this package. Install <code>bio</code> in your terminal with</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pip install bio
-</span></span></code></pre></div><p>we can see what <code>bio</code> can do by running the command</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bio <span class="nb">help</span>
-</span></span></code></pre></div><p>we are going to acquire by accession number using <code>bio</code>, with</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bio fetch XP_050796403
-</span></span></code></pre></div><p>notice this command just blasts out the results to the terminal output, but we want this in a file! Let&rsquo;s do that with a redirect:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bio fetch XP_050796403 &gt; XP_050796403.gbk
-</span></span></code></pre></div><p>*If <code>bio</code> isn&rsquo;t working for you (you might not have permissions or an ideal OS!), please create a new Python file, and add these lines</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">urllib</span>
+            </div><div class="content" id="content"><h2 id="fasta-files">FASTA files</h2>
+<h3 id="seqio"><code>SeqIO</code></h3>
+<p><code>SeqIO</code> is used for managing sequences as <em>inputs</em> and <em>outputs</em>. We are going to learn three methods from <code>SeqIO</code>:</p>
+<ul>
+<li><code>SeqIO.read</code> for bringing in single sequences</li>
+<li><code>SeqIO.parse</code> for working with multiple sequences, and</li>
+<li><code>SeqIO.write</code> for creating new files.
+In the previous section, we created two <code>FASTA</code> files: one a single sequence, the other a multi sequence. Let&rsquo;s start be reading in a single sequence</li>
+</ul>
+<h4 id="seqioread"><code>SeqIO.read</code></h4>
+<p>Start a fresh Python script. Let&rsquo;s read in the single <code>FASTA</code> file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://raw.githubusercontent.com/alleetanner/biopython/main/resources/sonichh_gopherus.gbk&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">fasta_file</span> <span class="o">=</span> <span class="s2">&#34;srp_single.fas&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">srp72_record</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">fasta_file</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&#34;XP_050796403.gbk&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p><code>urllib</code> is a standard Python library for making requests to web pages. Here <code>urllib</code> being asked to go to an address (first argument), and save it in a file called <code>sonic-hh-gopherus.gbk</code> (the second argument). Now we are going to use BioPython to read it into an object, with <code>SeqIO.parse</code>. We need to specify the filename (the one we just downloaded using <code>urllib</code>), and the format it is in. If we pass &ldquo;genbank&rdquo; (or &ldquo;gb&rdquo;) as the second argument then it will read it as a GenBank file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">record_iterator</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;XP_050796403.gbk&#34;</span><span class="p">,</span> <span class="s2">&#34;genbank&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>We are calling our object variable <code>record_iterator</code>, because it could contain many records, but for now it just contains one. We can access this single record by calling <a href="https://docs.python.org/3/library/functions.html#next" target="_blank" rel="noopener noreffer"><code>next</code></a>
-:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">gbk_record</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">record_iterator</span><span class="p">)</span>
-</span></span></code></pre></div><p>GenBank files usually contain a lot more information than a FASTA so more of the fields of the SeqRecord will be filled in. This means that we can, for example, see the record contents:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">gbk_record</span><span class="o">.</span><span class="n">annotations</span><span class="p">)</span>
-</span></span></code></pre></div><p>So, have the above five lines of code saved in a file, and run it in the Jupyter terminal. Inspect the output to get familiar with what information a GenBank record typically contains. (Some records are comprehensively annotated, others can be very sparse! This one is quite good.) We could also isolate just the sequence data with</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">gbk_record</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="fasta-files">FASTA files</h3>
-<h4 id="seqrecord-objects"><code>SeqRecord</code> objects</h4>
-<p>If you have a FASTA file with a single sequence in it, we can read it in with <code>SeqIO.read</code>. This takes two arguments, the name of the file you want to open, and the format that file is in. Let&rsquo;s read in the FASTA file (a single SRP72 sequence we made in the previous sections):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">srp72_record</span> <span class="o">=</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&#34;srp72_single.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">srp72_record</span><span class="p">)</span>
-</span></span></code></pre></div><p>As with a GenBank file, you can also isolate just the sequence information by using <code>.seq</code> on the object:</p>
+</span></span></code></pre></div><p>Have a look at the output; you&rsquo;ll see that it has been turned into a <code>Seq</code> object. We can also just look at the sequence by using the attribute <code>.seq</code> on the object:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">srp72_record</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="working-with-fastas-containing-multiple-sequences">Working with FASTAs containing multiple sequences</h3>
 <p>FASTA files often contain many sequences. These can represent a range of genomic data, for example transcriptomic fragments, a set of genes all from the same organism, or a set of the same gene from a range of organisms.</p>
@@ -273,7 +254,7 @@ bio fetch XP_050796403 notice this command just blasts out the results to the te
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-11-18</span>
+                <span>Updated on 2022-12-12</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
