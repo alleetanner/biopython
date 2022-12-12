@@ -21,10 +21,9 @@ comment:
   enable: false
 ---
 
-
 ## BioPython's `Seq` class
 
-`Seq` is a class in the BioPython library - which means that we have both data (in this case, sequence information) and functions attributed to the object. Since those functions are part of a class, they are also known as "methods". If this is confusing, don't worry too much! It just means that we can make special strings with `Seq`, and each also has special actions that can be done to it. It makes manipulating sequencing information easy, with a clean syntax. 
+`Seq` is a class in the BioPython library. A class allows us to create objects that contain both data, and actions we can run on that data. You should have used _variables_ (boxes containing data) and _functions_ (tools for acting on data); _classes_ combine both of these. If this is confusing, don't worry too much! It just means that we can make special strings with `Seq`, and each also has special actions that can be done to it. It makes manipulating sequencing information easier, with a clean syntax. 
 
 In your Jupyter Lab text editor, start a new script by importing `Seq` like this:
 
@@ -35,8 +34,11 @@ from Bio.Seq import Seq
 Let's start by creating a short string of DNA. We can then call `Seq` on it to create a new object, called `dna_seq`. 
 
 ```python
+# Create a string of valid DNA
 dna_string = "CATTACTTTGGCGGAAAAATATTT"
+# Feed dna_string into Seq to create a Seq object
 dna_seq = Seq(dna_string)
+# Have a look at this new object
 print(dna_seq)
 ```
 
@@ -44,7 +46,7 @@ print(dna_seq)
 
 Save your file, and in the terminal run the file using `python`. 
 
-We can examine our `dna_seq` object, so let's do that with:
+We can examine our `dna_seq` object in other ways, so let's do that with:
 
 ```python
 print(type(dna_seq))
