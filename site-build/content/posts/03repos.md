@@ -1,6 +1,6 @@
 ---
 title: "• Sequence repositories"
-subtitle: "Python as a sequence search tool"
+subtitle: "Wonders of the scientific world!"
 
 date: 2022-11-03T00:00:00+01:00
 
@@ -25,7 +25,7 @@ comment:
 While basic methods of sequencing have existed since the 1970s, it is in the 21st century that the field exploded. This was due to key technological advancements, collectively known as "high-throughput" or "next-generation" sequencing. Generating high-quality sequences, at a fraction of the price, made genomics accessible to even modest research groups. 
 
 ### The genetic revolution
-To illustrate this, [sequencing a human genome in 2000 required many specialist research groups, several years, and $100 million dollars](https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost); by 2010 this had dropped to a matter of weeks and $100,000. In 2022 a a human genome (or at least a full exome) can be sequenced for a few hundred dollars, in a matter of days - as such, aggregated bioinformatic data follows a parallel of [Moore's Law](https://www.wikiwand.com/en/Moore's_law), roughly doubling every 18 months.
+To illustrate this, [sequencing a human genome in 2000 required many specialist research groups, several years, and $100 million dollars](https://www.genome.gov/about-genomics/fact-sheets/Sequencing-Human-Genome-cost); by 2010 this had dropped to a matter of weeks and $100,000. In 2022 a human genome (or at least a full exome) can be sequenced for a few hundred dollars, in a matter of days - as such, aggregated bioinformatic data roughly follow [Moore's Law](https://www.wikiwand.com/en/Moore's_law), doubling every 18 months.
 
 Given the vast amount of data being produced, international consortia were established, with the goal of making any and all bioinformatic research data available to the world, for free (well, ultimately funded by the tax-payer, as with all public research). Most journals will require that sequence information (produced in the research process leading to publication) is deposited with one of the major repositories. These repos should be seen as wonders of the modern scientific world! The openly-accessible data they contain drive forward research in medicine, biology, mathematics, information theory, even nanotechnology and biocomputing.
 
@@ -36,30 +36,18 @@ Given the vast amount of data being produced, international consortia were estab
 - And there are more, which we encourage you to look for.
 {{< /admonition >}}
 
-## Using repositories manually
-Before we use BioPython to carry out a query, we will get familiar with a sequence archive using a browser. The key point here is that, as a starting point for answering a research question, we should become familiar with searching "as a human", before automating such searches.
+## Acquiring bioinformatic data
+Using a browser, we will explore a repository, and get hold of some data to work with in BioPython. A key point here is that, as a starting point for answering a research question, we should become familiar with searching "as a human", before automating such searches.
 
 Let's visit [GenBank](https://www.ncbi.nlm.nih.gov/genbank/). It is worth getting familiar with at least the major sections of GenBank.
 
 ### Making your own FASTA files
-We are going to search for a well-characterised, ultra-conserved gene, that we are going to use for some common bioinformatics tasks. By the dropdown, select "Protein" - this is the name of the database we will be searching. Note the others in the menu - some are major DBs like gene and genome, others are more niche. In the search box, enter `signal recognition particle 72`. This is a ubiquitous gene in eukaryotes, and arguably in prokaryotes too.
+We are going to search for a well-characterised, ultra-conserved gene, that we are going to use for some common bioinformatics tasks. By the dropdown, select "Protein" - this is the name of the database we will be searching. Note the others in the menu - some are major DBs like _gene_ and _genome_, others are more niche. In the search box, enter `signal recognition particle 72`. This is a ubiquitous gene in eukaryotes, and arguably in prokaryotes too.
 
-The search results will be shown - above the results, change the results per page from `20 per page` to `100 per page`. Have a look down the results, and see what details you can recognise. Open one by clicking the link, and have a look over the details that typically accompany an accession. 
+The search results will be shown - above the results, change the results per page from `20 per page` to `200 per page`. Have a look down the results, and see what details you can recognise. Open one by clicking the link, and have a look over the details that typically accompany an accession. 
 
-### Exercise
+### Exercise 1
 {{< admonition type="note" title="Exercise 1" open=true >}}
-Go back to your results list. Now, we are going to select a few of these, and get the protein sequences as a FASTA file. Select by ticking the box next to a record:
-- choose ten records
-- make sure each of these ten are from a different species (eg, don't get more than one from _Homo sapiens_)
-- make sure each one has a record with an amino acid length of between 600 and 690 aa,
-- don't worry if the record says `partial`, as long as it meets the above requirements.
-- Once you have selected 10 (or so) that you like, scroll to the very bottom (or the very top) of the records, and click on the "Summary". From the menu it shows, choose "FASTA (text)". This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (ctrl-a), and cut it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as `srp72_multi.fas`.
-
-For the exercises in the following section, we want to make one more FASTA file. This will be similar to `srp72_multi.fas` that you just made, but contain a single sequence. Go back to NCBI, and your list of SRP72 matches. Choose one more record (again, meeting the above criteria), from a species you have not already chosen. Click through and look at the main record, then find the FASTA for that gene. As before, copy and paste it into a new file in Jupyter, with the name `srp72_single.fas`.
-{{< /admonition >}}
-
-### Exercise
-{{< admonition type="note" title="Exercise 2" open=true >}}
 Sequences come in a variety of formats. Look at the following data, and identify what format it is in
 - Format 1
 ```
@@ -108,8 +96,6 @@ SQ   Sequence 368 BP;
 ```
 gi|6273285|gb|AF191659.1|AF191      TATATA----------ATATATTTCAAATTTCCTTATATACCCAAATATA
 gi|6273284|gb|AF191658.1|AF191      TATATATA--------ATATATTTCAAATTTCCTTATATACCCAAATATA
-gi|6273287|gb|AF191661.1|AF191      TATATA----------ATATATTTCAAATTTCCTTATATATCCAAATATA
-gi|6273286|gb|AF191660.1|AF191      TATATA----------ATATATTTATAATTTCCTTATATATCCAAATATA
 gi|6273290|gb|AF191664.1|AF191      TATATATATA------ATATATTTCAAATTCCCTTATATATCCAAATATA
 gi|6273289|gb|AF191663.1|AF191      TATATATATA------ATATATTTCAAATTCCCTTATATATCCAAATATA
 gi|6273291|gb|AF191665.1|AF191      TATATATATATATATAATATATTTCAAATTCCCTTATATATCCAAATATA
@@ -125,3 +111,25 @@ gi|6273291|gb|AF191665.1|AF191      TATATATATATATATAATATATTTCAAATTCCCTTATATATCCA
 - Format 5: [EMBL](https://www.genomatix.de/online_help/help/sequence_formats.html)
 - Format 6: [CLUSTAL](https://bioperl.org/formats/alignment_formats/ClustalW_multiple_alignment_format)
 {{< /admonition >}}
+
+### Exercise 2
+{{< admonition type="note" title="Exercise 2" open=true >}}
+1. Go back to your results list. We are going to make a `FASTA` file of one of these sequences.
+- return to your list of results
+- scroll down until you find a species you like the sound of
+- make sure your record has an amino acid length of **between 600 and 690 AA**
+- avoid records that say, `isoform`, but don't worry if it says `partial`
+- click on `FASTA` to see the sequence for the record
+- select and copy _just the FASTA data_, ie, starting with the `>` character, and ending with the last AA position
+- go to your Jupyter Lab session, create a new file, and paste this data in
+- save this file `srp72_single.fas`
+
+2. We also want to acquire a `multiple FASTA` file - which is just a `FASTA` file with more than one sequence in it.
+- return to your list of results and if you haven't already, ask it to show `200 per page` 
+- have a browse down this list, and tick the select box on **ten** records:
+  - make sure each of these ten are from a different species (eg, don't get more than one from _Homo sapiens_)
+  - as above, make sure each one has a record with an amino acid length of **between 600 and 690 AA** (avoid records that say, `isoform`, but don't worry if it says `partial`, as long as it is this length) 
+- Once you have selected ten that you like, scroll to the very bottom (or the very top) of the records, and click on the "Summary". From the menu it shows, choose `FASTA (text)`. This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (`ctrl-a`), and copy it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it (ideally in the folder you are working in today) as `srp72_multi.fas`
+{{< /admonition >}}
+
+
