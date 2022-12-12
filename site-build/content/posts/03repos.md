@@ -122,14 +122,14 @@ gi|6273291|gb|AF191665.1|AF191      TATATATATATATATAATATATTTCAAATTCCCTTATATATCCA
 - click on `FASTA` to see the sequence for the record
 - select and copy _just the FASTA data_, ie, starting with the `>` character, and ending with the last AA position
 - go to your Jupyter Lab session, create a new file, and paste this data in
-- save this file `srp72_single.fas`
+- save this file `srp_single.fas`
 
 **2.** We also want to create a `multiple FASTA` file - which is just a `FASTA` file with more than one sequence in it.
 - return to your list of results and if you haven't already, ask it to show `200 per page` 
 - have a browse down this list, and tick the select box on **ten** records:
   - make sure each of these ten are from a different species (eg, don't get more than one from _Homo sapiens_)
   - as above, make sure each one has a record with an amino acid length of **between 600 and 690 AA** and avoids `isoform`s
-- Once you have selected ten that you like, scroll to the very bottom (or the very top) of the records, and click on the `Summary`. From the menu it shows, choose `FASTA (text)`. This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (`ctrl-a`), and copy it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it as `srp72_multi.fas`
+- Once you have selected ten that you like, scroll to the very bottom (or the very top) of the records, and click on the `Summary`. From the menu it shows, choose `FASTA (text)`. This will open a new page, with the protein sequences for the gene SRP72, for the species you chose. Select all of this text (`ctrl-a`), and copy it. Now, go to your Jupyter Lab tab, and create a new text file. Paste your FASTA sequences into the new file, and save it as `srp_multi.fas`
 {{< /admonition >}}
 
 
