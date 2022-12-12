@@ -91,7 +91,7 @@ fasta_file = "srp_multi.fas"
 srp72_parsed = SeqIO.parse(fasta_file, "fasta")
 
 # run SeqIO.write to create an output file
-SeqIO.write(my_records, "my_example.fas", "fasta")
+SeqIO.write(srp72_parsed, "my_example.fas", "fasta")
 ```
 
 ### Exercises
