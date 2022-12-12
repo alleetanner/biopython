@@ -23,7 +23,7 @@ comment:
 
 ## BioPython's `Seq` class
 
-`Seq` is a class in the BioPython library. A class allows us to create objects that contain both data, and actions we can run on that data. You should have used _variables_ (boxes containing data) and _functions_ (tools for acting on data); _classes_ combine both of these. If this is confusing, don't worry too much! It just means that we can make special strings with `Seq`, and each also has special actions that can be done to it. It makes manipulating sequencing information easier, with a clean syntax. 
+`Seq` is a class in the BioPython library. A class allows us to create objects that contain both data, and functions we can run on that data. You should have used _variables_ (boxes containing data) and _functions_ (tools for acting on data); a _class_ combines both of these. If this is confusing, don't worry too much! It just means that we can make special strings with `Seq`, designed for molecular biology. This makes manipulating sequencing information easier, with a clean syntax.
 
 In your Jupyter Lab text editor, start a new script by importing `Seq` like this:
 
@@ -53,7 +53,13 @@ print(type(dna_seq))
 print(dir(dna_seq))
 ```
 
-These will print out what kind of object our `dna_seq` is, as well as the methods associated with it. Don't worry too much about all the `__dunders__` there, but notice the methods, at the end of the list. You can learn more about how to use these methods in [the BioPython documentation for `Seq`](https://biopython.org/wiki/Seq). Remove these `type` and `dir` lines from your script, they will make your terminal a bit messy and hard to read!
+These will print out what kind of object our `dna_seq` is, as well as the methods associated with it. Don't worry too much about all the `__special_methods__` there.
+
+{{< admonition type="info" title="Special methods, aka magic methods, aka dunders" open=false >}}
+You will come across mysterious functions with `__double__ __underscores__` in Python. These are
+{{< /admonition >}}
+
+Notice the methods attributed to the `Seq` object, at the end of the list. You can learn more about how to use these methods in [the BioPython documentation for `Seq`](https://biopython.org/wiki/Seq). Remove these `type` and `dir` lines from your script, they will make your terminal a bit messy and hard to read!
 
 {{< admonition type="info" title="Remember to save your script!" open=false >}}
 It is very easy to forget to save your script before running it! Jupyter Lab will tell you if a file is modified without saving, with the circle in the tab title. A `ctrl-S` will save it quickly. Also remember to be in the right folder in the terminal, when you are running your script.
@@ -81,7 +87,7 @@ It is also possible to convert back from an RNA sequence to a DNA sequence:
 dna_from_rna = rna_seq.back_transcribe()
 ```
 
-Which, if it's working correctly should give us back the original data - we can check that by asking "are these two objects identical?", like this:
+Which, in this case, _should_ give us back the original data - we can check that by asking "are these two objects identical?":
 
 ```python
 if dna_seq == dna_from_rna:
@@ -98,48 +104,65 @@ protein_seq = rna_seq.translate()
 print(protein_seq)
 ```
 
-Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence to break this kind of translation (you should be getting a `BiopythonWarning`, or a `Bio.Data.CodonTable.TranslationError` - read these tracebacks and pick out the important information it is giving you). There are two primary ways of doing this - what are they?
+Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence (say, apply indels, or include an invalid nucleotide) to break this kind of translation. You should be getting a `BiopythonWarning`, or a `Bio.Data.CodonTable.TranslationError` - read these tracebacks and pick out the important information it is giving you.
 
-### Exercise
+### Creating a `function`
+Let's build these into a function, for viewing the complement, transcription and translation of some DNA. Begin a new script with:
+```python
+from Bio.Seq import Seq
+def complement_transcribe_translate(dna):
+    print(f"My incoming DNA:           {dna}")
+```
+We begin with defining the function, give it a descriptive name, and declare that it takes one argument called `dna`. The function body is currently just printing out a confirmation of the input. Test that the function is working by creating a `Seq` object of the nucleotides `TTACCAAAAACCCCTTTGGGAAAGCAT`, and calling your function on it.
+
+Let's expand on this, to satisfy our descriptive function name.
+```python
+from Bio.Seq import Seq
+
+def complement_transcribe_translate(dna):
+    print(f"My incoming DNA:           {dna}")
+    
+    complement = dna.complement()
+    print(f"Complementary strand:      {complement}")
+    
+    transcribed_forward = complement.transcribe()
+    print(f"Complement transcription:  {transcribed_forward}")
+    
+    amino_acids_forward = transcribed_forward.translate()
+    print(f"Amino acid translation:    {amino_acids_forward}")
+
+dna_seq = Seq("TTACCAAAAACCCCTTTGGGAAAGCAT")
+
+complement_transcribe_translate(dna_seq)
+```
+
+### Exercise 1
 {{< admonition type="note" title="Exercise" open=true >}}
-Let's put together some of the methods we have used so far, and arrange them in functions. Create a new script in Jupyter Lab, and build a DNA translator, using the script below as a guide (ie, fill the `___` gaps!). When run on the command line, your script should neatly output the manipulations to the incoming raw DNA.
+Create a reverse DNA reader! 
+- Add to your script with the function `complement_transcribe_translate`, and add a new function to _reverse_ complement, translate and transcribe.
+- Use the script below as a template (ie, fill the `___` gaps!).
+- When run on the command line, your script should neatly output the manipulations to the incoming raw DNA.
+- Include a `docstring`, add `#comments` and format your functions neatly!
 
-Once you have a working script, use it to answer these questions:
+Once you have a working script:
 - Which of the two reading directions is probably correct?
 - Why?
-- Is this 5' to 3', or 3' to 5'?
 
 ```python
 from Bio.Seq import Seq
 
 
-def complement_transcribe_translate(___):
+def reverse_complement_transcribe_translate(dna):
     """
     Very good students fill out the docstring too! 
     """
-    print(f"My incoming DNA:           {___}")
-    
-    complement = ___.___()
-    print(f"Complementary strand:      {___}")
-    
-    transcribed_forward = ___.___()
-    print(f"Complement transcription:  {___}")
-    
-    amino_acids_forward = ___.___()
-    print(f"Amino acid translation:    {___}")
-
-
-def reverse_translate(___):
-    """
-    Very good students fill out the docstring too! 
-    """
-    dna_reverse = ___.___()
+    dna_reverse = dna.___()
     print(f"As a reverse complement:   {___}")
     
-    transcribed_backward = ___.___()
+    transcribed_backward = dna_reverse.___()
     print(f"Reverse transcription:     {___}")
     
-    amino_acids_backward = ___.___()
+    amino_acids_backward = transcribed_backward.___()
     print(f"Amino acids reading <-     {___}")
 
 
