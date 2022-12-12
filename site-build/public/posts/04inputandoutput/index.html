@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/04inputandoutput/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-04T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-12-12T18:40:23+00:00" />
+<meta property="article:modified_time" content="2022-12-12T18:45:20+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Working with FASTA"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/"
-        },"genre": "posts","wordcount":  962 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-12-12T18:40:23+00:00","publisher": {
+        },"genre": "posts","wordcount":  969 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/04inputandoutput\/","datePublished": "2022-11-04T00:00:00+01:00","dateModified": "2022-12-12T18:45:20+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -124,7 +124,10 @@ In the previous section, we created two <code>FASTA</code> files: one a single s
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
 </span></span></code></pre></div><p>We can only loop over a generator once before they are exhausted (this is very useful for memory and speed-critical processes). In the above code snippet, if there was a second loop taking in <code>fasta_batch</code>, it would do nothing!</p>
 <p>If we wish to loop again over a generator, we usually <em>cast</em> the generator to a list, which can be iterated over as many times as you like:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fasta_batch</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&#34;srp72.fas&#34;</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fasta_file</span> <span class="o">=</span> <span class="s2">&#34;srp_multi.fas&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">fasta_batch</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">fasta_file</span><span class="p">,</span> <span class="s2">&#34;fasta&#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">fasta_batch</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
