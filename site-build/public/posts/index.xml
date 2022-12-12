@@ -45,7 +45,7 @@ The genetic revolution To illustrate this, sequencing a human genome in 2000 req
     <pubDate>Wed, 02 Nov 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/biopython/posts/02sequences/</guid>
-    <description><![CDATA[BioPython&rsquo;s Seq class Seq is a class in the BioPython library. A class allows us to create objects that contain both data, and actions we can run on that data. You should have used variables (boxes containing data) and functions (tools for acting on data); classes combine both of these. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, and each also has special actions that can be done to it.]]></description>
+    <description><![CDATA[BioPython&rsquo;s Seq class Seq is a class in the BioPython library. A class allows us to create objects that contain both data, and functions we can run on that data. You should have used variables (boxes containing data) and functions (tools for acting on data); a class combines both of these. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, designed for molecular biology.]]></description>
 </item>
 <item>
     <title>• Set up and requirements</title>

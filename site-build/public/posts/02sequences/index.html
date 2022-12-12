@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>• Working with sequences - BioPython</title><meta name="Description" content=""><meta property="og:title" content="• Working with sequences" />
-<meta property="og:description" content="BioPython&rsquo;s Seq class Seq is a class in the BioPython library. A class allows us to create objects that contain both data, and actions we can run on that data. You should have used variables (boxes containing data) and functions (tools for acting on data); classes combine both of these. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, and each also has special actions that can be done to it." />
+<meta property="og:description" content="BioPython&rsquo;s Seq class Seq is a class in the BioPython library. A class allows us to create objects that contain both data, and functions we can run on that data. You should have used variables (boxes containing data) and functions (tools for acting on data); a class combines both of these. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, designed for molecular biology." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/biopython/posts/02sequences/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-02T00:00:00+01:00" />
-<meta property="article:modified_time" content="2022-12-12T12:05:01+00:00" />
+<meta property="article:modified_time" content="2022-12-12T14:29:55+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Working with sequences"/>
-<meta name="twitter:description" content="BioPython&rsquo;s Seq class Seq is a class in the BioPython library. A class allows us to create objects that contain both data, and actions we can run on that data. You should have used variables (boxes containing data) and functions (tools for acting on data); classes combine both of these. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, and each also has special actions that can be done to it."/>
+<meta name="twitter:description" content="BioPython&rsquo;s Seq class Seq is a class in the BioPython library. A class allows us to create objects that contain both data, and functions we can run on that data. You should have used variables (boxes containing data) and functions (tools for acting on data); a class combines both of these. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with Seq, designed for molecular biology."/>
 <meta name="application-name" content="BioPython">
 <meta name="apple-mobile-web-app-title" content="BioPython"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://alleetanner.github.io/biopython/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://alleetanner.github.io/biopython/favicon-32x32.png">
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/biopython\/posts\/02sequences\/"
-        },"genre": "posts","wordcount":  944 ,
-        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/02sequences\/","datePublished": "2022-11-02T00:00:00+01:00","dateModified": "2022-12-12T12:05:01+00:00","publisher": {
+        },"genre": "posts","wordcount":  1041 ,
+        "url": "https:\/\/alleetanner.github.io\/biopython\/posts\/02sequences\/","datePublished": "2022-11-02T00:00:00+01:00","dateModified": "2022-12-12T14:29:55+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -80,13 +80,14 @@
       <ul>
         <li><a href="#transcription">Transcription</a></li>
         <li><a href="#translation">Translation</a></li>
-        <li><a href="#exercise">Exercise</a></li>
+        <li><a href="#creating-a-function">Creating a <code>function</code></a></li>
+        <li><a href="#exercise-1">Exercise 1</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="biopythons-seq-class">BioPython&rsquo;s <code>Seq</code> class</h2>
-<p><code>Seq</code> is a class in the BioPython library. A class allows us to create objects that contain both data, and actions we can run on that data. You should have used <em>variables</em> (boxes containing data) and <em>functions</em> (tools for acting on data); <em>classes</em> combine both of these. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with <code>Seq</code>, and each also has special actions that can be done to it. It makes manipulating sequencing information easier, with a clean syntax.</p>
+<p><code>Seq</code> is a class in the BioPython library. A class allows us to create objects that contain both data, and functions we can run on that data. You should have used <em>variables</em> (boxes containing data) and <em>functions</em> (tools for acting on data); a <em>class</em> combines both of these. If this is confusing, don&rsquo;t worry too much! It just means that we can make special strings with <code>Seq</code>, designed for molecular biology. This makes manipulating sequencing information easier, with a clean syntax.</p>
 <p>In your Jupyter Lab text editor, start a new script by importing <code>Seq</code> like this:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio.Seq</span> <span class="kn">import</span> <span class="n">Seq</span>
 </span></span></code></pre></div><p>Let&rsquo;s start by creating a short string of DNA. We can then call <code>Seq</code> on it to create a new object, called <code>dna_seq</code>.</p>
@@ -101,7 +102,16 @@
 <p>We can examine our <code>dna_seq</code> object in other ways, so let&rsquo;s do that with:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dna_seq</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">dna_seq</span><span class="p">))</span>
-</span></span></code></pre></div><p>These will print out what kind of object our <code>dna_seq</code> is, as well as the methods associated with it. Don&rsquo;t worry too much about all the <code>__dunders__</code> there, but notice the methods, at the end of the list. You can learn more about how to use these methods in <a href="https://biopython.org/wiki/Seq" target="_blank" rel="noopener noreffer">the BioPython documentation for <code>Seq</code></a>
+</span></span></code></pre></div><p>These will print out what kind of object our <code>dna_seq</code> is, as well as the methods associated with it. Don&rsquo;t worry too much about all the <code>__special_methods__</code> there.</p>
+<div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Special methods, aka magic methods, aka dunders<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">You will come across mysterious functions with <code>__double__ __underscores__</code> in Python. These are</div>
+        </div>
+    </div>
+<p>Notice the methods attributed to the <code>Seq</code> object, at the end of the list. You can learn more about how to use these methods in <a href="https://biopython.org/wiki/Seq" target="_blank" rel="noopener noreffer">the BioPython documentation for <code>Seq</code></a>
 . Remove these <code>type</code> and <code>dir</code> lines from your script, they will make your terminal a bit messy and hard to read!</p>
 <div class="details admonition info">
         <div class="details-summary admonition-title">
@@ -120,7 +130,7 @@
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">rna_complement</span><span class="p">)</span>
 </span></span></code></pre></div><p>It is also possible to convert back from an RNA sequence to a DNA sequence:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dna_from_rna</span> <span class="o">=</span> <span class="n">rna_seq</span><span class="o">.</span><span class="n">back_transcribe</span><span class="p">()</span>
-</span></span></code></pre></div><p>Which, if it&rsquo;s working correctly should give us back the original data - we can check that by asking &ldquo;are these two objects identical?&rdquo;, like this:</p>
+</span></span></code></pre></div><p>Which, in this case, <em>should</em> give us back the original data - we can check that by asking &ldquo;are these two objects identical?&rdquo;:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">dna_seq</span> <span class="o">==</span> <span class="n">dna_from_rna</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Yes, they are identical.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
@@ -129,50 +139,63 @@
 <p>The next thing we might want to do with this nucleotide sequence is see what amino acid sequence it would translate to (let&rsquo;s assume our sequence is protein-coding for a tiny polypeptide!).</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">protein_seq</span> <span class="o">=</span> <span class="n">rna_seq</span><span class="o">.</span><span class="n">translate</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">protein_seq</span><span class="p">)</span>
-</span></span></code></pre></div><p>Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence to break this kind of translation (you should be getting a <code>BiopythonWarning</code>, or a <code>Bio.Data.CodonTable.TranslationError</code> - read these tracebacks and pick out the important information it is giving you). There are two primary ways of doing this - what are they?</p>
-<h3 id="exercise">Exercise</h3>
+</span></span></code></pre></div><p>Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence (say, apply indels, or include an invalid nucleotide) to break this kind of translation. You should be getting a <code>BiopythonWarning</code>, or a <code>Bio.Data.CodonTable.TranslationError</code> - read these tracebacks and pick out the important information it is giving you.</p>
+<h3 id="creating-a-function">Creating a <code>function</code></h3>
+<p>Let&rsquo;s build these into a function, for viewing the complement, transcription and translation of some DNA. Begin a new script with:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio.Seq</span> <span class="kn">import</span> <span class="n">Seq</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">complement_transcribe_translate</span><span class="p">(</span><span class="n">dna</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;My incoming DNA:           </span><span class="si">{</span><span class="n">dna</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>We begin with defining the function, give it a descriptive name, and declare that it takes one argument called <code>dna</code>. The function body is currently just printing out a confirmation of the input. Test that the function is working by creating a <code>Seq</code> object of the nucleotides <code>TTACCAAAAACCCCTTTGGGAAAGCAT</code>, and calling your function on it.</p>
+<p>Let&rsquo;s expand on this, to satisfy our descriptive function name.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio.Seq</span> <span class="kn">import</span> <span class="n">Seq</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">complement_transcribe_translate</span><span class="p">(</span><span class="n">dna</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;My incoming DNA:           </span><span class="si">{</span><span class="n">dna</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">complement</span> <span class="o">=</span> <span class="n">dna</span><span class="o">.</span><span class="n">complement</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Complementary strand:      </span><span class="si">{</span><span class="n">complement</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">transcribed_forward</span> <span class="o">=</span> <span class="n">complement</span><span class="o">.</span><span class="n">transcribe</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Complement transcription:  </span><span class="si">{</span><span class="n">transcribed_forward</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">amino_acids_forward</span> <span class="o">=</span> <span class="n">transcribed_forward</span><span class="o">.</span><span class="n">translate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Amino acid translation:    </span><span class="si">{</span><span class="n">amino_acids_forward</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dna_seq</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="s2">&#34;TTACCAAAAACCCCTTTGGGAAAGCAT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">complement_transcribe_translate</span><span class="p">(</span><span class="n">dna_seq</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="exercise-1">Exercise 1</h3>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>Let&rsquo;s put together some of the methods we have used so far, and arrange them in functions. Create a new script in Jupyter Lab, and build a DNA translator, using the script below as a guide (ie, fill the <code>___</code> gaps!). When run on the command line, your script should neatly output the manipulations to the incoming raw DNA.</p>
-<p>Once you have a working script, use it to answer these questions:</p>
+            <div class="admonition-content"><p>Create a reverse DNA reader!</p>
+<ul>
+<li>Add to your script with the function <code>complement_transcribe_translate</code>, and add a new function to <em>reverse</em> complement, translate and transcribe.</li>
+<li>Use the script below as a template (ie, fill the <code>___</code> gaps!).</li>
+<li>When run on the command line, your script should neatly output the manipulations to the incoming raw DNA.</li>
+<li>Include a <code>docstring</code>, add <code>#comments</code> and format your functions neatly!</li>
+</ul>
+<p>Once you have a working script:</p>
 <ul>
 <li>Which of the two reading directions is probably correct?</li>
 <li>Why?</li>
-<li>Is this 5&rsquo; to 3&rsquo;, or 3&rsquo; to 5'?</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Bio.Seq</span> <span class="kn">import</span> <span class="n">Seq</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">complement_transcribe_translate</span><span class="p">(</span><span class="n">___</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">reverse_complement_transcribe_translate</span><span class="p">(</span><span class="n">dna</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
 </span></span></span><span class="line"><span class="cl"><span class="s2">    Very good students fill out the docstring too! 
 </span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;My incoming DNA:           </span><span class="si">{</span><span class="n">___</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">complement</span> <span class="o">=</span> <span class="n">___</span><span class="o">.</span><span class="n">___</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Complementary strand:      </span><span class="si">{</span><span class="n">___</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">transcribed_forward</span> <span class="o">=</span> <span class="n">___</span><span class="o">.</span><span class="n">___</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Complement transcription:  </span><span class="si">{</span><span class="n">___</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">amino_acids_forward</span> <span class="o">=</span> <span class="n">___</span><span class="o">.</span><span class="n">___</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Amino acid translation:    </span><span class="si">{</span><span class="n">___</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">reverse_translate</span><span class="p">(</span><span class="n">___</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">    Very good students fill out the docstring too! 
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">dna_reverse</span> <span class="o">=</span> <span class="n">___</span><span class="o">.</span><span class="n">___</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dna_reverse</span> <span class="o">=</span> <span class="n">dna</span><span class="o">.</span><span class="n">___</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;As a reverse complement:   </span><span class="si">{</span><span class="n">___</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">transcribed_backward</span> <span class="o">=</span> <span class="n">___</span><span class="o">.</span><span class="n">___</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transcribed_backward</span> <span class="o">=</span> <span class="n">dna_reverse</span><span class="o">.</span><span class="n">___</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Reverse transcription:     </span><span class="si">{</span><span class="n">___</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">amino_acids_backward</span> <span class="o">=</span> <span class="n">___</span><span class="o">.</span><span class="n">___</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">amino_acids_backward</span> <span class="o">=</span> <span class="n">transcribed_backward</span><span class="o">.</span><span class="n">___</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Amino acids reading &lt;-     </span><span class="si">{</span><span class="n">___</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
