@@ -65,7 +65,10 @@ We can only loop over a generator once before they are exhausted (this is very u
 If we wish to loop again over a generator, we usually *cast* the generator to a list, which can be iterated over as many times as you like:
 
 ```python
-fasta_batch = list(SeqIO.parse("srp72.fas", "fasta"))
+from Bio import SeqIO
+
+fasta_file = "srp_multi.fas"
+fasta_batch = list(SeqIO.parse(fasta_file, "fasta"))
 
 for record in fasta_batch:
     print(record.description)
