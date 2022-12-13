@@ -173,8 +173,8 @@ dna_seq = Seq("TTACCAAAAACCCCTTTGGGAAAGCAT")
 # call my function "complement_transcribe_translate" from above
 complement_transcribe_translate(___)
 
-# call my function "reverse_translate" from above
-reverse_translate(___)
+# call my function "reverse_complement_transcribe_translate" from above
+reverse_complement_transcribe_translate(___)
 ```
 {{< /admonition >}}
 
@@ -207,7 +207,7 @@ def complement_transcribe_translate(dna):
     print(f"Amino acid translation:    {amino_acids_forward}")
     
     
-def reverse_translate(dna):
+def reverse_complement_transcribe_translate(dna):
     """
     Take some DNA, and print out some conversions:
     the reverse complement,
@@ -235,8 +235,8 @@ dna_seq = Seq("TTACCAAAAACCCCTTTGGGAAAGCAT")
 # call my function "complement_transcribe_translate" from above
 complement_transcribe_translate(dna_seq)
 
-# call my function "reverse_translate" from above
-reverse_translate(dna_seq)
+# call my function "reverse_complement_transcribe_translate" from above
+reverse_complement_transcribe_translate(dna_seq)
 ```
 {{< /admonition >}}
 
