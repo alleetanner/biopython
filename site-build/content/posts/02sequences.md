@@ -106,7 +106,7 @@ print(protein_seq)
 
 Note that this will always translate forward using the first nucleotide as the open reading frame. Try altering the raw DNA sequence (say, apply indels, or include an invalid nucleotide) to break this kind of translation. You should be getting a `BiopythonWarning`, or a `Bio.Data.CodonTable.TranslationError` - read these tracebacks and pick out the important information it is giving you.
 
-### Create DNA reader `function`
+### Create DNA reader function
 Let's build these into a function, for viewing the complement, transcription and translation of some DNA. Begin a new script with:
 ```python
 from Bio.Seq import Seq
